@@ -2,7 +2,18 @@ import Backbone from 'backbone'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import $ from 'jquery'
-import AppController from './lugg-view-controller.js'
+
+import {UserModel, ShopModel, UserCollection} from './user-models.js'
+import ACTIONS from './user-actions.js'
+import AuthView from './auth-view.js'
+import LuggAccept from './display-lugger-accepted.js'
+import CargoDisplay from './display-cargo-details.js'
+import CargoDisplay from './display-cargo-details.js'
+import AppController from './view-controller.js'
+import LuggList from './lugg-list.js'
+import PackProfile from './create-packer-profile'
+import LuggProfile from './create-lugger-profile'
+
 
 const AppRouter = Backbone.Router.extend({
    routes: {
