@@ -1,19 +1,24 @@
-const ReactDOM = require('react-dom');
-const React = require('react')
-const Backbone = require('backbone');
-
-
+import Backbone from 'backbone'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import $ from 'jquery'
+import AppController from './lugg-view-controller.js'
 
 const AppRouter = Backbone.Router.extend({
    routes: {
+    "user-login" : "showAuthView",
       "luggAcpt" : "showLuggAccept",
-        "cargo"  :  "showDisplayCargo",
-      "luggList" : "showLuggList"
+        "cargo"  : "showDisplayCargo",
+      "luggList" : "showLuggList",
        "PackPro" : "showPackProfile",
        "luggPro" : "showLuggProfile",
-        "splash" : "showSplashPage"
-   }
+              "" : "showSplashPage"
+   },
 
+   showAuthView: function(){
+      ReactDOM.render(<AppController routedFrom = "AuthView" />, document.querySelector('#app-container'))
+
+   },
    showLuggAccept: function(){
       ReactDOM.render(<AppController routedFrom = "LuggAccept" />, document.querySelector('#app-container'))
 
@@ -40,15 +45,13 @@ const AppRouter = Backbone.Router.extend({
    },
 
    showSplashPage: function(){
-      ReactDOM.render(<AppController routedFrom = "" />, document.querySelector('#app-container'))
+      ReactDOM.render(<AppController routedFrom = "SplashPage" />, document.querySelector('#app-container'))
+
+   },
+
+   initialize: function(){
+   Backbone.history.start();
 
    }
-
 })
-
-
-initialize: function(){
-   Backbone.history.start();
-}
-
-new AppRouter()
+const app = new AppRouter()
