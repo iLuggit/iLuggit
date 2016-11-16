@@ -66,7 +66,7 @@ public class iLuggitController {
 
     @RequestMapping(path = "/login", method = RequestMethod.POST)
     public ResponseEntity<User> postUser(HttpSession session, @RequestBody User user) throws PasswordStorage.InvalidHashException, PasswordStorage.CannotPerformOperationException {
-        User userFromDb = users.findByEmailAddress(user.getEmail());
+        User userFromDb = users.findFirstByName(user.getName());
         if (userFromDb == null) {
             user.setPassword(PasswordStorage.createHash(user.getPassword()));
             users.save(user);
