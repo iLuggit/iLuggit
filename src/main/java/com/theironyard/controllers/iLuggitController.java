@@ -37,7 +37,6 @@ public class iLuggitController {
 
     Server h2Server;
 
-
     @PostConstruct
     public void init () throws SQLException, PasswordStorage.CannotPerformOperationException{
         h2Server = Server.createWebServer().start();
@@ -45,7 +44,7 @@ public class iLuggitController {
             User user = new User("Barton", PasswordStorage.createHash("1234"), "Barry", "Daniels", "barry.a.daniels@gmail.com", "8439067218");
             users.save(user);
 
-            Truck truck = new Truck("BartonTruck", PasswordStorage.createHash("1234"), "Barry", "Daniels", "barry.a.daniels@gmail.com", "8439067218", null);
+            Truck truck = new Truck("BartonTruck", PasswordStorage.createHash("1234"), "Barry", "Daniels", "barry.a.daniels@gmail.com", "8439067218", Truck.BedSize.ONE);
             trucks.save(truck);
 
             jobs.save(new Job("123 Main st", "321 Main St", "Piano", null, 1, 1));
@@ -64,17 +63,29 @@ public class iLuggitController {
         return jobs.findAll();
     }
 
-    @RequestMapping(path = "/login", method = RequestMethod.POST)
+    @RequestMapping(path = "/user-login", method = RequestMethod.POST)
     public ResponseEntity<User> postUser(HttpSession session, @RequestBody User user) throws PasswordStorage.InvalidHashException, PasswordStorage.CannotPerformOperationException {
-        User userFromDb = users.findFirstByName(user.getName());
+        User userFromDb = users.findFirstByUsername(user.getUsername());
         if (userFromDb == null) {
             user.setPassword(PasswordStorage.createHash(user.getPassword()));
             users.save(user);
         } else if (!PasswordStorage.verifyPassword(user.getPassword(), userFromDb.getPassword())) {
             return new ResponseEntity<User>(HttpStatus.FORBIDDEN);
         }
-        session.setAttribute("name", user.getFirst_name());
+        session.setAttribute("first_name", user.getFirst_name());
         return new ResponseEntity<User>(user, HttpStatus.OK);
+    }
+    @RequestMapping(path = "/truck-login", method = RequestMethod.POST)
+    public ResponseEntity<Truck> postTruck(HttpSession session, @RequestBody Truck truck) throws PasswordStorage.InvalidHashException, PasswordStorage.CannotPerformOperationException {
+        Truck truckFromDb = trucks.findFirstByUsername(truck.getUsername());
+        if (truckFromDb == null) {
+            truck.setPassword(PasswordStorage.createHash(truck.getPassword()));
+            trucks.save(truck);
+        } else if (!PasswordStorage.verifyPassword(truck.getPassword(), truckFromDb.getPassword())) {
+            return new ResponseEntity<Truck>(HttpStatus.FORBIDDEN);
+        }
+        session.setAttribute("first_name", truck.getFirst_name());
+        return new ResponseEntity<Truck>(truck, HttpStatus.OK);
     }
     @RequestMapping(path = "/logout", method = RequestMethod.POST)
     public void logout(HttpSession session) {
