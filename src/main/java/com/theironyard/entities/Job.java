@@ -17,7 +17,7 @@ public class Job {
         String dropoff_address;
         @Column(nullable = false)
         String haul_description;
-        @Column(nullable = false)
+        @Column
         String haul_img;
         @Column(nullable = false)
         int poster_account_id;

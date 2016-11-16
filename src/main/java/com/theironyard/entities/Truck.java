@@ -6,12 +6,16 @@ import javax.persistence.*;
  * Created by VeryBarry on 11/16/16.
  */
 @Entity
-@Table(name = "user_accounts")
-public class UserAccount {
+@Table(name = "trucks")
+public class Truck {
+    public enum BedSize{
+        ONE, TWO, THREE
+    }
+
     @Id
     @GeneratedValue
     public int id;
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     String  username;
     @Column(nullable = false)
     String password;
@@ -19,21 +23,24 @@ public class UserAccount {
     String first_name;
     @Column(nullable = false)
     String last_name;
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     String email;
     @Column(nullable = false)
     String phone_number;
+    @Column
+    BedSize bedSize;
 
-    public UserAccount() {
+    public Truck() {
     }
 
-    public UserAccount(String username, String password, String first_name, String last_name, String email, String phone_number) {
+    public Truck(String username, String password, String first_name, String last_name, String email, String phone_number, BedSize bedSize) {
         this.username = username;
         this.password = password;
         this.first_name = first_name;
         this.last_name = last_name;
         this.email = email;
         this.phone_number = phone_number;
+        this.bedSize = bedSize;
     }
 
     public int getId() {
@@ -90,5 +97,13 @@ public class UserAccount {
 
     public void setPhone_number(String phone_number) {
         this.phone_number = phone_number;
+    }
+
+    public BedSize getBedSize() {
+        return bedSize;
+    }
+
+    public void setBedSize(BedSize bedSize) {
+        this.bedSize = bedSize;
     }
 }
