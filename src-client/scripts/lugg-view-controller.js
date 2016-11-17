@@ -3,6 +3,7 @@ import React from 'react'
 import $ from 'jquery'
 
 
+import PackAuthView from './pack-auth-view.js'
 import LuggAuthView from './lugg-auth-view.js'
 import HomeView from './home-page.js'
 
@@ -40,7 +41,7 @@ let AppController = React.createClass({
             break;
 
          case "PackAuthView":
-            return <PachAuthView/>
+            return <PackAuthView/>
             break;
 
          default:

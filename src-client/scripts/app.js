@@ -11,42 +11,45 @@ import AppController from './lugg-view-controller.js'
 console.log('hello')
 const AppRouter = Backbone.Router.extend({
    routes: {
-   //  "user-login" : "showPackAuthView",
-    "truck-login" : "showLuggAuthView",
-   //    "luggAcpt" : "showLuggAccept",
-   //       "cargo" : "showDisplayCargo",
-   //    "luggList" : "showLuggList",
-   //     "packPro" : "showPackProfile",
-          "luggPro" : "showLuggProfile",
+
+    "user-login" : "showPackAuthView",
+   "truck-login" : "showLuggAuthView",
+      "luggAcpt" : "showLuggAccept",
+         "cargo" : "showDisplayCargo",
+      "luggList" : "showLuggList",
+       "packPro" : "showPackProfile",
+       "luggPro" : "showLuggProfile",
               "" : "showHomeView"
    },
    showPackAuthView: function(){
       ReactDOM.render(<AppController routedFrom = "PackAuthView" />, document.querySelector('#app-container'))
    },
+
    showLuggAuthView: function(){
       ReactDOM.render(<AppController routedFrom = "LuggAuthView" />, document.querySelector('#app-container'))
 
    },
-   // showLuggAccept: function(){
-   //    ReactDOM.render(<AppController routedFrom = "LuggAccept" />, document.querySelector('#app-container'))
-   //
-   // },
-   //
-   // showDisplayCargo: function(){
-   //    ReactDOM.render(<AppController routedFrom = "CargoDisplay" />, document.querySelector('#app-container'))
-   //
-   // },
-   //
-   // showLuggList: function(){
-   //    ReactDOM.render(<AppController routedFrom = "LuggList" />, document.querySelector('#app-container'))
-   //
-   // },
-   //
-   // showPackProfile: function(){
-   //    ReactDOM.render(<AppController routedFrom = "PackProfile" />, document.querySelector('#app-container'))
-   //
-   // },
-   //
+
+   showLuggAccept: function(){
+      ReactDOM.render(<AppController routedFrom = "LuggAccept" />, document.querySelector('#app-container'))
+
+   },
+
+   showDisplayCargo: function(){
+      ReactDOM.render(<AppController routedFrom = "CargoDisplay" />, document.querySelector('#app-container'))
+
+   },
+
+   showLuggList: function(){
+      ReactDOM.render(<AppController routedFrom = "LuggList" />, document.querySelector('#app-container'))
+
+   },
+
+   showPackProfile: function(){
+      ReactDOM.render(<AppController routedFrom = "PackProfile" />, document.querySelector('#app-container'))
+
+   },
+
    showLuggProfile: function(){
       ReactDOM.render(<AppController routedFrom = "LuggProfile" />, document.querySelector('#app-container'))
 
