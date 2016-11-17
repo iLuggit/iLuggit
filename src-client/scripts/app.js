@@ -11,22 +11,22 @@ import AppController from './lugg-view-controller.js'
 console.log('hello')
 const AppRouter = Backbone.Router.extend({
    routes: {
-   //  "pack-login" : "showPackAuthView",
-   //  "logg-login" : "showLuggAuthView",
+   //  "user-login" : "showPackAuthView",
+    "truck-login" : "showLuggAuthView",
    //    "luggAcpt" : "showLuggAccept",
    //       "cargo" : "showDisplayCargo",
    //    "luggList" : "showLuggList",
    //     "packPro" : "showPackProfile",
-   //     "luggPro" : "showLuggProfile",
+          "luggPro" : "showLuggProfile",
               "" : "showHomeView"
    },
-   // showPackAuthView: function(){
-   //    ReactDOM.render(<AppController routedFrom = "PackAuthView" />, document.querySelector('#app-container'))
-   // },
-   // showLuggAuthView: function(){
-   //    ReactDOM.render(<AppController routedFrom = "LuggAuthView" />, document.querySelector('#app-container'))
-   //
-   // },
+   showPackAuthView: function(){
+      ReactDOM.render(<AppController routedFrom = "PackAuthView" />, document.querySelector('#app-container'))
+   },
+   showLuggAuthView: function(){
+      ReactDOM.render(<AppController routedFrom = "LuggAuthView" />, document.querySelector('#app-container'))
+
+   },
    // showLuggAccept: function(){
    //    ReactDOM.render(<AppController routedFrom = "LuggAccept" />, document.querySelector('#app-container'))
    //
@@ -47,10 +47,10 @@ const AppRouter = Backbone.Router.extend({
    //
    // },
    //
-   // showLuggProfile: function(){
-   //    ReactDOM.render(<AppController routedFrom = "LuggProfile" />, document.querySelector('#app-container'))
-   //
-   // },
+   showLuggProfile: function(){
+      ReactDOM.render(<AppController routedFrom = "LuggProfile" />, document.querySelector('#app-container'))
+
+   },
    showHomeView: function(){
       ReactDOM.render(<AppController routedFrom = "HomeView" />, document.querySelector('#app-container'))
 
