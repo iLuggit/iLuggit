@@ -1,6 +1,7 @@
 import STORE from './STORE.js'
 import $ from 'jquery'
 import {UserModel, UserCollection, LoginModel, CreateUserModel, CreateTruckModel} from './lugg-model.js'
+
 const ACTIONS = {
 
    loginUser: function(newLogin){
@@ -34,5 +35,14 @@ const ACTIONS = {
         location.hash = '#create-lugger-profile';
     })
   },
+
+  createLugg: function(newLugg){
+     let createLuggMod = new CreateLuggModel()
+     createLuggMod.set(newLugg)
+     createLuggMod.save().then(function(serverRes){
+        location.hash = '#create-lugger-profile';
+    })
+  },
 }
+
 module.exports = ACTIONS

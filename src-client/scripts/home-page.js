@@ -36,6 +36,28 @@ const HomeView = React.createClass({
                  </div>
              </div>
            </div>
+         </div>
+      </div>
+      <div className="container-fluid ">
+         <div className="row">
+            <div className="col-xs-12 col-md-4 text-center">
+               <div className="truck-info">
+                  <h3>Truck Info</h3>
+                  <p>Lorem ipsum dolor sit amet, nulla pariatur. erunt mollit anim id est laborum.</p>
+               </div>
+            </div>
+            <div className="lugg-reviews">
+               <div className="col-xs-12 col-md-4 text-center">
+                  <h3>Lugger Reviews</h3>
+                  <p>Lorem ipsum dolor situatlpa qui officia deserunt mollit anim id est laborum.</p>
+               </div>
+            </div>
+            <div className="pack-reviews">
+               <div className=" col-xs-12 col-md-4 text-center">
+                  <h3>Packer Reviews</h3>
+                  <p>Lorem ipsum dolor sit amet, dfyidshs akfds kha dlgkgjre im id est laborum.</p>
+               </div>
+            </div>
         </div>
       </div>
    </div>
