@@ -3,7 +3,7 @@ import React from 'react'
 import $ from 'jquery'
 
 
-// import AuthView from './auth-view.js'
+import LuggAuthView from './lugg-auth-view.js'
 import HomeView from './home-page.js'
 
 let AppController = React.createClass({
