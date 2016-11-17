@@ -40,7 +40,7 @@ let AppController = React.createClass({
             break;
 
          case "PackAuthView":
-            return <PachAuthView/>
+            return <PackAuthView/>
             break;
 
          default:
