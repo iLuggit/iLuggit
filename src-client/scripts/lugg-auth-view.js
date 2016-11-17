@@ -9,6 +9,7 @@ const LuggAuthView = React.createClass({
    _submitlogin:function(evt){
       evt.preventDefault()
 
+
       let existingUserData = {
          username: evt.target.name.value,
          password: evt.target.password.value
