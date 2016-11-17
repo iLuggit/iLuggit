@@ -2,20 +2,12 @@ import Backbone from 'backbone'
 import React from 'react'
 import $ from 'jquery'
 
-import ACTIONS from './ACTIONS.js'
-import STORE from './STORE.js'
-import LuggAccept form './display-lugger-accepted.js'
-import CargoDisplay from './display-cargo-details.js'
-import LuggList from './lugg-list.js'
-import PackProfile from './create-packer-profile.js'
-import LuggProfile from './create-lugger-profile.js'
-import AuthView from './auth-view.js'
 
+// import AuthView from './auth-view.js'
+import HomeView from './home-page.js'
 
 let AppController = React.createClass({
-   getinitialState: function(){
-      return
-   }
+
    render: function(){
 
       switch(this.props.routedFrom){
@@ -39,9 +31,9 @@ let AppController = React.createClass({
             return<LuggProfile/>
             break;
 
-         case "SplashPage":
-            return<SplashPage/>
-            break:
+         case "HomeView":
+            return<HomeView/>
+            break;
 
          case "AuthView":
             return<AuthView/>
@@ -57,4 +49,4 @@ let AppController = React.createClass({
    }
 })
 
-module.export = AppController
+module.exports = AppController
