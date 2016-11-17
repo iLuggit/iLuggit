@@ -11,6 +11,7 @@ import AppController from './lugg-view-controller.js'
 console.log('hello')
 const AppRouter = Backbone.Router.extend({
    routes: {
+
     "user-login" : "showPackAuthView",
    "truck-login" : "showLuggAuthView",
       "luggAcpt" : "showLuggAccept",
@@ -28,6 +29,7 @@ const AppRouter = Backbone.Router.extend({
       ReactDOM.render(<AppController routedFrom = "LuggAuthView" />, document.querySelector('#app-container'))
 
    },
+
    showLuggAccept: function(){
       ReactDOM.render(<AppController routedFrom = "LuggAccept" />, document.querySelector('#app-container'))
 
