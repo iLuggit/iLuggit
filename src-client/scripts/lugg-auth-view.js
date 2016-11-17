@@ -11,11 +11,10 @@ const LuggAuthView = React.createClass({
 
    render: function(){
       return(
-
+      <div>
          <div>
             <h1>Lugger Login</h1>
-
-
+         </div>
           <form className="form-group grid-container" onSubmit={this._handleUserAuth}>
 
              <div className="form-field sm-12-of-12 md-12-of-12">
@@ -29,11 +28,11 @@ const LuggAuthView = React.createClass({
              </div>
 
              <div className="form-field sm-12-of-12 md-12-of-12 txt-center">
-                 <input type="submit" className="btn primary" value="+" / >
+                 <input type="submit" className="btn primary" value="+"/>
              </div>
 
           </form>
-          </div>
+         </div>
 
       )
    }
