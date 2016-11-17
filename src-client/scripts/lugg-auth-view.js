@@ -2,40 +2,39 @@ import Backbone from 'backbone'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import $ from 'jquery'
-
+import ACTIONS from './ACTIONS.js'
 import AppController from './lugg-view-controller.js'
-
-
 
 const LuggAuthView = React.createClass({
    _submitlogin:function(evt){
       evt.preventDefault()
 
-      let existinUserData = {
+
+      let existingUserData = {
          username: evt.target.name.value,
          password: evt.target.password.value
 
       }
-      console.log(existinUserData);
+      console.log(existingUserData);
+      ACTIONS.loginTruck(existingUserData)
+
    },
 
    _submitnewtrucker: function(evt){
    evt.preventDefault()
 
    let newUserData = {
-      userName: evt.target.userName.value,
+      username: evt.target.userName.value,
       password: evt.target.password.value,
       first_name: evt.target.firstName.value,
       last_name: evt.target.lastName.value,
       email: evt.target.email.value,
       phone_number: evt.target.phone.value,
-      bedSize: evt.target.bed.value
+      bed_size: evt.target.bed.value
 
    }
-
    console.log(newUserData);
-
-   ACTIONS.authenticateUser(newUserData)
+   ACTIONS.createTruck(newUserData)
 },
 
    render: function(){
@@ -44,7 +43,6 @@ const LuggAuthView = React.createClass({
             <div>
                <h1>Lugger Login</h1>
             </div>
-
             <div className = "row text-center">
                  <form className = "col-sm-offset-3 col-sm-6 " id="login-form" onSubmit = {this._submitlogin}>
                           <a href = "#"><i className="fa fa-home fa-2x " aria-hidden="true"></i></a>
@@ -61,7 +59,6 @@ const LuggAuthView = React.createClass({
                  </form>
               </div>
               <br/>
-
               <div className = "row text-center">
                    <form className = "col-sm-offset-3 col-sm-6 " id="login-form" onSubmit = {this._submitnewtrucker}>
                             <h2 className = "">New Lugger </h2>
@@ -93,7 +90,6 @@ const LuggAuthView = React.createClass({
                             <label htmlFor = "name"></label>
                             <input type = "text" className="form-control" id="bed" placeholder="Truck Bed Size"/>
                          </div>
-
                             <input type = "submit" className="btn btn-default" />
                    </form>
                 </div>
