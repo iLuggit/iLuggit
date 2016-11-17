@@ -3,6 +3,8 @@ import React from 'react'
 import $ from 'jquery'
 
 
+import CargoDisplay from './display-cargo-details.js'
+import LuggProfile from './create-lugger-profile.js'
 import PackAuthView from './pack-auth-view.js'
 import LuggAuthView from './lugg-auth-view.js'
 import HomeView from './home-page.js'

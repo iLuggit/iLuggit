@@ -16,13 +16,14 @@ const LuggAuthView = React.createClass({
          password: evt.target.password.value
 
       }
+      console.log(existinUserData);
    },
 
    _submitnewtrucker: function(evt){
    evt.preventDefault()
 
    let newUserData = {
-      username: evt.target.userName.value,
+      userName: evt.target.userName.value,
       password: evt.target.password.value,
       first_name: evt.target.firstName.value,
       last_name: evt.target.lastName.value,
