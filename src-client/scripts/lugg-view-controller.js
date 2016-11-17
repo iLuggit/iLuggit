@@ -24,19 +24,23 @@ let AppController = React.createClass({
             break;
 
          case "PackProfile":
-            return<PackProfile/>
+            return <PackProfile/>
             break;
 
          case "LuggProfile":
-            return<LuggProfile/>
+            return <LuggProfile/>
             break;
 
          case "HomeView":
-            return<HomeView/>
+            return <HomeView/>
             break;
 
-         case "AuthView":
-            return<AuthView/>
+         case "LuggAuthView":
+            return <LuggAuthView/>
+            break;
+
+         case "PackAuthView":
+            return <PachAuthView/>
             break;
 
          default:

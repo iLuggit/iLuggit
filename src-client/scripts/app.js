@@ -3,7 +3,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import $ from 'jquery'
 
-// import AuthView from './auth-view.js'
+// import LuggAuthView from './auth-view.js'
 import HomeView from './home-page.js'
 
 import AppController from './lugg-view-controller.js'
@@ -11,7 +11,8 @@ import AppController from './lugg-view-controller.js'
 console.log('hello')
 const AppRouter = Backbone.Router.extend({
    routes: {
-   //  "user-login" : "showAuthView",
+   //  "pack-login" : "showPackAuthView",
+   //  "logg-login" : "showLuggAuthView",
    //    "luggAcpt" : "showLuggAccept",
    //       "cargo" : "showDisplayCargo",
    //    "luggList" : "showLuggList",
@@ -19,9 +20,11 @@ const AppRouter = Backbone.Router.extend({
    //     "luggPro" : "showLuggProfile",
               "" : "showHomeView"
    },
-
-   // showAuthView: function(){
-   //    ReactDOM.render(<AppController routedFrom = "AuthView" />, document.querySelector('#app-container'))
+   // showPackAuthView: function(){
+   //    ReactDOM.render(<AppController routedFrom = "PackAuthView" />, document.querySelector('#app-container'))
+   // },
+   // showLuggAuthView: function(){
+   //    ReactDOM.render(<AppController routedFrom = "LuggAuthView" />, document.querySelector('#app-container'))
    //
    // },
    // showLuggAccept: function(){

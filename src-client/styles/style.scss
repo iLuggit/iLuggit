@@ -1,5 +1,6 @@
 @import "../../node_modules/font-awesome/scss/font-awesome.scss";
-@import "../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";`
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+
 
 * {
 	box-sizing: border-box;
@@ -10,7 +11,7 @@ body{
 }
 
 h1 {
-	font-size: 300px;
+	font-size: 100px;
 	text-align: center;
-	color: fuchsia;
+	color: #000;
 }

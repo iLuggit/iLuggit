@@ -6,15 +6,15 @@ import AppController from './lugg-view-controller.js'
 
 
 
-const AuthView = React.createClass({
+const PackAuthView = React.createClass({
 
    render: function(){
       return(
 
-             <h1>AuthPage is now routing</h1>
+             <h1>PackAuthPage is now routing</h1>
 
       )
    }
 })
 
-module.exports = AuthView
+module.exports = PackAuthView
