@@ -19,12 +19,12 @@ const PackAuthView = React.createClass({
             evt.preventDefault()
 
             let newCreate = {
-               firstname: this.refs.first_name.value,
-               lastname: this.refs.last_name.value,
+               first_name: this.refs.first_name.value,
+               last_name: this.refs.last_name.value,
                email: this.refs.email.value,
-               phone: parseInt(this.refs.phone.value),
-               new_username: this.refs.new_username.value,
-               new_password: this.refs.new_password.value
+               phone_number: parseInt(this.refs.phone.value),
+               username: this.refs.new_username.value,
+               password: this.refs.new_password.value
 
             }
             console.log(newCreate)

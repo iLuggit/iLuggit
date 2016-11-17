@@ -11,15 +11,6 @@ const LuggAuthView = React.createClass({
    _submitlogin:function(evt){
       evt.preventDefault()
 
-<<<<<<< HEAD
-   render: function(){
-      return(
-      <div>
-         <div>
-            <h1>Lugger Login</h1>
-         </div>
-          <form className="form-group grid-container" onSubmit={this._handleUserAuth}>
-=======
       let existinUserData = {
          username: evt.target.name.value,
          password: evt.target.password.value
@@ -39,20 +30,11 @@ const LuggAuthView = React.createClass({
       email: evt.target.email.value,
       phone_number: evt.target.phone.value,
       bedSize: evt.target.bed.value
->>>>>>> 902ba6914f43c015b08af888d015c1bc21720ce4
 
    }
 
    console.log(newUserData);
 
-<<<<<<< HEAD
-             <div className="form-field sm-12-of-12 md-12-of-12 txt-center">
-                 <input type="submit" className="btn primary" value="+"/>
-             </div>
-
-          </form>
-         </div>
-=======
    ACTIONS.authenticateUser(newUserData)
 },
 
@@ -79,7 +61,6 @@ const LuggAuthView = React.createClass({
                  </form>
               </div>
               <br/>
->>>>>>> 902ba6914f43c015b08af888d015c1bc21720ce4
 
               <div className = "row text-center">
                    <form className = "col-sm-offset-3 col-sm-6 " id="login-form" onSubmit = {this._submitnewtrucker}>

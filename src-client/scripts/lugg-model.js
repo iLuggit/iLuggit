@@ -11,7 +11,7 @@ const UserModel = Backbone.Model.extend({
 
 const UserCollection = Backbone.Collection.extend({
    model: UserModel,
-   url: 'localhost:8080/luggs',
+   url: '/luggs',
 
       initialize: function(){
 
@@ -20,7 +20,7 @@ const UserCollection = Backbone.Collection.extend({
 
 const LoginModel = Backbone.Model.extend({
    model: UserModel,
-   url: 'localhost:8080/user-login',
+   url: '/user-login',
 
       initialize: function(){
 
@@ -28,7 +28,7 @@ const LoginModel = Backbone.Model.extend({
 })
 const CreateUserModel = Backbone.Model.extend({
    model: UserModel,
-   url: 'localhost:8080/create-user',
+   url: '/create-user',
 
       initialize: function(){
 
@@ -38,7 +38,7 @@ const CreateUserModel = Backbone.Model.extend({
 
 const TruckModel = Backbone.Model.extend({
    model: UserModel,
-   url: 'localhost:8080/truck-login',
+   url: '/truck-login',
 
       initialize: function(){
 
@@ -47,7 +47,7 @@ const TruckModel = Backbone.Model.extend({
 
 const CreateTruckModel = Backbone.Model.extend({
    model: UserModel,
-   url: 'localhost:8080/create-truck',
+   url: '/create-truck',
 
       initialize: function(){
 
