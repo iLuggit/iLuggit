@@ -12,28 +12,36 @@ public class Job {
         @GeneratedValue
         public int id;
         @Column(nullable = false)
-        String pickup_address;
+        public String pickup_address;
         @Column(nullable = false)
-        String dropoff_address;
+        public String dropoff_address;
         @Column(nullable = false)
-        String haul_description;
+        public String haul_description;
         @Column
-        String haul_img;
-        @Column(nullable = false)
-        int poster_account_id;
-        @Column
-        int truck_account_id;
+        public String haul_img;
+        @ManyToOne
+        public User user;
+        @ManyToOne
+        public Truck truck;
 
         public Job() {
         }
 
-        public Job(String pickup_address, String dropoff_address, String haul_description, String haul_img, int poster_account_id, int truck_account_id) {
+        public Job(String pickup_address, String dropoff_address, String haul_description, String haul_img, User user) {
                 this.pickup_address = pickup_address;
                 this.dropoff_address = dropoff_address;
                 this.haul_description = haul_description;
                 this.haul_img = haul_img;
-                this.poster_account_id = poster_account_id;
-                this.truck_account_id = truck_account_id;
+                this.user = user;
+        }
+
+        public Job(String pickup_address, String dropoff_address, String haul_description, String haul_img, User user, Truck truck) {
+                this.pickup_address = pickup_address;
+                this.dropoff_address = dropoff_address;
+                this.haul_description = haul_description;
+                this.haul_img = haul_img;
+                this.user = user;
+                this.truck = truck;
         }
 
         public int getId() {
@@ -76,19 +84,19 @@ public class Job {
                 this.haul_img = haul_img;
         }
 
-        public int getPoster_account_id() {
-                return poster_account_id;
+        public User getUser() {
+                return user;
         }
 
-        public void setPoster_account_id(int poster_account_id) {
-                this.poster_account_id = poster_account_id;
+        public void setUser(User user) {
+                this.user = user;
         }
 
-        public int getTruck_account_id() {
-                return truck_account_id;
+        public Truck getTruck() {
+                return truck;
         }
 
-        public void setTruck_account_id(int truck_account_id) {
-                this.truck_account_id = truck_account_id;
+        public void setTruck(Truck truck) {
+                this.truck = truck;
         }
 }
