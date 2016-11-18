@@ -9,11 +9,12 @@ const CreateLugg = React.createClass({
             pickup_address: this.ref.startAddress.value,
             dropoff_address: this.ref.endAddress.value,
             haul_description: this.ref.cargo_Description.value,
-            haul_img: this.ref.cargo_img.value
+            haul_img: this.ref.cargo_img.value,
          }
-      }
+         ACTIONS.createLugg(newLugg)
 
-   ACTIONS.createLugg(newLugg)
+      },
+
    render: function(){
       return(
             <div className = "row text-center">
