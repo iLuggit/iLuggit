@@ -3,6 +3,7 @@ import Backbone from 'backbone'
 import $ from 'jquery'
 
 import ACTIONS from './ACTIONS.js'
+
 const PackAuthView = React.createClass({
    _submitLogin: function(evt){
          evt.preventDefault()

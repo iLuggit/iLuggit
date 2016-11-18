@@ -8,17 +8,21 @@ import HomeView from './home-page.js'
 import LuggerAccepted from './display-lugger-accepted.js'
 import AppController from './lugg-view-controller.js'
 import CargoDisplay from './display-cargo-details.js'
-
+import CreateLugg from './create-lugg.js'
 const AppRouter = Backbone.Router.extend({
    routes: {
     "user-login" : "showPackAuthView",
-    "truck-login" : "showLuggAuthView",
+   "truck-login" : "showLuggAuthView",
       "luggAcpt" : "showLuggAccept",
          "cargo" : "showDisplayCargo",
       "luggList" : "showLuggList",
+   "create-lugg" : "showCreateLugg",
        "packPro" : "showPackProfile",
        "luggPro" : "showLuggProfile",
               "" : "showHomeView"
+   },
+   showCreateLugg: function(){
+      ReactDOM.render(<AppController routedFrom = "CreateLugg" />, document.querySelector('#app-container'))
    },
    showPackAuthView: function(){
       ReactDOM.render(<AppController routedFrom = "PackAuthView" />, document.querySelector('#app-container'))
@@ -38,16 +42,6 @@ const AppRouter = Backbone.Router.extend({
 
    showLuggList: function(){
       ReactDOM.render(<AppController routedFrom = "LuggList" />, document.querySelector('#app-container'))
-
-   },
-
-   showPackProfile: function(){
-      ReactDOM.render(<AppController routedFrom = "PackProfile" />, document.querySelector('#app-container'))
-
-   },
-
-   showLuggProfile: function(){
-      ReactDOM.render(<AppController routedFrom = "LuggProfile" />, document.querySelector('#app-container'))
 
    },
    showHomeView: function(){

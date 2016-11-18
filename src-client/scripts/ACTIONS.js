@@ -8,7 +8,7 @@ const ACTIONS = {
       let loginMod = new LoginModel()
       loginMod.set(newLogin)
       loginMod.save().then(function(serverRes){
-         location.hash = '#packPro';
+         location.hash = '#create-lugg';
     })
   },
 
@@ -16,7 +16,7 @@ const ACTIONS = {
       let createMod = new CreateUserModel()
       createMod.set(newCreate)
       createMod.save().then(function(serverRes){
-         location.hash = '#packPro';
+         location.hash = '#create-lugg';
     })
   },
 
@@ -24,7 +24,7 @@ const ACTIONS = {
      let truckLoginMod = new LoginModel()
      truckLoginMod.set(loginTruck)
      truckLoginMod.save().then(function(serverRes){
-        location.hash = '#luggPro';
+        window.location.hash = '#lugg-list';
     })
   },
 
@@ -32,7 +32,7 @@ const ACTIONS = {
      let truckCreateMod = new CreateTruckModel()
      truckCreateMod.set(createTruck)
      truckCreateMod.save().then(function(serverRes){
-        location.hash = '#luggPro';
+        window.location.hash = '#luggPro';
     })
   },
 
@@ -40,7 +40,7 @@ const ACTIONS = {
      let createLuggMod = new CreateLuggModel()
      createLuggMod.set(newLugg)
      createLuggMod.save().then(function(serverRes){
-        location.hash = '';
+        window.location.hash = '#create-lugger-profile';
     })
   },
 }
