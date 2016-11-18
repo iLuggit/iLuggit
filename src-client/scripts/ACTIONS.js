@@ -25,7 +25,7 @@ const ACTIONS = {
      let truckLoginMod = new LoginModel()
      truckLoginMod.set(loginTruck)
         window.location.hash = '#lugg-list';
-    })
+    }
   },
 
   createTruck: function(createTruck){
