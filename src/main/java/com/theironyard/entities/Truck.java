@@ -1,5 +1,7 @@
 package com.theironyard.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 /**
@@ -17,16 +19,21 @@ public class Truck {
     public int id;
     @Column(nullable = false, unique = true)
     String username;
+    @JsonIgnore
     @Column(nullable = false)
     String password;
     @Column(nullable = false)
     String first_name;
+    @JsonIgnore
     @Column(nullable = false)
     String last_name;
+    @JsonIgnore
     @Column(nullable = false, unique = true)
     String email;
+    @JsonIgnore
     @Column(nullable = false)
     String phone_number;
+    @JsonIgnore
     @Column
     BedSize bedSize;
 
