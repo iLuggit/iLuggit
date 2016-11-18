@@ -5,7 +5,7 @@ import $ from 'jquery'
 import ACTIONS from './ACTIONS.js'
 
 const LuggAuthView = React.createClass({
-   _submitlogin:function(evt){
+   _submitLogin:function(evt){
       evt.preventDefault()
 
 
@@ -40,7 +40,7 @@ const LuggAuthView = React.createClass({
       return(
          <div>
             <div className = "row text-center">
-                 <form className = "col-sm-offset-3 col-sm-6 " id="login-form" onSubmit = {this._submitlogin}>
+                 <form className = "col-sm-offset-3 col-sm-6 " id="login-form" onSubmit = {this._submitLogin}>
                           <a href = "#"><i className="fa fa-home fa-2x " aria-hidden="true"></i></a>
                           <h2 className = "">Existing Lugger Login </h2>
                        <div className = "form-group">

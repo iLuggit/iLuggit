@@ -18,14 +18,14 @@ const HomeView = React.createClass({
             <div className="row profile-row">
             <div className="col-xs-12 col-md-6 ">
                   <div className="luggProfile text-center">
-                     <a href="#truck-login"><i className="fa fa-truck fa-5x" aria-hidden="true"></i></a>
+                     <a href="/#truck-login"><i className="fa fa-truck fa-5x" aria-hidden="true"></i></a>
                      <h3>Create a Lugger Profile</h3>
                      <p>Want to be a Lugger, create a Lugger Profile and get Started</p>
                   </div>
             </div>
            <div className="col-xs-12 col-md-6 ">
                 <div className="create-pack-profile text-center">
-                     <a href="#user-login"><i className="fa fa-user-plus fa-5x" aria-hidden="true"></i></a>
+                     <a href="/#user-login"><i className="fa fa-user-plus fa-5x" aria-hidden="true"></i></a>
                      <h3>Create a Packer Profile</h3>
                      <p>Your a Packer and need a Lugger to help move your items</p>
                 </div>

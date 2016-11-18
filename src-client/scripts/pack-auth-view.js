@@ -6,11 +6,13 @@ import ACTIONS from './ACTIONS.js'
 
 const PackAuthView = React.createClass({
    _submitLogin: function(evt){
+      console.log('evt', evt);
          evt.preventDefault()
 
-         let newlogin = {
-            username: evt.target.name.value,
-            password: evt.target.password.value
+
+         let newLogin = {
+            username: this.refs.username.value,
+            password: this.refs.password.value
          }
          console.log(newLogin)
 
@@ -37,7 +39,7 @@ const PackAuthView = React.createClass({
       return(
             <div>
                <div className = "row text-center">
-                  <form className = "col-sm-offset-3 col-sm-6 " id="login-form" onSubmit = {this._submitlogin}>
+                  <form className = "col-sm-offset-3 col-sm-6 " id="login-form" onSubmit = {this._submitLogin}>
                            <a href = "#"><i className="fa fa-home fa-2x " aria-hidden="true"></i></a>
                            <h2 className = "">Existing Packer Login </h2>
                         <div className = "form-group">

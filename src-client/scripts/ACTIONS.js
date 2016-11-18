@@ -8,6 +8,7 @@ const ACTIONS = {
       let loginMod = new LoginModel()
       loginMod.set(newLogin)
       loginMod.save().then(function(serverRes){
+      console.log('are we changing the route?', window.location);
          window.location.hash = 'create-lugg';
     })
   },
@@ -16,6 +17,7 @@ const ACTIONS = {
       let createMod = new CreateUserModel()
       createMod.set(newCreate)
       createMod.save().then(function(serverRes){
+
          window.location.hash = 'create-lugg';
     })
   },
@@ -40,7 +42,7 @@ const ACTIONS = {
      let createLuggMod = new CreateLuggModel()
      createLuggMod.set(newLugg)
      createLuggMod.save().then(function(serverRes){
-        window.location.hash = '#create-lugger-profile';
+        window.location.hash = '';
     })
   },
 }
