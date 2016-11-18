@@ -78,6 +78,7 @@ public class iLuggitController {
             return new ResponseEntity<User>(HttpStatus.RESET_CONTENT);
         }
         session.setAttribute("first_name", user.getFirst_name());
+        session.setAttribute("username", user.getUsername());
         return new ResponseEntity<User>(user, HttpStatus.OK);
     }
     @RequestMapping(path = "/create-user", method = RequestMethod.POST)
@@ -86,6 +87,8 @@ public class iLuggitController {
         if (userFromDb == null) {
             user.setPassword(PasswordStorage.createHash(user.getPassword()));
             users.save(user);
+            session.setAttribute("first_name", user.getFirst_name());
+            session.setAttribute("username", user.getUsername());
             return new ResponseEntity<User>(user, HttpStatus.OK);
         }
         return new ResponseEntity<User>(HttpStatus.RESET_CONTENT);
@@ -99,6 +102,7 @@ public class iLuggitController {
             return new ResponseEntity<Truck>(HttpStatus.RESET_CONTENT);
         }
         session.setAttribute("first_name", truck.getFirst_name());
+        session.setAttribute("username", truck.getUsername());
         return new ResponseEntity<Truck>(truck, HttpStatus.OK);
     }
     @RequestMapping(path = "/create-truck", method = RequestMethod.POST)
@@ -107,6 +111,8 @@ public class iLuggitController {
         if (truckFromDb == null) {
             truck.setPassword(PasswordStorage.createHash(truck.getPassword()));
             trucks.save(truck);
+            session.setAttribute("first_name", truck.getFirst_name());
+            session.setAttribute("username", truck.getUsername());
             return new ResponseEntity<Truck>(truck, HttpStatus.OK);
         }
         return new ResponseEntity<Truck>(HttpStatus.RESET_CONTENT);
