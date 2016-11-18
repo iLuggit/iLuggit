@@ -3,12 +3,12 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import $ from 'jquery'
 
-// import LuggAuthView from './auth-view.js'
+import LuggAuthView from './lugg-auth-view.js'
 import HomeView from './home-page.js'
-
+import LuggerAccepted from './display-lugger-accepted.js'
 import AppController from './lugg-view-controller.js'
+import CargoDisplay from './display-cargo-details.js'
 
-console.log('hello')
 const AppRouter = Backbone.Router.extend({
    routes: {
     "user-login" : "showPackAuthView",
@@ -17,7 +17,7 @@ const AppRouter = Backbone.Router.extend({
          "cargo" : "showDisplayCargo",
       "luggList" : "showLuggList",
        "packPro" : "showPackProfile",
-          "luggPro" : "showLuggProfile",
+       "luggPro" : "showLuggProfile",
               "" : "showHomeView"
    },
    showPackAuthView: function(){
@@ -31,7 +31,6 @@ const AppRouter = Backbone.Router.extend({
       ReactDOM.render(<AppController routedFrom = "LuggAccept" />, document.querySelector('#app-container'))
 
    },
-
    showDisplayCargo: function(){
       ReactDOM.render(<AppController routedFrom = "CargoDisplay" />, document.querySelector('#app-container'))
 

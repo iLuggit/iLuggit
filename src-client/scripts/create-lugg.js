@@ -8,11 +8,11 @@ const CreateLugg = React.createClass({
       let createNewLugg = {
             pickup_address: this.ref.startAddress.value,
             dropoff_address: this.ref.endAddress.value,
-            haul_description: this.ref.cargoDescription.value,
-            haul_img: this.ref.cargoImg.value
+            haul_description: this.ref.cargo_Description.value,
+            haul_img: this.ref.cargo_img.value
          }
       }
-      
+
    ACTIONS.createLugg(newLugg)
    render: function(){
       return(

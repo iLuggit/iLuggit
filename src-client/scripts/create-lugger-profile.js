@@ -22,6 +22,8 @@ const LuggProfile = React.createClass({
                   <a href = "#cargo"><li>Object from lugg database</li></a>
                </ul>
             </div>
+            <div id="map">
+            </div>
          </div>
       )
 

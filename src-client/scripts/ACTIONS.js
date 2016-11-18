@@ -40,7 +40,7 @@ const ACTIONS = {
      let createLuggMod = new CreateLuggModel()
      createLuggMod.set(newLugg)
      createLuggMod.save().then(function(serverRes){
-        location.hash = '#create-lugger-profile';
+        location.hash = '';
     })
   },
 }

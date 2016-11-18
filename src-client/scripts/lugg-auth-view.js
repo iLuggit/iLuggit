@@ -40,13 +40,10 @@ const LuggAuthView = React.createClass({
    render: function(){
       return(
          <div>
-            <div>
-               <h1>Lugger Login</h1>
-            </div>
             <div className = "row text-center">
                  <form className = "col-sm-offset-3 col-sm-6 " id="login-form" onSubmit = {this._submitlogin}>
                           <a href = "#"><i className="fa fa-home fa-2x " aria-hidden="true"></i></a>
-                          <h2 className = "">Existing User Login </h2>
+                          <h2 className = "">Existing Lugger Login </h2>
                        <div className = "form-group">
                           <label htmlFor = "name"> </label>
                           <input type = "text" className="form-control" id="name" placeholder = "Enter Username" />
@@ -61,7 +58,7 @@ const LuggAuthView = React.createClass({
               <br/>
               <div className = "row text-center">
                    <form className = "col-sm-offset-3 col-sm-6 " id="login-form" onSubmit = {this._submitnewtrucker}>
-                            <h2 className = "">New Lugger </h2>
+                            <h2 className = "">Create New Lugger </h2>
                          <div className = "form-group">
                             <label htmlFor = "name"> </label>
                             <input type = "text" className="form-control" id="userName" placeholder = "New Username" />
