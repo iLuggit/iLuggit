@@ -46,7 +46,7 @@ const PackAuthView = React.createClass({
                         </div>
                         <div className="form-group">
                            <label htmlFor = "new-password"></label>
-                           <input type = "password" className="form-control" name = "password" ref="password" placeholder="Enter Password"/>
+                           <input type = "password" className="form-control" name = "password" ref = "password" placeholder="Enter Password"/>
                         </div>
                            <input type = "submit" className="btn btn-default" />
                   </form>
@@ -56,27 +56,27 @@ const PackAuthView = React.createClass({
                            <h2 className = "">Create New Packer </h2>
                         <div className = "form-group">
                            <label htmlFor = "firstname"> </label>
-                           <input type = "text" className="form-control" name="firstname" ref="first_name" placeholder = "Enter First Name" />
+                           <input type = "text" className="form-control" name="firstname" ref = "first_name" placeholder = "Enter First Name" />
                         </div>
                         <div className="form-group">
                            <label htmlFor = "lastname"></label>
-                           <input type = "text" className="form-control" name="lastname" ref="last_name" placeholder="Enter Last Name"/>
+                           <input type = "text" className="form-control" name="lastname" ref = "last_name" placeholder="Enter Last Name"/>
                         </div>
                         <div className="form-group">
                            <label htmlFor = "new-email"></label>
-                           <input type = "text" className="form-control" name="email" ref="email" placeholder="Enter Email"/>
+                           <input type = "text" className="form-control" name="email" ref = "email" placeholder="Enter Email"/>
                         </div>
                         <div className="form-group">
                            <label htmlFor = "new-phone"></label>
-                           <input type = "text" className="form-control" name="phone" ref="phone" placeholder="Enter Phone Number"/>
+                           <input type = "text" className="form-control" name="phone" ref = "phone" placeholder="Enter Phone Number"/>
                         </div>
                         <div className="form-group">
                            <label htmlFor = "new-username"></label>
-                           <input type = "text" className="form-control" name="new_username" ref="new_username" placeholder="Enter Username"/>
+                           <input type = "text" className="form-control" name="new_username" ref = "new_username" placeholder="Enter Username"/>
                         </div>
                         <div className="form-group">
                            <label htmlFor = "new-password"></label>
-                           <input type = "password" className="form-control" name="new_password" ref="new_password" placeholder="Enter Password"/>
+                           <input type = "password" className="form-control" name="new_password" ref = "new_password" placeholder="Enter Password"/>
                         </div>
                            <input type = "submit" className="btn btn-default" />
                   </form>
