@@ -11,17 +11,54 @@ const UserModel = Backbone.Model.extend({
 
 const UserCollection = Backbone.Collection.extend({
    model: UserModel,
-   url: '',
+   url: '/luggs',
 
       initialize: function(){
 
       }
    })
 
+const LoginModel = Backbone.Model.extend({
+   model: UserModel,
+   url: '/user-login',
+
+      initialize: function(){
+
+      }
+})
+const CreateUserModel = Backbone.Model.extend({
+   model: UserModel,
+   url: '/create-user',
+
+      initialize: function(){
+
+      }
+
 })
 
+const TruckModel = Backbone.Model.extend({
+   model: UserModel,
+   url: '/truck-login',
+
+      initialize: function(){
+
+      }
+})
+
+const CreateTruckModel = Backbone.Model.extend({
+   model: UserModel,
+   url: '/create-truck',
+
+      initialize: function(){
+
+      }
+
+})
 module.exports = {
    UserModel,
-   UserCollection
+   UserCollection,
+   LoginModel,
+   CreateUserModel,
+   CreateTruckModel
 
 }
