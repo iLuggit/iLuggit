@@ -81,14 +81,14 @@ public class iLuggitController {
         return new ResponseEntity<User>(user, HttpStatus.OK);
     }
     @RequestMapping(path = "/create-user", method = RequestMethod.POST)
-    public String createUser(HttpSession session, @RequestBody User user) throws PasswordStorage.CannotPerformOperationException {
+    public ResponseEntity<User> createUser(HttpSession session, @RequestBody User user) throws PasswordStorage.CannotPerformOperationException {
         User userFromDb = users.findFirstByUsername(user.getUsername());
         if (userFromDb == null) {
             user.setPassword(PasswordStorage.createHash(user.getPassword()));
             users.save(user);
-            return "Account Created";
+            return new ResponseEntity<User>(user, HttpStatus.OK);
         }
-        return "You already have an Account";
+        return new ResponseEntity<User>(HttpStatus.RESET_CONTENT);
     }
     @RequestMapping(path = "/truck-login", method = RequestMethod.POST)
     public ResponseEntity<Truck> postTruck(HttpSession session, @RequestBody Truck truck) throws PasswordStorage.InvalidHashException, PasswordStorage.CannotPerformOperationException {
@@ -102,14 +102,14 @@ public class iLuggitController {
         return new ResponseEntity<Truck>(truck, HttpStatus.OK);
     }
     @RequestMapping(path = "/create-truck", method = RequestMethod.POST)
-    public String createTruck(HttpSession session, @RequestBody Truck truck) throws PasswordStorage.InvalidHashException, PasswordStorage.CannotPerformOperationException {
+    public ResponseEntity<Truck> createTruck(HttpSession session, @RequestBody Truck truck) throws PasswordStorage.InvalidHashException, PasswordStorage.CannotPerformOperationException {
         Truck truckFromDb = trucks.findFirstByUsername(truck.getUsername());
         if (truckFromDb == null) {
             truck.setPassword(PasswordStorage.createHash(truck.getPassword()));
             trucks.save(truck);
-            return "Account Created";
+            return new ResponseEntity<Truck>(truck, HttpStatus.OK);
         }
-        return "Account already created.";
+        return new ResponseEntity<Truck>(HttpStatus.RESET_CONTENT);
     }
     @RequestMapping(path = "/logout", method = RequestMethod.POST)
     public void logout(HttpSession session) {
