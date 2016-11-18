@@ -38,7 +38,7 @@ const PackAuthView = React.createClass({
                <div className = "row text-center">
                   <form className = "col-sm-offset-3 col-sm-6 " id="login-form" onSubmit = {this._submitlogin}>
                            <a href = "#"><i className="fa fa-home fa-2x " aria-hidden="true"></i></a>
-                           <h2 className = "">Login </h2>
+                           <h2 className = "">Existing Packer Login </h2>
                         <div className = "form-group">
                            <label htmlFor = "new-username"></label>
                            <input type = "text" className="form-control" name = "username" ref = "username" placeholder = "Enter Username" />
@@ -52,7 +52,7 @@ const PackAuthView = React.createClass({
                </div>
                <div className = "row text-center">
                   <form className = "col-sm-offset-3 col-sm-6 " id="create-form" onSubmit = {this._submitCreate}>
-                           <h2 className = "">Create New User </h2>
+                           <h2 className = "">Create New Packer </h2>
                         <div className = "form-group">
                            <label htmlFor = "firstname"> </label>
                            <input type = "text" className="form-control" name="firstname" ref="first_name" placeholder = "Enter First Name" />
