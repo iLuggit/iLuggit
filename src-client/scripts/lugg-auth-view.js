@@ -29,7 +29,7 @@ const LuggAuthView = React.createClass({
       last_name: evt.target.lastName.value,
       email: evt.target.email.value,
       phone_number: evt.target.phone.value,
-      bed_size: evt.target.bed.value
+      bedSize: evt.target.bed.value
 
    }
    console.log(newUserData);
