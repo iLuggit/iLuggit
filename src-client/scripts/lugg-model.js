@@ -59,6 +59,7 @@ module.exports = {
    UserCollection,
    LoginModel,
    CreateUserModel,
-   CreateTruckModel
+   CreateTruckModel,
+   TruckModel
 
 }

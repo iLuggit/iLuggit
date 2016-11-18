@@ -16,27 +16,27 @@ let AppController = React.createClass({
 
       switch(this.props.routedFrom){
          case "LuggAccept":
-            return <LuggAccept/>
+            return <LuggAccept />
             break;
 
          case "CargoDisplay":
-            return <CargoDisplay/>
+            return <CargoDisplay />
             break;
 
-         case "LuggList":
-            return <LuggList/>
+         case "LuggProfile":
+            return <LuggProfile />
             break;
 
          case "HomeView":
-            return <HomeView/>
+            return <HomeView />
             break;
 
          case "LuggAuthView":
-            return <LuggAuthView/>
+            return <LuggAuthView />
             break;
 
          case "PackAuthView":
-            return <PackAuthView/>
+            return <PackAuthView />
             break;
 
          case "CreateLugg" :

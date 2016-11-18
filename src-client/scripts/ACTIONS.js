@@ -1,6 +1,8 @@
-import STORE from './STORE.js'
+import Backbone from 'backbone'
+import react from 'react'
 import $ from 'jquery'
-import {UserModel, UserCollection, LoginModel, CreateUserModel, CreateTruckModel} from './lugg-model.js'
+
+import {UserModel, UserCollection, LoginModel, CreateUserModel, TruckModel, CreateTruckModel} from './lugg-model.js'
 
 const ACTIONS = {
 
@@ -23,9 +25,11 @@ const ACTIONS = {
   },
 
   loginTruck: function(loginTruck){
-     let truckLoginMod = new LoginModel()
+     let truckLoginMod = new TruckModel()
      truckLoginMod.set(loginTruck)
      truckLoginMod.save().then(function(serverRes){
+        console.log('am i even here?')
+
         window.location.hash = 'lugg-list';
     })
   },
@@ -34,6 +38,7 @@ const ACTIONS = {
      let truckCreateMod = new CreateTruckModel()
      truckCreateMod.set(createTruck)
      truckCreateMod.save().then(function(serverRes){
+        console.log('are we changing the route?', window.location);
         window.location.hash = 'lugg-list';
     })
   },
