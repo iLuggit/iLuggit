@@ -1,1 +1,1 @@
-console.error("SyntaxError: /Users/paulswift/TIY/assignments/iLuggit/src-client/scripts/ACTIONS.js: Unexpected token (10:3) while parsing file: /Users/paulswift/TIY/assignments/iLuggit/src-client/scripts/ACTIONS.js");
+console.error("SyntaxError: /Users/paulswift/TIY/assignments/iLuggit/src-client/scripts/ACTIONS.js: Unexpected token, expected , (28:5) while parsing file: /Users/paulswift/TIY/assignments/iLuggit/src-client/scripts/ACTIONS.js");

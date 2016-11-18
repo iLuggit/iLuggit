@@ -7,24 +7,17 @@ const ACTIONS = {
    loginUser: function(newLogin){
       let loginMod = new LoginModel()
       loginMod.set(newLogin)
-<<<<<<< HEAD
       loginMod.save().then(function(serverRes){
          location.hash = 'create-lugg';
-=======
-         window.location.hash = '#create-lugg';
->>>>>>> e8af78c5d99a8cdab4bcd56e31b119cb4ccf9928
-    })
+      })
   },
 
    createUser: function(newCreate){
       let createMod = new CreateUserModel()
       createMod.set(newCreate)
-<<<<<<< HEAD
       createMod.save().then(function(serverRes){
          location.hash = 'create-lugg';
-=======
-         window.location.hash = '#create-lugg';
->>>>>>> e8af78c5d99a8cdab4bcd56e31b119cb4ccf9928
+
     })
   },
 
