@@ -8,7 +8,7 @@ const ACTIONS = {
       let loginMod = new LoginModel()
       loginMod.set(newLogin)
       loginMod.save().then(function(serverRes){
-         location.hash = '#create-lugg';
+         location.hash = 'create-lugg';
     })
   },
 
@@ -16,7 +16,7 @@ const ACTIONS = {
       let createMod = new CreateUserModel()
       createMod.set(newCreate)
       createMod.save().then(function(serverRes){
-         location.hash = '#create-lugg';
+         location.hash = 'create-lugg';
     })
   },
 
