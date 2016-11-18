@@ -7,23 +7,20 @@ const ACTIONS = {
    loginUser: function(newLogin){
       let loginMod = new LoginModel()
       loginMod.set(newLogin)
-      loginMod.save().then(function(serverRes){
-         location.hash = '#create-lugg';
+         window.location.hash = '#create-lugg';
     })
   },
 
    createUser: function(newCreate){
       let createMod = new CreateUserModel()
       createMod.set(newCreate)
-      createMod.save().then(function(serverRes){
-         location.hash = '#create-lugg';
+         window.location.hash = '#create-lugg';
     })
   },
 
   loginTruck: function(loginTruck){
      let truckLoginMod = new LoginModel()
      truckLoginMod.set(loginTruck)
-     truckLoginMod.save().then(function(serverRes){
         window.location.hash = '#lugg-list';
     })
   },
@@ -32,7 +29,7 @@ const ACTIONS = {
      let truckCreateMod = new CreateTruckModel()
      truckCreateMod.set(createTruck)
      truckCreateMod.save().then(function(serverRes){
-        window.location.hash = '#luggPro';
+        window.location.hash = '#lugg-list';
     })
   },
 
