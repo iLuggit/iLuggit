@@ -4,10 +4,11 @@ import $ from 'jquery'
 
 
 import CargoDisplay from './display-cargo-details.js'
-import LuggProfile from './create-lugger-profile.js'
+import LuggProfile from './lugg-list.js'
 import PackAuthView from './pack-auth-view.js'
 import LuggAuthView from './lugg-auth-view.js'
 import HomeView from './home-page.js'
+import CreateLugg from './create-lugg.js'
 
 let AppController = React.createClass({
 
@@ -26,14 +27,6 @@ let AppController = React.createClass({
             return <LuggList/>
             break;
 
-         case "PackProfile":
-            return <PackProfile/>
-            break;
-
-         case "LuggProfile":
-            return <LuggProfile/>
-            break;
-
          case "HomeView":
             return <HomeView/>
             break;
@@ -44,6 +37,10 @@ let AppController = React.createClass({
 
          case "PackAuthView":
             return <PackAuthView/>
+            break;
+
+         case "CreateLugg" :
+            return <CreateLugg />
             break;
 
          default:

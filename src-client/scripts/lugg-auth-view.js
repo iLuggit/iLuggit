@@ -3,7 +3,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import $ from 'jquery'
 import ACTIONS from './ACTIONS.js'
-import AppController from './lugg-view-controller.js'
 
 const LuggAuthView = React.createClass({
    _submitlogin:function(evt){
