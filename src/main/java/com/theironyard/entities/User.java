@@ -1,5 +1,7 @@
 package com.theironyard.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 /**
@@ -13,15 +15,19 @@ public class User {
     public int id;
     @Column(nullable = false, unique = true)
     String username;
+    @JsonIgnore
     @Column(nullable = false)
     String password;
     @Column(nullable = false)
     String first_name;
+    @JsonIgnore
     @Column(nullable = false)
     String last_name;
+    @JsonIgnore
     @Column(nullable = false, unique = true)
     String email;
-    @Column(nullable = false)
+    @JsonIgnore
+    @Column
     String phone_number;
 
     public User() {
