@@ -24,16 +24,12 @@ public class Truck {
     String password;
     @Column(nullable = false)
     String first_name;
-    @JsonIgnore
     @Column(nullable = false)
     String last_name;
-    @JsonIgnore
     @Column(nullable = false, unique = true)
     String email;
-    @JsonIgnore
     @Column(nullable = false)
     String phone_number;
-    @JsonIgnore
     @Column
     BedSize bedSize;
 
