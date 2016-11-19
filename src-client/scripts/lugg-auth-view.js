@@ -15,7 +15,7 @@ const LuggAuthView = React.createClass({
 
       }
       console.log(existingUserData);
-      ACTIONS.loginTruck(existingUserData)
+      ACTIONS._loginTruck(existingUserData)
 
    },
 
@@ -23,17 +23,17 @@ const LuggAuthView = React.createClass({
    evt.preventDefault()
 
    let newUserData = {
-      username: this.refs.username.value,
-      password: this.refs.password.value,
-      first_name: this.refs.first_name.value,
-      last_name: this.refs.last_name.value,
-      email: this.refs.email.value,
-      phone_number: parseInt(this.refs.phone_number.value),
+      username: this.refs.user_name1.value,
+      password: this.refs.pass_word1.value,
+      first_name: this.refs.first_name1.value,
+      last_name: this.refs.last_name1.value,
+      email: this.refs.email1.value,
+      phone_number: parseInt(this.refs.phone_number1.value),
       bedSize: this.refs.bedSize.value
 
    }
    console.log(newUserData);
-   ACTIONS.createTruck(newUserData)
+   ACTIONS._createTruck(newUserData)
 },
 
    render: function(){
@@ -60,27 +60,27 @@ const LuggAuthView = React.createClass({
                             <h2 className = "">Create New Lugger </h2>
                          <div className = "form-group">
                             <label htmlFor = "name"> </label>
-                            <input type = "text" className="form-control" id="username" ref = "username" placeholder = "Username" />
+                            <input type = "text" className="form-control" id="username" ref = "user_name1" placeholder = "Username" />
                          </div>
                          <div className = "form-group">
                             <label htmlFor = "password"> </label>
-                            <input type = "password" className="form-control" id="password" ref = "password" placeholder = "Password" />
+                            <input type = "password" className="form-control" id="password" ref = "pass_word1" placeholder = "Password" />
                          </div>
                          <div className = "form-group">
                             <label htmlFor = "name"> </label>
-                            <input type = "text" className="form-control" id="firstName" ref = "first_name" placeholder = "First Name" />
+                            <input type = "text" className="form-control" id="firstName" ref = "first_name1" placeholder = "First Name" />
                          </div>
                          <div className="form-group">
                             <label htmlFor = "name"></label>
-                            <input type = "text" className="form-control" id="lastName" ref = "last_name" placeholder="Last Name"/>
+                            <input type = "text" className="form-control" id="lastName" ref = "last_name1" placeholder="Last Name"/>
                          </div>
                          <div className="form-group">
                             <label htmlFor = "name"></label>
-                            <input type = "text" className="form-control" id="email" ref = "email" placeholder="Email"/>
+                            <input type = "text" className="form-control" id="email" ref = "email1" placeholder="Email"/>
                          </div>
                          <div className="form-group">
                             <label htmlFor = "name"></label>
-                            <input type = "text" className="form-control" id="phone" ref ="phone_number" placeholder="Phone Number"/>
+                            <input type = "text" className="form-control" id="phone" ref ="phone_number1" placeholder="Phone Number"/>
                          </div>
                          <div className="form-group">
                             <label htmlFor = "name"></label>
