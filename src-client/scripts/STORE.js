@@ -5,7 +5,7 @@ import $ from 'jquery'
 
 const STORE = {
       luggData: {
-
+         newluggData: []
    },
 
    setStore: function(luggProp, maindata){

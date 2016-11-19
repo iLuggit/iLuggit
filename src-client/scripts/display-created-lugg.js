@@ -3,15 +3,15 @@ import React from 'react'
 import $ from 'jquery'
 
 
-const LuggerAccepted = React.createClass({
+const LuggCreated = React.createClass({
 
    render: function(){
       return(
          <div>
-            <p>Your Lugg has been accepted by {}. The Lugger will be contacting you soon.</p>
+            <p>Your Lugg has been created. A Lugger will be contacting you soon.</p>
          </div>
 
       )
    }
 })
-module.exports = LuggerAccepted
+module.exports = LuggCreated
