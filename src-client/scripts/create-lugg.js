@@ -42,3 +42,4 @@ const CreateLugg = React.createClass({
       )
    }
 })
+module.exports = CreateLugg
