@@ -11,9 +11,11 @@ import CargoDisplay from './display-cargo-details.js'
 import CreateLugg from './create-lugg.js'
 import {LuggProfile, LuggView} from './lugg-list.js'
 import LuggCreated from './display-created-lugg.js'
+import Sandbox from './sandbox.js'
 
 const AppRouter = Backbone.Router.extend({
    routes: {
+       "sandbox" : "showSandbox",
    "lugg-created": "showLuggCreated",
     "user-login" : "showPackAuthView",
    "truck-login" : "showLuggAuthView",
@@ -55,6 +57,10 @@ const AppRouter = Backbone.Router.extend({
    },
    showLuggCreated: function(){
       ReactDOM.render(<AppController routedFrom = "LuggCreated" />, document.querySelector('#app-container'))
+
+   },
+   showSandbox: function(){
+      ReactDOM.render(<AppController routedFrom = "Sandbox" />, document.querySelector('#app-container'))
 
    },
 
