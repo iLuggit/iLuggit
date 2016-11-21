@@ -7,7 +7,7 @@ const CargoDisplay = React.createClass({
 
    render: function (){
       let luggs = this.props.newLuggData.models.map(function(model){
-         return 
+         return
       })
       return(
          <div>
@@ -20,7 +20,7 @@ const CargoDisplay = React.createClass({
             </div>
             <div className="container">
               <div className="row">
-                <div className="col-md-6">
+                <div className="col-sm-offset-3 col-sm-6">
                   <div>
                      <p>Cargo Img:{this.props.model.get('haul_img')}</p>
                      <p>Haul Description:{this.props.model.get('haul_description')}</p>
@@ -39,7 +39,7 @@ const CargoDisplay = React.createClass({
 
 
 module.exports = {
-    CargoDisplay,
+    CargoDisplay
 
 
 }

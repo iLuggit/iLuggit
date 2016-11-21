@@ -11,6 +11,7 @@ import LuggAuthView from './lugg-auth-view.js'
 import HomeView from './home-page.js'
 import CreateLugg from './create-lugg.js'
 import LuggCreated from './display-created-lugg.js'
+import Sandbox from './sandbox.js'
 
 let AppController = React.createClass({
    getInitialState: function(){
@@ -67,6 +68,10 @@ let AppController = React.createClass({
 
          case "LuggCreated":
             return <LuggCreated />
+            break;
+
+         case "Sandbox":
+            return <Sandbox />
             break;
 
          default:

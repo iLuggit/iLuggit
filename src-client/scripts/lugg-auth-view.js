@@ -10,7 +10,7 @@ const LuggAuthView = React.createClass({
 
 
       let existingUserData = {
-         username: this.refs.user_name.value,
+         usertruck: this.refs.user_name.value,
          password: this.refs.pass_word.value
 
       }
@@ -23,7 +23,7 @@ const LuggAuthView = React.createClass({
    evt.preventDefault()
 
    let newUserData = {
-      username: this.refs.user_name1.value,
+      usertruck: this.refs.user_name1.value,
       password: this.refs.pass_word1.value,
       first_name: this.refs.first_name1.value,
       last_name: this.refs.last_name1.value,
