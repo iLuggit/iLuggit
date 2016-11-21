@@ -46,7 +46,7 @@ const ACTIONS = {
      let createLuggMod = new CreateLuggModel()
      createLuggMod.set(newLugg)
      createLuggMod.save().then(function(){
-        window.location.hash = '/create-lugg';
+        window.location.hash = '';
     })
   },
 
