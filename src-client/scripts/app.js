@@ -11,7 +11,7 @@ import LuggerAccepted from './display-lugger-accepted.js'
 import AppController from './lugg-view-controller.js'
 import CargoDisplay from './display-cargo-details.js'
 import CreateLugg from './create-lugg.js'
-import LuggProfile from './lugg-list.js'
+import {LuggProfile, LuggView} from './lugg-list.js'
 import LuggCreated from './display-created-lugg.js'
 
 const AppRouter = Backbone.Router.extend({

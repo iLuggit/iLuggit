@@ -53,9 +53,9 @@ const CreateTruckModel = Backbone.Model.extend({
       }
 })
 
-const CreateNewLugg = Backbone.Model.extend({
+const CreateLuggModel = Backbone.Model.extend({
    model: UserModel,
-   url: '/create-new-lug',
+   url: '/create-lugg',
 
       initialize: function(){
 
@@ -68,6 +68,6 @@ module.exports = {
    CreateUserModel,
    CreateTruckModel,
    TruckModel,
-   CreateNewLugg
+   CreateLuggModel
 
 }

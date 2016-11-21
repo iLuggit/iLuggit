@@ -1,24 +1,24 @@
 import Backbone from 'backbone'
 import React from 'react'
 import $ from 'jquery'
-
+import ACTIONS from './ACTIONS.js'
 const CreateLugg = React.createClass({
    _createLugg: function(){
 
       let createNewLugg = {
-            pickup_address: this.ref.start_address.value,
-            dropoff_address: this.ref.end_address.value,
-            haul_description: this.ref.cargo_Description.value,
-            haul_img: this.ref.cargo_img.value,
+            pickup_address: this.refs.start_address.value,
+            dropoff_address: this.refs.end_address.value,
+            haul_description: this.refs.cargo_description.value,
+            haul_img: this.refs.cargo_img.value,
          }
-         ACTIONS.createLugg(createnewLugg)
+         ACTIONS.createLugg(createNewLugg)
 
       },
 
    render: function(){
       return(
             <div className = "row text-center">
-               <form className = "col-sm-offset-3 col-sm-6 " id="createLugg-form" onSubmit = {this._createLugg}>
+               <form className = "col-sm-offset-3 col-sm-6 " id="create-lugg-form" onSubmit = {this._createLugg}>
                        <h2 className = "">Create a New Lugg </h2>
                   <div className = "form-group">
                        <label htmlFor = "startAddress"> </label>

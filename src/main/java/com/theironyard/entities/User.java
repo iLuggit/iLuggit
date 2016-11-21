@@ -1,6 +1,5 @@
 package com.theironyard.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
@@ -15,7 +14,7 @@ public class User {
     @GeneratedValue
     public int id;
     @Column(nullable = false, unique = true)
-    String username;
+    String useruser;
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @Column(nullable = false)
     String password;
@@ -31,8 +30,8 @@ public class User {
     public User() {
     }
 
-    public User(String username, String password, String first_name, String last_name, String email, String phone_number) {
-        this.username = username;
+    public User(String useruser, String password, String first_name, String last_name, String email, String phone_number) {
+        this.useruser = useruser;
         this.password = password;
         this.first_name = first_name;
         this.last_name = last_name;
@@ -48,12 +47,12 @@ public class User {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUseruser() {
+        return useruser;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUseruser(String useruser) {
+        this.useruser = useruser;
     }
 
     public String getPassword() {

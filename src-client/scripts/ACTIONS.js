@@ -1,8 +1,8 @@
 import Backbone from 'backbone'
-import react from 'react'
+import React from 'react'
 import $ from 'jquery'
 
-import {UserModel, UserCollection, LoginModel, CreateUserModel, TruckModel, CreateTruckModel, CreateNewLugg} from './lugg-model.js'
+import {UserModel, UserCollection, LoginModel, CreateUserModel, TruckModel, CreateTruckModel, CreateLuggModel} from './lugg-model.js'
 import STORE from './STORE.js'
 const ACTIONS = {
 
@@ -47,17 +47,17 @@ const ACTIONS = {
   },
 
   createLugg: function(newLugg){
-     let createLuggMod = new UserCollection()
+     let createLuggMod = new CreateLuggModel()
      createLuggMod.set(newLugg)
-     createLuggMod.save().then(function(serverRes){
-        window.location.hash = 'luggs';
+     createLuggMod.save().then(function(){
+        window.location.hash = '/create-lugg';
     })
   },
 
   fetchLuggData: function(){
       let luggCollInstance = new UserCollection();
          luggCollInstance.fetch().then(function(){
-            STORE.setStore('newLuggData', luggCollInstance);
+            STORE.setStore('newLuggData', luggCollInstance.models);
             console.log('fetch ', luggCollInstance);
       })
       return luggCollInstance
