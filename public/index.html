@@ -5,7 +5,19 @@
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body>
-	<div id="app-container"></div>
+
+	<div id="app-container">
+		<div id="map"></div>
+		<script>
+		function initMap() {
+			  var map = new google.maps.Map(document.getElementById('map'), {
+				 center: {lat: -34.397, lng: 150.644},
+				 zoom: 6
+			  });
+			  var infoWindow = new google.maps.InfoWindow({map: map});
+		  }
+		  </script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGoG15YaqO4Hp9Si4jUP2u_61EHK-jw-4&callback=initMap"></script>
 	<script type="text/javascript" src="./js/app.js"></script>
 </body>
 </html>
