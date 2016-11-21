@@ -71,48 +71,48 @@ public class iLuggitController {
 
     @RequestMapping(path = "/user-login", method = RequestMethod.POST)
     public ResponseEntity<User> postUser(HttpSession session, @RequestBody User user) throws Exception {
-        User userFromDb = users.findFirstByUsername(user.getUsername());
+        User userFromDb = users.findFirstByUseruser(user.getUseruser());
         if (userFromDb == null) {
             return new ResponseEntity<User>(HttpStatus.RESET_CONTENT);
         } else if (!PasswordStorage.verifyPassword(user.getPassword(), userFromDb.getPassword())) {
             return new ResponseEntity<User>(HttpStatus.RESET_CONTENT);
         }
         session.setAttribute("first_name", user.getFirst_name());
-        session.setAttribute("username", user.getUsername());
+        session.setAttribute("useruser", user.getUseruser());
         return new ResponseEntity<User>(user, HttpStatus.OK);
     }
     @RequestMapping(path = "/create-user", method = RequestMethod.POST)
     public ResponseEntity<User> createUser(HttpSession session, @RequestBody User user) throws PasswordStorage.CannotPerformOperationException {
-        User userFromDb = users.findFirstByUsername(user.getUsername());
+        User userFromDb = users.findFirstByUseruser(user.getUseruser());
         if (userFromDb == null) {
             user.setPassword(PasswordStorage.createHash(user.getPassword()));
             users.save(user);
             session.setAttribute("first_name", user.getFirst_name());
-            session.setAttribute("username", user.getUsername());
+            session.setAttribute("useruser", user.getUseruser());
             return new ResponseEntity<User>(user, HttpStatus.OK);
         }
         return new ResponseEntity<User>(HttpStatus.RESET_CONTENT);
     }
     @RequestMapping(path = "/truck-login", method = RequestMethod.POST)
     public ResponseEntity<Truck> postTruck(HttpSession session, @RequestBody Truck truck) throws PasswordStorage.InvalidHashException, PasswordStorage.CannotPerformOperationException {
-        Truck truckFromDb = trucks.findFirstByUsername(truck.getUsername());
+        Truck truckFromDb = trucks.findFirstByUsertruck(truck.getUsertruck());
         if (truckFromDb == null) {
             return new ResponseEntity<Truck>(HttpStatus.RESET_CONTENT);
         } else if (!PasswordStorage.verifyPassword(truck.getPassword(), truckFromDb.getPassword())) {
             return new ResponseEntity<Truck>(HttpStatus.RESET_CONTENT);
         }
         session.setAttribute("first_name", truck.getFirst_name());
-        session.setAttribute("username", truck.getUsername());
+        session.setAttribute("usertruck", truck.getUsertruck());
         return new ResponseEntity<Truck>(truck, HttpStatus.OK);
     }
     @RequestMapping(path = "/create-truck", method = RequestMethod.POST)
     public ResponseEntity<Truck> createTruck(HttpSession session, @RequestBody Truck truck) throws PasswordStorage.InvalidHashException, PasswordStorage.CannotPerformOperationException {
-        Truck truckFromDb = trucks.findFirstByUsername(truck.getUsername());
+        Truck truckFromDb = trucks.findFirstByUsertruck(truck.getUsertruck());
         if (truckFromDb == null) {
             truck.setPassword(PasswordStorage.createHash(truck.getPassword()));
             trucks.save(truck);
             session.setAttribute("first_name", truck.getFirst_name());
-            session.setAttribute("username", truck.getUsername());
+            session.setAttribute("usertruck", truck.getUsertruck());
             return new ResponseEntity<Truck>(truck, HttpStatus.OK);
         }
         return new ResponseEntity<Truck>(HttpStatus.RESET_CONTENT);
