@@ -72,15 +72,15 @@ public class iLuggitController {
         return jobs.findFirstById(id);
     }
 
-//    @RequestMapping(path = "/accept-lugg", method = RequestMethod.GET)
-//    public String acceptJob(HttpSession session, int id) {
-//        Job job1 = jobs.findFirstById(id);
-//        int truckId = session.getAttribute("id");
-//        Truck truck1 = trucks.findFirstById(session.getAttribute("id"))
-//        job1.setTruck(truck1);
-//        Job job2 = jobs.findFirstById(id);
-//        job2
-//    }
+    @RequestMapping(path = "/accept-lugg", method = RequestMethod.GET)
+    public String acceptJob(HttpSession session, int id) {
+        Job job1 = jobs.findFirstById(id);
+        int truckId = (int) session.getAttribute("id");
+        Truck truck1 = trucks.findFirstById(truckId);
+        job1.setTruck(truck1);
+        jobs.save(job1);
+        return "Job Accepted";
+    }
 
     @RequestMapping(path = "/create-lugg", method = RequestMethod.POST)
     public String postJob(HttpSession session, @RequestBody Job job) throws Exception {
@@ -148,14 +148,6 @@ public class iLuggitController {
         }
         return new ResponseEntity<Truck>(HttpStatus.RESET_CONTENT);
     }
-
-
-//    @RequestMapping(path = "/accept-job", method = RequestMethod.POST)
-//    public ResponseEntity<Job> acceptJob(HttpSession session, @RequestBody Job job) {
-//        Job jobFromDb = jobs.findOne()
-//    }
-
-
     @RequestMapping(path = "/logout", method = RequestMethod.POST)
     public void logout(HttpSession session) {
         session.invalidate();
