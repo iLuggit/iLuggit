@@ -11,7 +11,7 @@ const PackAuthView = React.createClass({
 
 
          let newLogin = {
-            username: this.refs.user_name2.value,
+            useruser: this.refs.user_name2.value,
             password: this.refs.pass_word2.value
          }
          console.log(newLogin)
@@ -26,7 +26,7 @@ const PackAuthView = React.createClass({
                last_name: this.refs.last_name2.value,
                email: this.refs.email2.value,
                phone_number: parseInt(this.refs.phone_number2.value),
-               username: this.refs.new_username.value,
+               useruser: this.refs.new_username.value,
                password: this.refs.new_password.value
 
             }
