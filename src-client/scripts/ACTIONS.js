@@ -1,10 +1,12 @@
-import STORE from './STORE.js'
+import Backbone from 'backbone'
+import react from 'react'
 import $ from 'jquery'
-import {UserModel, UserCollection, LoginModel, CreateUserModel, CreateTruckModel} from './lugg-model.js'
 
+import {UserModel, UserCollection, LoginModel, CreateUserModel, TruckModel, CreateTruckModel, CreateNewLugg} from './lugg-model.js'
+import STORE from './STORE.js'
 const ACTIONS = {
 
-   loginUser: function(newLogin){
+   _loginUser: function(newLogin){
       let loginMod = new LoginModel()
       loginMod.set(newLogin)
       loginMod.save().then(function(serverRes){
@@ -12,44 +14,54 @@ const ACTIONS = {
 
 
       console.log('are we changing the route?', window.location);
-         window.location.hash = 'create-lugg';
+         window.location.hash = '/create-lugg';
     })
   },
 
-   createUser: function(newCreate){
+   _createUser: function(newCreate){
       let createMod = new CreateUserModel()
       createMod.set(newCreate)
       createMod.save().then(function(serverRes){
-
-
-         window.location.hash = 'create-lugg';
+         window.location.hash = '/create-lugg';
     })
   },
 
-  loginTruck: function(loginTruck){
-     let truckLoginMod = new LoginModel()
+  _loginTruck: function(loginTruck){
+     let truckLoginMod = new TruckModel()
      truckLoginMod.set(loginTruck)
 
      truckLoginMod.save().then(function(serverRes){
-        window.location.hash = 'luggList';
+        console.log('am i even here?')
+
+        window.location.hash = '/lugg-list';
     })
   },
 
-  createTruck: function(createTruck){
+  _createTruck: function(createTruck){
      let truckCreateMod = new CreateTruckModel()
      truckCreateMod.set(createTruck)
      truckCreateMod.save().then(function(serverRes){
-        window.location.hash = 'luggList';
+        console.log('are we changing the route?', window.location);
+        window.location.hash = '/lugg-list';
     })
   },
 
   createLugg: function(newLugg){
-     let createLuggMod = new CreateLuggModel()
+     let createLuggMod = new UserCollection()
      createLuggMod.set(newLugg)
      createLuggMod.save().then(function(serverRes){
-        window.location.hash = '';
+        window.location.hash = 'luggs';
     })
   },
+
+  fetchLuggData: function(){
+      let luggCollInstance = new UserCollection();
+         luggCollInstance.fetch().then(function(){
+            STORE.setStore('newLuggData', luggCollInstance);
+            console.log('fetch ', luggCollInstance);
+      })
+      return luggCollInstance
+   },
 }
 
 module.exports = ACTIONS
