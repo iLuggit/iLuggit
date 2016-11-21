@@ -6,6 +6,7 @@
 	box-sizing: border-box;
 }
 img{
+	display: block;
 	width: 100%;
 }
 body{
@@ -19,24 +20,9 @@ h1 h3{
 #app-container{
 	height: 100%;
 }
-#map{
-	 height: 100%;
-	 width:100%;
-	 z-index: 100;
 
-}
-html body{
-	height: 100%;
-	width: 100%;
-	margin: 0;
-	padding: 0;
 
-}
-.lugg-data{
-	li{
-		list-style-type: none;
-	}
-}
+
 .main-container{
 	   color: #FFF;
 		width: 100%;
@@ -45,6 +31,7 @@ html body{
 	   padding-top: 75px;
 	   padding-left: 20px;
 	   margin-bottom: 0;
+	   position: relative;
 	   background: url('../images/2menmoving.jpeg') center center no-repeat fixed;
 	   background-size: cover;
 			hr{
@@ -58,7 +45,27 @@ html body{
 				margin: 0, auto;
 				padding-top: 50px;
 			}
+}
+.lugg-data{
+	width: 45%;
+	display: inline-block;
+	  li{
+		list-style-type: none;
+		}
+		a{
+		color: #000;
+		text-decoration: none;
 
+		}
+}
+#map{
+	display: inline-block;
+	vertical-align: top;
+	position: absolute;
+	top: 60%;
+	right: 3%;
+	width: 40%;
+	height: 50%;
 }
 
 

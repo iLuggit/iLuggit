@@ -26,7 +26,7 @@ class SimpleMapPage extends Component {
   }
 }
 
-let ugh = {
+let CharlestonMap = {
    center: {lat: 32.784618, lng: -79.940918},
    zoom: 9,
 }
@@ -37,7 +37,7 @@ const Sandbox = React.createClass({
       <div>
          <p> this is a test</p>
          <div style={{height: "300px", width: '100%'}}>
-            <SimpleMapPage {...ugh} />
+            <SimpleMapPage {...CharlestonMap} />
          </div>
       </div>
       )
