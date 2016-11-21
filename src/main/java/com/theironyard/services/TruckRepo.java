@@ -8,5 +8,5 @@ import org.springframework.data.repository.CrudRepository;
  */
 public interface TruckRepo extends CrudRepository<Truck, Integer>{
     Truck findFirstByUsertruck(String usertruck);
-
+    //Truck findFirstById(int id);
 }
