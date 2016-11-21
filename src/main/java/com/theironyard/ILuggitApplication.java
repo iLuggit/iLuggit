@@ -9,4 +9,5 @@ public class ILuggitApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ILuggitApplication.class, args);
 	}
+
 }
