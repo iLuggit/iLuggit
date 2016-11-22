@@ -11,11 +11,11 @@ const CargoDisplay = React.createClass({
    render: function (){
       let id = this.props.id
       console.log('id', id);
-      let model = this.props.newLuggData.filter(function(model){
+      let model = this.props.newLuggData.find(function(model){
          return Number(model.get('id')) === Number(id)
       })
-      model = model[0]
       console.log('model', model);
+      console.log( typeof model === 'object' && model.get('haul_img') )
 
       return(
          <div>
@@ -31,11 +31,11 @@ const CargoDisplay = React.createClass({
                 <div className="col-sm-offset-3 col-sm-6">
                   <div>
 
-                     <p>Cargo Img:{model.get('haul_img')}</p>
-                     <p>Haul Description:{model.get('haul_description')}</p>
-                     <p>Pickup address:{model.get('pickup_address')}</p>
-                     <p>Drop off address:{model.get('dropoff_address')}</p>
-                     <p>Cargo description:{model.get('haul_description')}</p>
+                     <p>Cargo Img:{typeof model === 'object'  &&  model.get('haul_img')}</p>
+                     <p>Haul Description:{typeof model === 'object' && model.get('haul_description')}</p>
+                     <p>Pickup address:{typeof model === 'object' && model.get('pickup_address')}</p>
+                     <p>Drop off address:{typeof model === 'object' && model.get('dropoff_address')}</p>
+                     <p>Cargo description:{typeof model === 'object' && model.get('haul_description')}</p>
 
                   </div>
                 </div>
