@@ -47,6 +47,7 @@ const ACTIONS = {
   },
 
   createLugg: function(newLugg){
+     console.log(newLugg)
      let createLuggMod = new CreateLuggModel()
      createLuggMod.set(newLugg)
      createLuggMod.save().then(function(){

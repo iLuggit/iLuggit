@@ -22,7 +22,7 @@ const AppRouter = Backbone.Router.extend({
     "user-login" : "showPackAuthView",
    "truck-login" : "showLuggAuthView",
       "luggAcpt" : "showLuggAccept",
-       "cargo/:cargoId" : "showDisplayCargo",
+"cargo/:cargoId" : "showDisplayCargo",
      "lugg-list" : "showLuggList",
    "create-lugg" : "showCreateLugg",
        "packPro" : "showPackProfile",

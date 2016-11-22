@@ -31,6 +31,7 @@ const CargoDisplay = React.createClass({
                 <div className="col-sm-offset-3 col-sm-6">
                   <div>
 
+
                      <p>Cargo Img:{typeof model === 'object'  &&  model.get('haul_img')}</p>
                      <p>Haul Description:{typeof model === 'object' && model.get('haul_description')}</p>
                      <p>Pickup address:{typeof model === 'object' && model.get('pickup_address')}</p>
