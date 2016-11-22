@@ -31,11 +31,11 @@ const CargoDisplay = React.createClass({
                 <div className="col-sm-offset-3 col-sm-6">
                   <div>
 
-                     <p>Cargo Img:{model.get('haul_img')}</p>
-                     <p>Haul Description:{model.get('haul_description')}</p>
-                     <p>Pickup address:{model.get('pickup_address')}</p>
-                     <p>Drop off address:{model.get('dropoff_address')}</p>
-                     <p>Cargo description:{model.get('haul_description')}</p>
+                     <p>Cargo Img: {model.get('haul_img')}</p>
+                     <p>Haul Description: {model.get('haul_description')}</p>
+                     <p>Pickup address: {model.get('pickup_address')}</p>
+                     <p>Drop off address: {model.get('dropoff_address')}</p>
+                     <p>Cargo description: {model.get('haul_description')}</p>
 
                   </div>
                 </div>
