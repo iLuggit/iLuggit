@@ -25,8 +25,12 @@ public class Job {
         public Double job_price;
         @ManyToOne
         public User user;
+        @Column
+        public boolean user_accept;
         @ManyToOne
         public Truck truck;
+        @Column
+        public boolean truck_accept;
 
         public Job() {
         }
@@ -49,6 +53,43 @@ public class Job {
                 this.job_price = job_price;
                 this.user = user;
                 this.truck = truck;
+        }
+
+        public Job(int id, String[] pickup_address, String[] dropoff_address, String haul_description, String haul_img, Double job_price, User user, boolean user_accept, Truck truck, boolean truck_accept) {
+                this.id = id;
+                this.pickup_address = pickup_address;
+                this.dropoff_address = dropoff_address;
+                this.haul_description = haul_description;
+                this.haul_img = haul_img;
+                this.job_price = job_price;
+                this.user = user;
+                this.user_accept = user_accept;
+                this.truck = truck;
+                this.truck_accept = truck_accept;
+        }
+
+        public Job(int id, String[] pickup_address, String[] dropoff_address, String haul_description, String haul_img, Double job_price, User user, boolean user_accept, Truck truck) {
+                this.id = id;
+                this.pickup_address = pickup_address;
+                this.dropoff_address = dropoff_address;
+                this.haul_description = haul_description;
+                this.haul_img = haul_img;
+                this.job_price = job_price;
+                this.user = user;
+                this.user_accept = user_accept;
+                this.truck = truck;
+        }
+
+        public Job(int id, String[] pickup_address, String[] dropoff_address, String haul_description, String haul_img, Double job_price, User user, Truck truck, boolean truck_accept) {
+                this.id = id;
+                this.pickup_address = pickup_address;
+                this.dropoff_address = dropoff_address;
+                this.haul_description = haul_description;
+                this.haul_img = haul_img;
+                this.job_price = job_price;
+                this.user = user;
+                this.truck = truck;
+                this.truck_accept = truck_accept;
         }
 
         public int getId() {
@@ -113,5 +154,21 @@ public class Job {
 
         public void setTruck(Truck truck) {
                 this.truck = truck;
+        }
+
+        public boolean isUser_accept() {
+                return user_accept;
+        }
+
+        public void setUser_accept(boolean user_accept) {
+                this.user_accept = user_accept;
+        }
+
+        public boolean isTruck_accept() {
+                return truck_accept;
+        }
+
+        public void setTruck_accept(boolean truck_accept) {
+                this.truck_accept = truck_accept;
         }
 }
