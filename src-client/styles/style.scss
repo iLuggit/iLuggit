@@ -32,7 +32,7 @@ h1 h3{
 	   padding-left: 20px;
 	   margin-bottom: 0;
 	   position: relative;
-		// opacity: 1;
+	   opacity: 1;
 	   background: url('../images/MoverBox.jpg') center center no-repeat fixed;
 	   background-size: cover; opacity: .7;
 			hr{
@@ -84,8 +84,8 @@ h1 h3{
 #create-lugg-form{
 	padding: 10px;
 }
-#autoComplete{
-	width: 100%;
+#s_address, #e_address, #cargo_description, #cargo_img{
+	width: 75%;
 }
 .info-container{
 		width: 100%;

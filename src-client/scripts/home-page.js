@@ -24,7 +24,7 @@ const HomeView = React.createClass({
                   </div>
             </div>
            <div className="col-xs-12 col-md-6 ">
-                <div className="create-pack-profile text-center">
+                <div className="userProfile text-center">
                      <a href="/#user-login"><i className="fa fa-user-plus fa-5x" aria-hidden="true"></i></a>
                      <h3>Create a Packer Profile</h3>
                      <p>Your a Packer and need a Lugger to help move your items</p>
