@@ -32,7 +32,7 @@ const LuggProfile = React.createClass({
                      <h3 className="lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
                   </div>
                </div>
-               <div className ="lugg-list-container">
+               <div className = "lugg-list-container">
                   <div className ="luggInfo">
                      <p>LUGG ITEM</p>
                         { luggs }
