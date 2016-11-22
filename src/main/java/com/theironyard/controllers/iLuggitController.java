@@ -74,6 +74,12 @@ public class iLuggitController {
         return jobs.findFirstById(id);
     }
 
+    @RequestMapping(path = "/user-luggs", method = RequestMethod.GET)
+    public Iterable<Job> getUserJobs(HttpSession session){
+        String user = (String) session.getAttribute("useruser");
+        return jobs.findByUser(users.findFirstByUseruser(user));
+    }
+
     @RequestMapping(path = "/accept-lugg", method = RequestMethod.POST)
     public String acceptJob(HttpSession session, int id) {
         Job job1 = jobs.findFirstById(id);
@@ -95,12 +101,7 @@ public class iLuggitController {
         return "Job Paid";
     }
     @RequestMapping(path = "/create-lugg", method = RequestMethod.POST)
-    public String postJob(HttpSession session, @RequestBody Job job, MultipartFile image) throws Exception {
-        File dir = new File("public/images");
-        dir.mkdirs();
-        File f = File.createTempFile("image", image.getOriginalFilename(), dir);
-        FileOutputStream fos = new FileOutputStream(f);
-        fos.write(image.getBytes());
+    public String postJob(HttpSession session, @RequestBody Job job) throws Exception {
         String[] origin = job.getPickup_address();
         String[] destination = job.getDropoff_address();
         GeoApiContext apiContext = new GeoApiContext();
@@ -112,10 +113,8 @@ public class iLuggitController {
         double price = ((inMetersDouble * 0.012) / 10) + 5 ;
         String username = (String) session.getAttribute("useruser");
         User user = users.findFirstByUseruser(username);
-        String haulImg = f.getName();
         job.setJob_price(price);
         job.setUser(user);
-        job.setHaul_img(haulImg);
         job.setUser_accept(false);
         job.setTruck_accept(false);
         jobs.save(job);
