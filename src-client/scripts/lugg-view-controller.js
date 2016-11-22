@@ -13,10 +13,11 @@ import CreateLugg from './create-lugg.js'
 import LuggCreated from './display-created-lugg.js'
 import Sandbox from './sandbox.js'
 import TruckInfo from './truckinfo.js'
+import WhatWeDo from './whatwedo.js'
+import Reviews from './reviews.js'
 
 let AppController = React.createClass({
    getInitialState: function(){
-      ACTIONS.fetchLuggData()
       //   let data = ACTIONS.fetchLuggData()
             // STORE.setStore('newLuggData', data)
             let initialState = STORE.getLuggData()
@@ -27,6 +28,7 @@ let AppController = React.createClass({
 
      componentWillMount: function(){
          let self = this
+         ACTIONS.fetchLuggData()
 
          STORE.onChange(function(){
             console.log('view willMount');
@@ -79,6 +81,14 @@ let AppController = React.createClass({
          case "TruckInfo":
             return <TruckInfo />
             break;
+
+         case "WhatWeDo":
+            return <WhatWeDo />
+            break;
+
+         case "Reviews":
+               return <Reviews />
+               break;
 
          default:
             return
