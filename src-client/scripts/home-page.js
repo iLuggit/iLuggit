@@ -59,35 +59,22 @@ const HomeView = React.createClass({
          </div>
       </div>
    <div className="footer-container text-center">
-         <div className="container-fluid">
-            <div className="left-chamber">
-               <div className="copyright2">
-               </div>
-               <div className="copyright2016">
-                  <p>2016 iLuggit</p>
-               </div>
-            </div>
-            <div className="middle-chamber">
-               <div className="quicklinks">
-               <ul>
-                  <li>How it Works</li>
-                  <li>FAQ</li>
-                  <li>Blog</li>
-                  <li>Imprint</li>
-               </ul>
-               </div>
-            </div>
-            <div className ="right-chamber">
-               <div className="follow-us">
-                     <p> Follow US </p>
-               </div>
-                     <i className="fa fa-twitter fa-lg twitter" aria-hidden="true"></i>
-                     <i className="fa fa-facebook fa-lg facebook" aria-hidden="true"></i>
-                     <i className="fa fa-google fa-lg google" aria-hidden="true"></i>
-                  </div>
-               </div>
-              </div>
-            </div>
+      <div className="columns-container updates-section">
+         <div className="todays-quote">
+            <h6>Quote of the Day</h6></div>
+         <div className="columns-container">
+            <strong>We are all here to help others, what the others are here for I don't know! W.H.Auden</strong>
+         </div>
+      </div>
+      <div className="news">
+         <h6>News</h6>
+         <p className="description">Featured Luggers<span className="extra-caret">»</span></p>
+         <h5>Trust Worthy Packers <span className="extra-caret">»</span></h5>
+      </div>
+   </div>
+</div>
+
+
          )
       }
    })
