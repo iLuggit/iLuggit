@@ -13,6 +13,7 @@ const showTruckInfo = React.createClass({
       return (
          <div className="home-container">
             <div className="container-fluid text-center main-container ">
+            <a href = "#"><i className = "fa fa-home fa-2x" aria-hidden = "true"></i></a>
                      <div className="container ">
                         <h1>iLuggit, Our Story</h1>
                         <h3 className="lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
