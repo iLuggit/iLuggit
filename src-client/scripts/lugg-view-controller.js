@@ -11,20 +11,25 @@ import LuggAuthView from './lugg-auth-view.js'
 import HomeView from './home-page.js'
 import CreateLugg from './create-lugg.js'
 import LuggCreated from './display-created-lugg.js'
+import Sandbox from './sandbox.js'
+import TruckInfo from './truckinfo.js'
 
 let AppController = React.createClass({
    getInitialState: function(){
-        let data = ACTIONS.fetchLuggData()
-            STORE.setStore('newLuggData', data)
+      ACTIONS.fetchLuggData()
+      //   let data = ACTIONS.fetchLuggData()
+            // STORE.setStore('newLuggData', data)
             let initialState = STORE.getLuggData()
-            console.log(initialState)
+            console.log("init state", initialState)
          return initialState
 
      },
 
      componentWillMount: function(){
          let self = this
+
          STORE.onChange(function(){
+            console.log('view willMount');
 
              let newState = STORE.getLuggData()
              self.setState(newState)
@@ -42,7 +47,7 @@ let AppController = React.createClass({
             break;
 
          case "CargoDisplay":
-            return <CargoDisplay />
+            return <CargoDisplay newLuggData={this.state.newLuggData} id={this.props.modelId}/>
             break;
 
          case "LuggProfile":
@@ -67,6 +72,14 @@ let AppController = React.createClass({
 
          case "LuggCreated":
             return <LuggCreated />
+            break;
+
+         case "Sandbox":
+            return <Sandbox />
+            break;
+
+         case "TruckInfo":
+            return <TruckInfo />
             break;
 
          default:

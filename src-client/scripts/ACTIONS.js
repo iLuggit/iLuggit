@@ -62,6 +62,8 @@ const ACTIONS = {
       })
       return luggCollInstance
    },
+
 }
+
 
 module.exports = ACTIONS

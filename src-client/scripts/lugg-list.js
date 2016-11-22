@@ -8,7 +8,7 @@ import AppController from './lugg-view-controller.js'
 
 const LuggProfile = React.createClass({
    componentWillMount: function(){
-        ACTIONS.fetchLuggData()
+      //   ACTIONS.fetchLuggData()
      },
 
 
@@ -16,14 +16,14 @@ const LuggProfile = React.createClass({
    render: function(){
 
       let luggs = this.props.newLuggData.map(function(model){
-         // console.log('its me')
+      //   console.log('its me')
          return <LuggView key = {model.cid} model={model} />
       })
       return(
          <div>
             <div className = "row text-center">
                <div className="container-fluid text-center main-container">
-                     <a href = "cargo"><i className = "fa fa-home fa-2x" aria-hidden = "true"></i></a>
+                     <a href = "#"><i className = "fa fa-home fa-2x" aria-hidden = "true"></i></a>
                   <div className="container">
                      <h1 className="display-3">iLuggit</h1>
                      <h3 className="lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
@@ -49,7 +49,7 @@ const LuggProfile = React.createClass({
              <div className="col-xs-12">
                <div className = "lugg-data">
                   <ul>
-                     <li><a href="">{this.props.model.get('username')}:{this.props.model.get('haul_description')}</a></li>
+                     <li><a href={`#cargo/${this.props.model.get('id')}`}>{this.props.model.get('username')}:{this.props.model.get('haul_description')}</a></li>
                   </ul>
                </div>
             <div id="map"></div>
