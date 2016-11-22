@@ -13,6 +13,7 @@ import CreateLugg from './create-lugg.js'
 import {LuggProfile, LuggView} from './lugg-list.js'
 import LuggCreated from './display-created-lugg.js'
 import Sandbox from './sandbox.js'
+import TruckInfo from './truckinfo.js'
 
 const AppRouter = Backbone.Router.extend({
    routes: {
@@ -21,11 +22,12 @@ const AppRouter = Backbone.Router.extend({
     "user-login" : "showPackAuthView",
    "truck-login" : "showLuggAuthView",
       "luggAcpt" : "showLuggAccept",
-         "cargo" : "showDisplayCargo",
+       "cargo/:cargoId" : "showDisplayCargo",
      "lugg-list" : "showLuggList",
    "create-lugg" : "showCreateLugg",
        "packPro" : "showPackProfile",
        "luggPro" : "showLuggProfile",
+       "truck-info": "showTruckInfo",
               "" : "showHomeView"
    },
    showCreateLugg: function(){
@@ -44,8 +46,8 @@ const AppRouter = Backbone.Router.extend({
       ReactDOM.render(<AppController routedFrom = "LuggAccept" />, document.querySelector('#app-container'))
 
    },
-   showDisplayCargo: function(){
-      ReactDOM.render(<AppController routedFrom = "CargoDisplay" />, document.querySelector('#app-container'))
+   showDisplayCargo: function(cargoId){
+      ReactDOM.render(<AppController routedFrom = "CargoDisplay" modelId={cargoId} />, document.querySelector('#app-container'))
 
    },
    showLuggList: function(){
@@ -62,6 +64,10 @@ const AppRouter = Backbone.Router.extend({
    },
    showSandbox: function(){
       ReactDOM.render(<AppController routedFrom = "Sandbox" />, document.querySelector('#app-container'))
+
+   },
+   showTruckInfo: function(){
+      ReactDOM.render(<AppController routedFrom = "TruckInfo" />, document.querySelector('#app-container'))
 
    },
 

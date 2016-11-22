@@ -10,6 +10,9 @@ const ACTIONS = {
       let loginMod = new LoginModel()
       loginMod.set(newLogin)
       loginMod.save().then(function(serverRes){
+
+
+
       console.log('are we changing the route?', window.location);
          window.location.hash = '/create-lugg';
     })
@@ -26,6 +29,7 @@ const ACTIONS = {
   _loginTruck: function(loginTruck){
      let truckLoginMod = new TruckModel()
      truckLoginMod.set(loginTruck)
+
      truckLoginMod.save().then(function(serverRes){
         console.log('am i even here?')
 
@@ -58,6 +62,8 @@ const ACTIONS = {
       })
       return luggCollInstance
    },
+
 }
+
 
 module.exports = ACTIONS
