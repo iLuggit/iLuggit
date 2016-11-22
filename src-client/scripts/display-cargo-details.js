@@ -4,7 +4,7 @@ import ACTIONS from './ACTIONS.js'
 
 const CargoDisplay = React.createClass({
    componentWillMount: function(){
-      //   ACTIONS.fetchLuggData()
+        ACTIONS.fetchLuggData()
         console.log(this.props);
      },
 
