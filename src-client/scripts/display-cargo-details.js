@@ -37,6 +37,12 @@ const CargoDisplay = React.createClass({
                      <p>Drop off address:{typeof model === 'object' && model.get('dropoff_address')}</p>
                      <p>Cargo description:{typeof model === 'object' && model.get('haul_description')}</p>
 
+                     <div className="btn-group">
+                        <button type="button" className="btn btn-default">Accept Lugg</button>
+                        <a href="/#lugg-list"><button type="button" className="btn btn-default">Return</button></a>
+
+                     </div>
+
                   </div>
                 </div>
               </div>
