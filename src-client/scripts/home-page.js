@@ -38,22 +38,22 @@ const HomeView = React.createClass({
             <div className="col-xs-12 col-md-4 text-center">
                <div className="truck-info">
                   <a href="#truck-info"><img src= "./images/truckclock.png" alt="" /></a>
-                  <h3>Truck Info</h3>
-                  <p>We have many different types of trucks to fit all your lugging needs. Find a style that fits you.  </p>
+                  <h3>Our Story</h3>
+                  <p>What we do and why iLuggit was born.</p>
                </div>
             </div>
                <div className="col-xs-12 col-md-4 text-center">
                <div className="lugg-reviews">
-                  <a href="#luggreviews"><img src="./images/luggerreviews.jpeg" alt=""/></a>
-                  <h3>Lugger Reviews</h3>
-                  <p>See what our Luggers are saying about the Packers that they have served.</p>
+                  <a href="#whatwedo"><img src="./images/luggerreviews.jpeg" alt=""/></a>
+                  <h3>What we do</h3>
+                  <p>Playing match makers between trucks and people who need them.</p>
                </div>
             </div>
                <div className="col-xs-12 col-md-4 text-center">
                <div className="pack-reviews">
-                  <a href="#packreviews"><img src="./images/userreviews.png" alt=""/></a>
-                  <h3>Packer Reviews</h3>
-                  <p>Se what out Packers are saying about the Luggers they have hired.</p>
+                  <a href="#reviews"><img src="./images/userreviews.png" alt=""/></a>
+                  <h3>Reviews</h3>
+                  <p>See what users are saying.</p>
                </div>
             </div>
          </div>

@@ -27,7 +27,9 @@ const AppRouter = Backbone.Router.extend({
    "create-lugg" : "showCreateLugg",
        "packPro" : "showPackProfile",
        "luggPro" : "showLuggProfile",
-     "truck-info": "showTruckInfo",
+       "truck-info": "showTruckInfo",
+       "whatwedo": "showWhatWeDo",
+       "reviews": "showReviews",
               "" : "showHomeView"
    },
    showCreateLugg: function(){
@@ -68,6 +70,16 @@ const AppRouter = Backbone.Router.extend({
    },
    showTruckInfo: function(){
       ReactDOM.render(<AppController routedFrom = "TruckInfo" />, document.querySelector('#app-container'))
+
+   },
+
+   showWhatWeDo: function(){
+      ReactDOM.render(<AppController routedFrom = "WhatWeDo" />, document.querySelector('#app-container'))
+
+   },
+
+   showReviews: function(){
+      ReactDOM.render(<AppController routedFrom = "Reviews" />, document.querySelector('#app-container'))
 
    },
 
