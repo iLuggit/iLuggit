@@ -4,7 +4,7 @@ import ACTIONS from './ACTIONS.js'
 
 const CargoDisplay = React.createClass({
    componentWillMount: function(){
-      //   ACTIONS.fetchLuggData()
+        ACTIONS.fetchLuggData()
         console.log(this.props);
      },
 
@@ -15,7 +15,7 @@ const CargoDisplay = React.createClass({
          return Number(model.get('id')) === Number(id)
       })
       console.log('model', model);
-      console.log( typeof model === 'object' && model.get('haul_img') )
+      console.log( typeof model === 'object' && model.get('haul_img')  )
 
       return(
          <div>
@@ -31,12 +31,17 @@ const CargoDisplay = React.createClass({
                 <div className="col-sm-offset-3 col-sm-6">
                   <div>
 
-
                      <p>Cargo Img:{typeof model === 'object'  &&  model.get('haul_img')}</p>
                      <p>Haul Description:{typeof model === 'object' && model.get('haul_description')}</p>
                      <p>Pickup address:{typeof model === 'object' && model.get('pickup_address')}</p>
                      <p>Drop off address:{typeof model === 'object' && model.get('dropoff_address')}</p>
                      <p>Cargo description:{typeof model === 'object' && model.get('haul_description')}</p>
+
+                     <div className="btn-group">
+                        <button type="button" className="btn btn-default">Accept Lugg</button>
+                        <a href="/#lugg-list"><button type="button" className="btn btn-default">Return</button></a>
+
+                     </div>
 
                   </div>
                 </div>
