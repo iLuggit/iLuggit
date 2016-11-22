@@ -18,10 +18,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.servlet.http.HttpSession;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.sql.SQLException;
 
 import static org.aspectj.runtime.internal.Conversions.doubleValue;
@@ -42,8 +45,6 @@ public class iLuggitController {
 
     Server h2Server;
 
-    static final String google_key = "AIzaSyBfP-iSDWJ3Ilz-D3j1obcywarlD0knZzY";
-
     @PostConstruct
     public void init () throws SQLException, PasswordStorage.CannotPerformOperationException{
         h2Server = Server.createWebServer().start();
@@ -53,6 +54,7 @@ public class iLuggitController {
 
             Truck truck = new Truck("BartonTruck", PasswordStorage.createHash("1234"), "Barry", "Daniels", "barry.a.daniels@gmail.com", "8439067218", Truck.BedSize.ONE);
             trucks.save(truck);
+
 
         }
     }
@@ -72,18 +74,33 @@ public class iLuggitController {
         return jobs.findFirstById(id);
     }
 
-    @RequestMapping(path = "/accept-lugg", method = RequestMethod.GET)
+    @RequestMapping(path = "/accept-lugg", method = RequestMethod.POST)
     public String acceptJob(HttpSession session, int id) {
         Job job1 = jobs.findFirstById(id);
         int truckId = (int) session.getAttribute("id");
         Truck truck1 = trucks.findFirstById(truckId);
         job1.setTruck(truck1);
+        job1.setTruck_accept(true);
         jobs.save(job1);
         return "Job Accepted";
     }
-
+    @RequestMapping(path = "/pay-lugg", method = RequestMethod.POST)
+    public String payJob(HttpSession session, int id) {
+        Job job1 = jobs.findFirstById(id);
+        int userId = (int) session.getAttribute("id");
+        User user1 = users.findFirstById(userId);
+        job1.setUser(user1);
+        job1.setUser_accept(true);
+        jobs.save(job1);
+        return "Job Paid";
+    }
     @RequestMapping(path = "/create-lugg", method = RequestMethod.POST)
-    public String postJob(HttpSession session, @RequestBody Job job) throws Exception {
+    public String postJob(HttpSession session, @RequestBody Job job, MultipartFile image) throws Exception {
+        File dir = new File("public/images");
+        dir.mkdirs();
+        File f = File.createTempFile("image", image.getOriginalFilename(), dir);
+        FileOutputStream fos = new FileOutputStream(f);
+        fos.write(image.getBytes());
         String[] origin = job.getPickup_address();
         String[] destination = job.getDropoff_address();
         GeoApiContext apiContext = new GeoApiContext();
@@ -92,12 +109,18 @@ public class iLuggitController {
         Distance distance = request.rows[0].elements[0].distance;
         long inMeters = distance.inMeters;
         double inMetersDouble = doubleValue(inMeters);
-        User user = users.findFirstByUseruser(session.getId());
-        Job job1 = new Job(origin, destination, job.getHaul_description(), job.getHaul_img(), inMetersDouble, user);
-        jobs.save(job1);
+        double price = ((inMetersDouble * 0.012) / 10) + 5 ;
+        String username = (String) session.getAttribute("useruser");
+        User user = users.findFirstByUseruser(username);
+        String haulImg = f.getName();
+        job.setJob_price(price);
+        job.setUser(user);
+        job.setHaul_img(haulImg);
+        job.setUser_accept(false);
+        job.setTruck_accept(false);
+        jobs.save(job);
         return "Job Created";
     }
-
     @RequestMapping(path = "/user-login", method = RequestMethod.POST)
     public ResponseEntity<User> postUser(HttpSession session, @RequestBody User user) throws Exception {
         User userFromDb = users.findFirstByUseruser(user.getUseruser());
