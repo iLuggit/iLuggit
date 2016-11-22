@@ -35,8 +35,6 @@ let AppController = React.createClass({
              self.setState(newState)
 
          })
-
-
       },
 
    render: function(){

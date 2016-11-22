@@ -1,9 +1,12 @@
 import Backbone from 'backbone'
-import React from 'react'
 import ReactDOM from 'react-dom'
 import ACTIONS from './ACTiONS.js'
 import STORE from './STORE.js'
 import AppController from './lugg-view-controller.js'
+import SimpleMapPage from './map-api.js'
+import React, {PropTypes, Component} from 'react';
+import shouldPureComponentUpdate from 'react-pure-render/function';
+import GoogleMap from 'google-map-react';
 
 
 const LuggProfile = React.createClass({
@@ -20,28 +23,38 @@ const LuggProfile = React.createClass({
          return <LuggView key = {model.cid} model={model} />
       })
       return(
-         <div>
-            <div className = "row text-center">
-               <div className="container-fluid text-center main-container">
+            <div>
+               <div className = "main-container">
+                  <div className="container text-center">
                      <a href = "#"><i className = "fa fa-home fa-2x" aria-hidden = "true"></i></a>
-                  <div className="container">
                      <h1 className="display-3">iLuggit</h1>
                      <h3 className="lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
                   </div>
                </div>
+                  <div className ="luggInfo">
+                     <p>LUGG ITEM</p>
+                        { luggs }
+                  </div>
+                  <div id= "map">
+                     <SimpleMapPage {...CharlestonMap} />
+                  </div>
             </div>
-            <div className="container">
-            <p>LUGG ITEM</p>
-             <div className="row">
-               { luggs }
-             </div>
-           </div>
-         </div>
-       );
-     }
-   });
 
+      );
+   }
+});
+
+let CharlestonMap = {
+   center: {lat: 32.784618, lng: -79.940918},
+   zoom: 9,
+}
    const LuggView = React.createClass({
+      // let uName = ''
+      //    if ( this.props.model.get('user') ) && (this.props.model.get('user').useruser){
+      //       return uName
+      //
+      //    }
+
 
 
      render: function(){
@@ -52,16 +65,9 @@ const LuggProfile = React.createClass({
                      <li><a href={`#cargo/${this.props.model.get('id')}`}>{this.props.model.get('username')}:{this.props.model.get('haul_description')}</a></li>
                   </ul>
                </div>
-            <div id="map"></div>
             </div>
-
-
-
-
       )
-
    }
-
 })
 
 module.exports = {
