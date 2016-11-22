@@ -37,7 +37,7 @@ const HomeView = React.createClass({
          <div className="row">
             <div className="col-xs-12 col-md-4 text-center">
                <div className="truck-info">
-                  <a href="#truckinfo"><img src= "./images/truckclock.png" alt="" /></a>
+                  <a href="#truck-info"><img src= "./images/truckclock.png" alt="" /></a>
                   <h3>Truck Info</h3>
                   <p>We have many different types of trucks to fit all your lugging needs. Find a style that fits you.  </p>
                </div>

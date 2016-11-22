@@ -8,15 +8,19 @@ import React, {PropTypes, Component} from 'react';
 import shouldPureComponentUpdate from 'react-pure-render/function';
 import GoogleMap from 'google-map-react';
 
-// const CharlestonMap = {};
+
 
 const LuggProfile = React.createClass({
+   componentWillMount: function(){
+      //   ACTIONS.fetchLuggData()
+     },
+
 
 
    render: function(){
 
       let luggs = this.props.newLuggData.map(function(model){
-         console.log('its me')
+      //   console.log('its me')
          return <LuggView key = {model.cid} model={model} />
       })
       let CharlestonMap = {
@@ -62,7 +66,7 @@ const LuggProfile = React.createClass({
              <div className="col-xs-12">
                <div className = "lugg-data">
                   <ul>
-                     <li><a href="">{ this.props.model.get('user') && this.props.model.get('user').useruser || ''} : {this.props.model.get('haul_description')}</a></li>
+                     <li><a href={`#cargo/${this.props.model.get('id')}`}>{this.props.model.get('username')}:{this.props.model.get('haul_description')}</a></li>
                   </ul>
                </div>
             </div>
