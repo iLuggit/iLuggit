@@ -47,7 +47,7 @@ let AppController = React.createClass({
             break;
 
          case "CargoDisplay":
-            return <CargoDisplay newLuggData={this.state.newLuggData} id={this.props.modelId}/>
+            return <CargoDisplay newLuggData={this.state.newLuggData}/>
             break;
 
          case "LuggProfile":
@@ -67,7 +67,7 @@ let AppController = React.createClass({
             break;
 
          case "CreateLugg" :
-            return <CreateLugg />
+            return <CreateLugg newLuggData={this.state.newLuggData} id={this.props.modelId}/>
             break;
 
          case "LuggCreated":
