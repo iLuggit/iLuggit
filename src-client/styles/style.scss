@@ -68,6 +68,16 @@ h1 h3{
 	height: 50%;
 }
 
+#map2{
+	display: inline-block;
+	vertical-align: top;
+	position: absolute;
+	top: 3%;
+	right: 1%;
+	width: 40%;
+	height: 45%;
+}
+
 
 .info-container{
 		width: 100%;
@@ -87,6 +97,12 @@ h1 h3{
 				width: 33.3%;
 			}
 }
+.lugg-container{
+	border: 2px solid black;
+}
+.lugg-list-container{
+	border: 2px solid black;
+}
 .footer-container{
    background-color: black;
    width: 100%;
@@ -95,41 +111,6 @@ h1 h3{
    position: relative;
    hr{
       margin-top: 50px;
-   }
-
-.how-it-works{
-   width: 24%;
-   display: inline-block;
-   margin-top: auto;
-   margin-left: 20px;
-      p{
-         font-size: 14px;
-      }
-
-}
-.faq{
-   width: 20%;
-   display: inline-block;
-   vertical-align: top;
-   margin-top: auto;
-      p{
-         font-size: 14px;
-      }
-
-}
-
-.quicklinks{
-      width: 25%;
-      color: lightgrey;
-      display: inline-block;
-      margin-top: 20px;
-      font-size: 10px;
-         ul{
-      list-style-type: none;
-            p{
-               font-size: 10px;
-            }
-      	}
    }
 
    .follow-us{
