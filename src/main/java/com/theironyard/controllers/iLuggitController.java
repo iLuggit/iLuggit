@@ -4,9 +4,11 @@ import com.google.maps.*;
 import com.google.maps.model.Distance;
 import com.google.maps.model.DistanceMatrix;
 import com.theironyard.entities.Job;
+import com.theironyard.entities.Review;
 import com.theironyard.entities.Truck;
 import com.theironyard.entities.User;
 import com.theironyard.services.JobRepo;
+import com.theironyard.services.ReviewRepo;
 import com.theironyard.services.TruckRepo;
 import com.theironyard.services.UserRepo;
 import com.theironyard.utilities.PasswordStorage;
@@ -18,13 +20,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.servlet.http.HttpSession;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.sql.SQLException;
 
 import static org.aspectj.runtime.internal.Conversions.doubleValue;
@@ -43,6 +42,9 @@ public class iLuggitController {
     @Autowired
     JobRepo jobs;
 
+    @Autowired
+    ReviewRepo reviews;
+
     Server h2Server;
 
     @PostConstruct
@@ -51,14 +53,30 @@ public class iLuggitController {
         if (users.count() == 0) {
             User user = new User("Barton", PasswordStorage.createHash("1234"), "Barry", "Daniels", "barry.a.daniels@gmail.com", "8439067218");
             users.save(user);
+            User user1 = new User("Zach", PasswordStorage.createHash("1234"), "Zack", "Oakes", "barry.a.daniels@gmail.com", "8439067218");
+            users.save(user1);
+            User user2 = new User("Travis", PasswordStorage.createHash("1234"), "Travis", "Hubbard", "barry.a.daniels@gmail.com", "8439067218");
+            users.save(user2);
+            User user3 = new User("Betsy", PasswordStorage.createHash("1234"), "Betsy", "Hare", "barry.a.daniels@gmail.com", "8439067218");
+            users.save(user3);
+            User user4 = new User("Kaity", PasswordStorage.createHash("1234"), "Kaity", "Miller", "barry.a.daniels@gmail.com", "8439067218");
+            users.save(user4);
 
-            Truck truck = new Truck("BartonTruck", PasswordStorage.createHash("1234"), "Barry", "Daniels", "barry.a.daniels@gmail.com", "8439067218", Truck.BedSize.ONE);
+            Truck truck = new Truck("BartonTruck", PasswordStorage.createHash("1234"), "Barry", "Daniels", "barry.a.daniels@gmail.com", "8439067218", Truck.BedSize.LargeBed);
             trucks.save(truck);
 
-
+            Review review = new Review("Once you use iLuggit, you'll never want to buy your own truck!", user);
+            reviews.save(review);
+            Review review1 = new Review("I CANT BELIEVE IT WAS SO EASY TO GET A TRUCK.", user1);
+            reviews.save(review1);
+            Review review2 = new Review("Good Work.", user2);
+            reviews.save(review2);
+            Review review3 = new Review("When my Prius got flooded in Hurricane Matthew I had to use iLuggit to take my massive puppies, Max and Sammy, to the park", user3);
+            reviews.save(review3);
+            Review review4 = new Review("When I couldn't fit the whole Roller Derby team in my car, iLuggit carried us all the rink! (Insert Kaity laugh here)", user4);
+            reviews.save(review4);
         }
     }
-
     @PreDestroy
     public void destroy(){
         h2Server.stop();
@@ -79,7 +97,6 @@ public class iLuggitController {
         String user = (String) session.getAttribute("useruser");
         return jobs.findByUser(users.findFirstByUseruser(user));
     }
-
     @RequestMapping(path = "/accept-lugg", method = RequestMethod.POST)
     public String acceptJob(HttpSession session, int id) {
         Job job1 = jobs.findFirstById(id);
@@ -110,7 +127,7 @@ public class iLuggitController {
         Distance distance = request.rows[0].elements[0].distance;
         long inMeters = distance.inMeters;
         double inMetersDouble = doubleValue(inMeters);
-        double price = ((inMetersDouble * 0.012) / 10) + 5 ;
+        double price = ((inMetersDouble * 0.012) / 10) + 5;
         String username = (String) session.getAttribute("useruser");
         User user = users.findFirstByUseruser(username);
         job.setJob_price(price);
@@ -173,5 +190,19 @@ public class iLuggitController {
     @RequestMapping(path = "/logout", method = RequestMethod.POST)
     public void logout(HttpSession session) {
         session.invalidate();
+    }
+    @RequestMapping(path = "/reviews", method = RequestMethod.GET)
+    public Iterable<Review> getReviews() {
+        return reviews.findAll();
+    }
+
+    @RequestMapping(path = "/test", method = RequestMethod.POST)
+    public String testRoute(){
+        GeoApiContext apiContext = new GeoApiContext();
+        apiContext.setApiKey("AIzaSyB8QAVhBnoK5pQC-1hPqRCSvpiyLzmBNyo");
+        String pickUpJob = "2312 Portside Way, Charleston, SC";
+        GeocodingApiRequest latlng = new GeocodingApiRequest(apiContext).address(pickUpJob);
+        System.out.println(latlng);
+        return "Test Ran";
     }
 }

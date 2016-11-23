@@ -12,7 +12,7 @@ import GoogleMap from 'google-map-react';
 
 const LuggProfile = React.createClass({
    componentWillMount: function(){
-      //   ACTIONS.fetchLuggData()
+         ACTIONS.fetchLuggData()
      },
 
 
@@ -20,7 +20,7 @@ const LuggProfile = React.createClass({
    render: function(){
 
       let luggs = this.props.newLuggData.map(function(model){
-      //   console.log('its me')
+        console.log('its me')
          return <LuggView key = {model.cid} model={model} />
       })
       let CharlestonMap = {
@@ -53,20 +53,13 @@ const LuggProfile = React.createClass({
 
 
    const LuggView = React.createClass({
-      // let uName = ''
-      //    if ( this.props.model.get('user') ) && (this.props.model.get('user').useruser){
-      //       return uName
-      //
-      //    }
-
-
 
      render: function(){
         return(
              <div className="col-xs-12">
                <div className = "lugg-data">
                   <ul>
-                     <li><a href={`#cargo/${this.props.model.get('id')}`}>{this.props.model.get('username')}:{this.props.model.get('haul_description')}</a></li>
+                     <li><a href={`#cargo/${this.props.model.get('id')}`}>{this.props.model.get('user').useruser} : {this.props.model.get('haul_description')}</a></li>
                   </ul>
                </div>
             </div>

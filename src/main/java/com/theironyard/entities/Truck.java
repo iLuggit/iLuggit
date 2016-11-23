@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Table(name = "trucks")
 public class Truck {
     public enum BedSize{
-        ONE, TWO, THREE
+        SmallBed, LargeBed, Van, Trailer
     }
 
     @Id

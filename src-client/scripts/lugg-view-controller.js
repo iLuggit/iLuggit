@@ -19,9 +19,9 @@ import Reviews from './reviews.js'
 let AppController = React.createClass({
    getInitialState: function(){
       //   let data = ACTIONS.fetchLuggData()
-            // STORE.setStore('newLuggData', data)
+      //       STORE.setStore('newLuggData', data)
             let initialState = STORE.getLuggData()
-            console.log("init state", initialState)
+            // console.log("init state", initialState)
          return initialState
 
      },
@@ -31,7 +31,7 @@ let AppController = React.createClass({
          ACTIONS.fetchLuggData()
 
          STORE.onChange(function(){
-            console.log('view willMount');
+            // console.log('view willMount');
 
              let newState = STORE.getLuggData()
              self.setState(newState)
@@ -47,7 +47,7 @@ let AppController = React.createClass({
             break;
 
          case "CargoDisplay":
-            return <CargoDisplay newLuggData={this.state.newLuggData} id={this.props.modelId}/>
+            return <CargoDisplay newLuggData={this.state.newLuggData}/>
             break;
 
          case "LuggProfile":
@@ -67,7 +67,7 @@ let AppController = React.createClass({
             break;
 
          case "CreateLugg" :
-            return <CreateLugg />
+            return <CreateLugg newLuggData={this.state.newLuggData} id={this.props.modelId}/>
             break;
 
          case "LuggCreated":

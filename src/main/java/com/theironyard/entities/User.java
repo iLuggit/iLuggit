@@ -22,7 +22,7 @@ public class User {
     String first_name;
     @Column(nullable = false)
     String last_name;
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     String email;
     @Column(nullable = false)
     String phone_number;
