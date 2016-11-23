@@ -84,9 +84,16 @@ const LuggAuthView = React.createClass({
                             <input type = "text" className="form-control" id="phone" ref ="phone_number1" placeholder="Phone Number"/>
                          </div>
                          <div className="form-group">
-                            <label htmlFor = "name">Bed Size</label>
-                            <input type = "text" className="form-control" id="bed" ref ="bedSize" placeholder="Truck Bed Size"/>
-                         </div>
+
+                               <select ref="bedSize">
+                                   <option value="SmallBed">Small Bed</option>
+                                   <option value="LargeBed">Large Bed</option>
+                                   <option value="Van">Van</option>
+                                   <option value="Trailer">Trailer</option>
+                              </select>
+                           </div>
+
+
                             <input type = "submit" className="btn btn-default" />
                        </div>
                    </form>
