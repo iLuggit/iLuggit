@@ -21,7 +21,10 @@ h1 h3{
 	height: 100%;
 }
 
-
+.pack-description{
+	width: 50%;
+	border: 2px solid #000;
+}
 
 .main-container{
 	   color: #3A539B;
@@ -32,19 +35,14 @@ h1 h3{
 	   padding-left: 20px;
 	   margin-bottom: 0;
 	   position: relative;
-	   opacity: 1;
 	   background: url('../images/MoverBox.jpg') center center no-repeat fixed;
-	   background-size: cover; opacity: .7;
-			hr{
-				border: 4px solid grey;
-			}
+	   background-size: cover;
 			i{
 				color: #3A539B;
 			}
 
 }
 .profile-row{
-	opacity: 1;
 	width: 100%;
 	margin: 0, auto;
 	padding-top: 50px;
@@ -93,21 +91,34 @@ h1 h3{
 
 }
 .info-container{
+	margin-top: 20px;
 		width: 100%;
+
 			.truck-info{
 				color: #000;
 				display: inline-block;
 				width: 33.3%;
+				img{
+					opacity: .5;
+
+				}
 			}
 			.lugg-reviews{
 				display: inline-block;
 				vertical-align: top;
 				width: 33.3%;
+				img{
+					opacity: .5;
+
+				}
 			}
 			.pack-reviews{
 				display: inline-block;
 				vertical-align: top;
 				width: 33.3%;
+				img{
+					opacity: .5;
+				}
 			}
 }
 .form-container{

@@ -30,11 +30,9 @@ _createLugg: function(){
    render: function(){
 
 
-      let userLuggs = this.props.newLuggData.map(function(model){
+      let userLuggs = this.props.newLuggData.map(function(){
          return
       })
-
-      //console.log('model', userLuggs);
 
 
       let CharlestonMap = {
