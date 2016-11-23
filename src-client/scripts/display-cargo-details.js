@@ -7,15 +7,22 @@ const CargoDisplay = React.createClass({
         ACTIONS.fetchLuggData()
         console.log(this.props);
      },
+     _acceptLugg: function(){
+        let userid = this.refs.id.dataset.id
+         console.log('id', id);
+
+         ACTIONS.acceptLugg(userid)
+     },
 
    render: function (){
       let id = this.props.id
       console.log('id', id);
       let model = this.props.newLuggData.find(function(model){
+
          return Number(model.get('id')) === Number(id)
       })
-      console.log('model', model);
-      console.log( typeof model === 'object' && model.get('haul_img')  )
+      // console.log('model', model);
+      // console.log( typeof model === 'object' && model.get('haul_img')  )
 
       return(
          <div>
@@ -38,7 +45,7 @@ const CargoDisplay = React.createClass({
                      <p>Job Price: ${typeof model === 'object' && model.get('job_price')}</p>
 
                   <div className="btn-group">
-                        <button type="button" className="btn btn-default">Accept Lugg</button>
+                        <button type="button" onClick = {this._acceptLugg} ref={'userid'} data-id={userid} className="btn btn-default">Accept Lugg</button>
                         <a href="/#lugg-list"><button type="button" className="btn btn-default">Return</button></a>
                   </div>
                   </div>
