@@ -35,7 +35,7 @@ const CargoDisplay = React.createClass({
                      <p>Haul Description: {typeof model === 'object' && model.get('haul_description')}</p>
                      <p>Pickup address: {typeof model === 'object' && model.get('pickup_address')}</p>
                      <p>Drop off address: {typeof model === 'object' && model.get('dropoff_address')}</p>
-                     <p>Job Price: {typeof model === 'object' && model.get('job_price')}</p>
+                     <p>Job Price: ${typeof model === 'object' && model.get('job_price')}</p>
 
                   <div className="btn-group">
                         <button type="button" className="btn btn-default">Accept Lugg</button>
