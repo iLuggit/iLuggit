@@ -10,30 +10,31 @@ import STORE from './STORE.js'
 
 const CreateLugg = React.createClass({
 
-_createLugg: function(){
+   // componentWillMount: function(){
+   //        ACTIONS.fetchLuggData()
+   //        console.log('fetch')
+   //   },
+
+   _createLugg: function(){
       let createNewLugg = {
             pickup_address: [this.refs.start_address.value],
             dropoff_address: [this.refs.end_address.value],
             haul_description: this.refs.cargo_description.value,
             haul_img: this.refs.cargo_img.value,
          }
+
          ACTIONS.createLugg(createNewLugg)
 
       },
 
 
-      componentWillMount: function(){
-         ACTIONS.fetchLuggData()
 
-      },
 
    render: function(){
-
-
-      let userLuggs = this.props.newLuggData.map(function(){
-         return
-      })
-
+      // let userLuggs = this.props.newLuggData.map(function(model){
+      //   console.log('its me', userLuggs)
+      //
+      // })
 
       let CharlestonMap = {
          center: {lat: 32.784618, lng: -79.940918},
@@ -69,16 +70,35 @@ _createLugg: function(){
                      <SimpleMapPage {...CharlestonMap}/>
                   </div>
                </div>
-            <div className="pack-container">
-                  <div className="row">
-                     <div className="col-xs-12 col-sm-3">
-                      <p> Oustanding Packs </p>
-                          {userLuggs}
-                     </div>
-                  </div>
+               <div>
+               <p> Oustanding Packs </p>
+               
                </div>
-         </div>
-      )
-   }
+      </div>
+    );
+  }
 })
-module.exports = CreateLugg
+//    const PackView = React.createClass({
+//
+//         render: function(){
+//            return(
+//                <div className="pack-container">
+//                   <div className="row">
+//                      <div className="col-xs-12 col-md-3">
+//                         <div className = "user-packs">
+//                            <p> Oustanding Packs </p>
+//                            <ul>
+//                            <li>{this.props.model.get('user') && this.props.model.get('user').useruser || ''} : {this.props.model.get('haul_description')}</li>
+//                            </ul>
+//                         </div>
+//                      </div>
+//                   </div>
+//                </div>
+//                )
+//             }
+// })
+
+module.exports = {
+   CreateLugg,
+   // PackView
+}
