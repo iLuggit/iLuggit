@@ -10,30 +10,38 @@ import STORE from './STORE.js'
 
 const CreateLugg = React.createClass({
 
-_createLugg: function(){
+   componentWillMount: function(){
+        ACTIONS.fetchLuggData()
+        console.log('cr-lugg view', this.props);
+     },
+
+   _createLugg: function(){
       let createNewLugg = {
             pickup_address: [this.refs.start_address.value],
             dropoff_address: [this.refs.end_address.value],
             haul_description: this.refs.cargo_description.value,
             haul_img: this.refs.cargo_img.value,
          }
+
          ACTIONS.createLugg(createNewLugg)
 
       },
 
 
-      componentWillMount: function(){
-         ACTIONS.fetchLuggData()
 
-      },
 
    render: function(){
+    console.log('props', this.props);
+    let outstandingPacks = this.props.newLuggData.map(function(model, i){
 
 
-      let userLuggs = this.props.newLuggData.map(function(){
-         return
+         return (
+            <div key={i}>
+               <li >{typeof model === 'object' && model.get('haul_description') }</li>
+               <span>{model.get('user').useruser}</span>
+            </div>
+         )
       })
-
 
       let CharlestonMap = {
          center: {lat: 32.784618, lng: -79.940918},
@@ -69,16 +77,21 @@ _createLugg: function(){
                      <SimpleMapPage {...CharlestonMap}/>
                   </div>
                </div>
-            <div className="pack-container">
-                  <div className="row">
-                     <div className="col-xs-12 col-sm-3">
-                      <p> Oustanding Packs </p>
-                          {userLuggs}
-                     </div>
-                  </div>
+               <div>
+               <p>  Oustanding Packs </p>
+                  <ul>
+                     { outstandingPacks }
+                  </ul>
+
+
+
                </div>
-         </div>
-      )
-   }
+      </div>
+    );
+  }
 })
-module.exports = CreateLugg
+
+module.exports = {
+   CreateLugg,
+   // PackView
+}

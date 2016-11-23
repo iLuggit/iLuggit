@@ -6,12 +6,10 @@ import STORE from './STORE.js'
 import AppController from './lugg-view-controller.js'
 
 const showWhatWeDo = React.createClass({
-
-   render: function(){
-
+   render:function(){
       return(
          <div>
-            <p> on the page</p>
+            <p>on the page</p>
          </div>
       )
    }
