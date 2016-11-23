@@ -10,10 +10,10 @@ import STORE from './STORE.js'
 
 const CreateLugg = React.createClass({
 
-   // componentWillMount: function(){
-   //        ACTIONS.fetchLuggData()
-   //        console.log('fetch')
-   //   },
+   componentWillMount: function(){
+          ACTIONS.fetchLuggData()
+          console.log('fetch')
+     },
 
    _createLugg: function(){
       let createNewLugg = {
@@ -31,10 +31,9 @@ const CreateLugg = React.createClass({
 
 
    render: function(){
-      // let userLuggs = this.props.newLuggData.map(function(model){
-      //   console.log('its me', userLuggs)
-      //
-      // })
+      let userLuggs = this.props.newLuggData.map(function(model){
+        console.log('its me', userLuggs)
+      })
 
       let CharlestonMap = {
          center: {lat: 32.784618, lng: -79.940918},
@@ -72,7 +71,7 @@ const CreateLugg = React.createClass({
                </div>
                <div>
                <p> Oustanding Packs </p>
-               
+                   { userLuggs }
                </div>
       </div>
     );
@@ -86,7 +85,6 @@ const CreateLugg = React.createClass({
 //                   <div className="row">
 //                      <div className="col-xs-12 col-md-3">
 //                         <div className = "user-packs">
-//                            <p> Oustanding Packs </p>
 //                            <ul>
 //                            <li>{this.props.model.get('user') && this.props.model.get('user').useruser || ''} : {this.props.model.get('haul_description')}</li>
 //                            </ul>
@@ -100,5 +98,5 @@ const CreateLugg = React.createClass({
 
 module.exports = {
    CreateLugg,
-   // PackView
+    //PackView
 }

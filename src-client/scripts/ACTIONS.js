@@ -47,7 +47,7 @@ const ACTIONS = {
   },
 
   createLugg: function(newLugg){
-     console.log(newLugg)
+     //console.log(newLugg)
      let createLuggMod = new CreateLuggModel()
      createLuggMod.set(newLugg)
      createLuggMod.save().then(function(){
@@ -63,6 +63,15 @@ const ACTIONS = {
       })
       return luggCollInstance
    },
+
+   _acceptLugg: function(id){
+      let acceptlugg = new CreateLuggModel()
+      acceptlugg.url = `/accept-lugg/${id}`
+
+      accpetlugg.save().then(function(serverRes){
+         window.location.hash = '/create-lugg';
+    })
+  },
 
 }
 
