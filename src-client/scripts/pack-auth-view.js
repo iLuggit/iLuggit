@@ -37,51 +37,51 @@ const PackAuthView = React.createClass({
 
    render: function(){
       return(
-            <div>
-               <div className = "row text-center">
-                  <form className = "col-sm-offset-3 col-sm-6 " id="login-form" onSubmit = {this._submitLogin}>
+            <div className = "row">
+                  <div className="pack-auth-form">
+                     <form className = "col-xs-12 col-sm-6 text-center" id="login-form" onSubmit = {this._submitLogin}>
                            <a href = "#"><i className="fa fa-home fa-2x " aria-hidden="true"></i></a>
                            <h2 className = "">Existing Packer Login </h2>
                         <div className = "form-group">
-                           <label htmlFor = "new-username"></label>
+                           <label htmlFor = "new-username">Username</label>
                            <input type = "text" className="form-control" name = "username" ref = "user_name2" placeholder = "Enter Username" />
                         </div>
                         <div className="form-group">
-                           <label htmlFor = "new-password"></label>
+                           <label htmlFor = "new-password">Password</label>
                            <input type = "password" className="form-control" name = "password" ref = "pass_word2" placeholder="Enter Password"/>
                         </div>
                            <input type = "submit" className="btn btn-default" />
-                  </form>
-               </div>
-               <div className = "row text-center">
-                  <form className = "col-sm-offset-3 col-sm-6 " id="create-form" onSubmit = {this._submitCreate}>
+                     </form>
+                  <div className = "row ">
+                     <form className = "col-xs-12 col-sm-6 text-center" id="create-form" onSubmit = {this._submitCreate}>
                            <h2 className = "">Create New Packer </h2>
                         <div className = "form-group">
-                           <label htmlFor = "firstname"> </label>
+                           <label htmlFor = "firstname">First Name </label>
                            <input type = "text" className="form-control" name = "firstname" ref = "first_name2" placeholder = "Enter First Name" />
                         </div>
                         <div className="form-group">
-                           <label htmlFor = "lastname"></label>
+                           <label htmlFor = "lastname">Last Name</label>
                            <input type = "text" className="form-control" name ="lastname" ref = "last_name2" placeholder="Enter Last Name"/>
                         </div>
                         <div className="form-group">
-                           <label htmlFor = "new-email"></label>
+                           <label htmlFor = "new-email">Email</label>
                            <input type = "text" className="form-control" name = "email" ref = "email2" placeholder="Enter Email"/>
                         </div>
                         <div className="form-group">
-                           <label htmlFor = "new-phone"></label>
+                           <label htmlFor = "new-phone">Phone Number</label>
                            <input type = "text" className="form-control" name = "phone_number" ref = "phone_number2" placeholder="Enter Phone Number"/>
                         </div>
                         <div className="form-group">
-                           <label htmlFor = "new-username"></label>
+                           <label htmlFor = "new-username">Username</label>
                            <input type = "text" className="form-control" name = "new-username" ref = "new_username" placeholder="Enter Username"/>
                         </div>
                         <div className="form-group">
-                           <label htmlFor = "new-password"></label>
+                           <label htmlFor = "new-password">Password</label>
                            <input type = "password" className="form-control" name ="new-password" ref = "new_password" placeholder="Enter Password"/>
                         </div>
                            <input type = "submit" className="btn btn-default" />
-                  </form>
+                     </form>
+                  </div>
                </div>
             </div>
       )

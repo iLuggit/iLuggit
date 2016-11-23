@@ -26,23 +26,21 @@ const CargoDisplay = React.createClass({
                   <h3 className="lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
                </div>
             </div>
-            <div className="container">
+            <div className="container pack-description">
               <div className="row">
-                <div className="col-sm-offset-3 col-sm-6">
+                <div className="col-sm-offset-3 col-sm-6 text-center">
                   <div>
+                     <p>Details Of Pack</p>
+                     <p>Cargo Img: {typeof model === 'object'  &&  model.get('haul_img')}</p>
+                     <p>Haul Description: {typeof model === 'object' && model.get('haul_description')}</p>
+                     <p>Pickup address: {typeof model === 'object' && model.get('pickup_address')}</p>
+                     <p>Drop off address: {typeof model === 'object' && model.get('dropoff_address')}</p>
+                     <p>Job Price: ${typeof model === 'object' && model.get('job_price')}</p>
 
-                     <p>Cargo Img:{typeof model === 'object'  &&  model.get('haul_img')}</p>
-                     <p>Haul Description:{typeof model === 'object' && model.get('haul_description')}</p>
-                     <p>Pickup address:{typeof model === 'object' && model.get('pickup_address')}</p>
-                     <p>Drop off address:{typeof model === 'object' && model.get('dropoff_address')}</p>
-                     <p>Cargo description:{typeof model === 'object' && model.get('haul_description')}</p>
-
-                     <div className="btn-group">
+                  <div className="btn-group">
                         <button type="button" className="btn btn-default">Accept Lugg</button>
                         <a href="/#lugg-list"><button type="button" className="btn btn-default">Return</button></a>
-
-                     </div>
-
+                  </div>
                   </div>
                 </div>
               </div>

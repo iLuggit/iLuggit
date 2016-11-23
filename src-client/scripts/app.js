@@ -9,7 +9,7 @@ import HomeView from './home-page.js'
 import LuggerAccepted from './display-lugger-accepted.js'
 import AppController from './lugg-view-controller.js'
 import CargoDisplay from './display-cargo-details.js'
-import CreateLugg from './create-lugg.js'
+import {CreateLugg, PackView} from './create-lugg.js'
 import {LuggProfile, LuggView} from './lugg-list.js'
 import LuggCreated from './display-created-lugg.js'
 import Sandbox from './sandbox.js'
@@ -18,18 +18,16 @@ import TruckInfo from './truckinfo.js'
 const AppRouter = Backbone.Router.extend({
    routes: {
        "sandbox" : "showSandbox",
-   "lugg-created": "showLuggCreated",
+  "lugg-created" : "showLuggCreated",
     "user-login" : "showPackAuthView",
    "truck-login" : "showLuggAuthView",
       "luggAcpt" : "showLuggAccept",
 "cargo/:cargoId" : "showDisplayCargo",
      "lugg-list" : "showLuggList",
    "create-lugg" : "showCreateLugg",
-       "packPro" : "showPackProfile",
-       "luggPro" : "showLuggProfile",
-       "truck-info": "showTruckInfo",
-       "whatwedo": "showWhatWeDo",
-       "reviews": "showReviews",
+    "truck-info" : "showTruckInfo",
+      "whatwedo" : "showWhatWeDo",
+       "reviews" : "showReviews",
               "" : "showHomeView"
    },
    showCreateLugg: function(){
