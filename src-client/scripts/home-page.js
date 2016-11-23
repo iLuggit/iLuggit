@@ -32,7 +32,6 @@ const HomeView = React.createClass({
               </div>
             </div>
          </div>
-      {<hr/>}
       <div className="container-fluid info-container">
          <div className="row">
             <div className="col-xs-12 col-md-4 text-center">

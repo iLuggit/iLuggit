@@ -8,6 +8,7 @@ import AppController from './lugg-view-controller.js'
 const showWhatWeDo = React.createClass({
 
    render: function(){
+
       return(
          <div>
             <p> on the page</p>
