@@ -18,12 +18,8 @@ import Reviews from './reviews.js'
 
 let AppController = React.createClass({
    getInitialState: function(){
-        let data = ACTIONS.fetchLuggData()
-           STORE.setStore('newLuggData', data)
-            let initialState = STORE.getLuggData()
-            // console.log("init state", initialState)
-         return initialState
 
+         return STORE.getLuggData()
      },
 
      componentWillMount: function(){
@@ -31,7 +27,6 @@ let AppController = React.createClass({
          ACTIONS.fetchLuggData()
 
          STORE.onChange(function(){
-            // console.log('view willMount');
 
              let newState = STORE.getLuggData()
              self.setState(newState)

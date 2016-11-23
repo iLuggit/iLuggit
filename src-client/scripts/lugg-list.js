@@ -62,7 +62,7 @@ const LuggProfile = React.createClass({
              <div className="col-xs-12">
                <div className = "lugg-data">
                   <ul>
-                     <li><a href={`#cargo/${this.props.model.get('id')}`}>{this.props.model.get('user') && this.props.model.get('user').useruser || ''} : {this.props.model.get('haul_description')}</a></li>
+                     <li><a href={`#cargo/${this.props.model.get('id')}`}>{this.props.model.get('user').useruser} : {this.props.model.get('haul_description')}</a></li>
                   </ul>
                </div>
             </div>

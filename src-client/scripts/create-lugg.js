@@ -11,8 +11,9 @@ import STORE from './STORE.js'
 const CreateLugg = React.createClass({
 
    componentWillMount: function(){
-          ACTIONS.fetchLuggData()
-          console.log('fetch')
+        ACTIONS.fetchLuggData()
+        console.log('cr-lugg view', this.props);
+
      },
 
    _createLugg: function(){
@@ -31,8 +32,16 @@ const CreateLugg = React.createClass({
 
 
    render: function(){
-      let userLuggs = this.props.newLuggData.map(function(model){
-        console.log('its me', userLuggs)
+    console.log('props', this.props);
+    let outstandingPacks = this.props.newLuggData.map(function(model, i){
+
+
+         return (
+            <div key={i}>
+               <li >{typeof model === 'object' && model.get('haul_description') }</li>
+               <span>{model.get('user').useruser}</span>
+            </div>
+         )
       })
 
       let CharlestonMap = {
@@ -70,33 +79,19 @@ const CreateLugg = React.createClass({
                   </div>
                </div>
                <div>
-               <p> Oustanding Packs </p>
-                   { userLuggs }
+               <p>  Oustanding Packs </p>
+                  <ul>
+                     { outstandingPacks }
+                  </ul>
+
+
+
                </div>
       </div>
     );
   }
 })
-//    const PackView = React.createClass({
-//
-//         render: function(){
-//            return(
-//                <div className="pack-container">
-//                   <div className="row">
-//                      <div className="col-xs-12 col-md-3">
-//                         <div className = "user-packs">
-//                            <ul>
-//                            <li>{this.props.model.get('user') && this.props.model.get('user').useruser || ''} : {this.props.model.get('haul_description')}</li>
-//                            </ul>
-//                         </div>
-//                      </div>
-//                   </div>
-//                </div>
-//                )
-//             }
-// })
 
 module.exports = {
    CreateLugg,
-    //PackView
 }
