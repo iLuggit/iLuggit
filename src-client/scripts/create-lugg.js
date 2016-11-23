@@ -13,6 +13,7 @@ const CreateLugg = React.createClass({
    componentWillMount: function(){
         ACTIONS.fetchLuggData()
         console.log('cr-lugg view', this.props);
+
      },
 
    _createLugg: function(){
@@ -93,5 +94,4 @@ const CreateLugg = React.createClass({
 
 module.exports = {
    CreateLugg,
-   // PackView
 }
