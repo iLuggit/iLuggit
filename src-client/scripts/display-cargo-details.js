@@ -7,9 +7,9 @@ const CargoDisplay = React.createClass({
         ACTIONS.fetchLuggData()
         console.log(this.props);
      },
+     
      _acceptLugg: function(){
-        let userid = this.refs.id.dataset.id
-         console.log('id', id);
+        let userid = this.refs.id
 
          ACTIONS.acceptLugg(userid)
      },
@@ -45,7 +45,7 @@ const CargoDisplay = React.createClass({
                      <p>Job Price: ${typeof model === 'object' && model.get('job_price')}</p>
 
                   <div className="btn-group">
-                        <button type="button" onClick = {this._acceptLugg} ref={'userid'} data-id={userid} className="btn btn-default">Accept Lugg</button>
+                        <button type="button" onClick = {this._acceptLugg} ref={'userid'} className="btn btn-default">Accept Lugg</button>
                         <a href="/#lugg-list"><button type="button" className="btn btn-default">Return</button></a>
                   </div>
                   </div>
