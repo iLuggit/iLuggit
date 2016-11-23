@@ -69,7 +69,7 @@ public class iLuggitController {
             reviews.save(review);
             Review review1 = new Review("I CANT BELIEVE IT WAS SO EASY TO GET A TRUCK.", user1);
             reviews.save(review1);
-            Review review2 = new Review("Good Work.", user2);
+            Review review2 = new Review("Yea, Good Work.", user2);
             reviews.save(review2);
             Review review3 = new Review("When my Prius got flooded in Hurricane Matthew I had to use iLuggit to take my massive puppies, Max and Sammy, to the park", user3);
             reviews.save(review3);
@@ -147,7 +147,8 @@ public class iLuggitController {
         }
         session.setAttribute("first_name", user.getFirst_name());
         session.setAttribute("useruser", user.getUseruser());
-        session.setAttribute("id", user.getId());
+        session.setAttribute("id", userFromDb.getId());
+        System.out.println(session.getAttribute("id"));
         return new ResponseEntity<User>(user, HttpStatus.OK);
     }
     @RequestMapping(path = "/create-user", method = RequestMethod.POST)
@@ -172,7 +173,7 @@ public class iLuggitController {
         }
         session.setAttribute("first_name", truck.getFirst_name());
         session.setAttribute("usertruck", truck.getUsertruck());
-        session.setAttribute("id", truck.getId());
+        session.setAttribute("id", truckFromDb.getId());
         return new ResponseEntity<Truck>(truck, HttpStatus.OK);
     }
     @RequestMapping(path = "/create-truck", method = RequestMethod.POST)
