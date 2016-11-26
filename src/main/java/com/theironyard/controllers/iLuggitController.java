@@ -149,7 +149,6 @@ public class iLuggitController {
         session.setAttribute("first_name", user.getFirst_name());
         session.setAttribute("useruser", user.getUseruser());
         session.setAttribute("id", userFromDb.getId());
-        System.out.println(session.getAttribute("id"));
         return new ResponseEntity<User>(user, HttpStatus.OK);
     }
     @RequestMapping(path = "/create-user", method = RequestMethod.POST)
