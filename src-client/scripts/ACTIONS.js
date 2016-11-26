@@ -47,7 +47,7 @@ const ACTIONS = {
   },
 
   createLugg: function(newLugg){
-     //console.log(newLugg)
+     console.log(newLugg)
      let createLuggMod = new CreateLuggModel()
      createLuggMod.set(newLugg)
      createLuggMod.save().then(function(){
@@ -68,11 +68,13 @@ const ACTIONS = {
       let acceptlugg = new CreateLuggModel()
       acceptlugg.url = `/accept-lugg/${id}`
 
-      accpetlugg.save().then(function(serverRes){
+      acceptlugg.save().then(function(serverRes){
          window.location.hash = '/create-lugg';
     })
   },
-
+  _logOut: function(){
+         window.location.hash = '/logout'
+   }
 }
 
 
