@@ -49,7 +49,22 @@ const CreateLugg = React.createClass({
          zoom: 13,
       }
       return(
-      <div className = "lugg-container">
+         <div className = "lugg-container">
+            <div className="container-fluid text-center main-container ">
+                  <div className="container ">
+                     <h1>iLuggit</h1>
+                     <h3 className="lead">Tell us what you need moved, we'll find a Lugger!</h3>
+                  </div>
+            </div>
+
+            <div>
+               <h3>  Oustanding Packs </h3>
+                  <ul>
+                     { outstandingPacks }
+                  </ul>
+            </div>
+
+
             <div className ="row form-container">
                <form className = "col-xs-12 col-md-6" id="create-lugg-form" onSubmit = {this._createLugg}>
                        <a href = "#"><i className = "fa fa-home fa-2x" aria-hidden = "true"></i></a>
@@ -78,15 +93,7 @@ const CreateLugg = React.createClass({
                      <SimpleMapPage {...CharlestonMap}/>
                   </div>
                </div>
-               <div>
-               <p>  Oustanding Packs </p>
-                  <ul>
-                     { outstandingPacks }
-                  </ul>
 
-
-
-               </div>
       </div>
     );
   }

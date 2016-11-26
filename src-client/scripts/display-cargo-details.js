@@ -1,6 +1,7 @@
 import Backbone from 'backbone'
 import React from 'react'
 import ACTIONS from './ACTIONS.js'
+import LuggAuthView from './lugg-auth-view.js'
 
 const CargoDisplay = React.createClass({
    componentWillMount: function(){
@@ -15,6 +16,7 @@ const CargoDisplay = React.createClass({
      },
 
    render: function (){
+      console.log('username', existingUserData);
       let id = this.props.id
       console.log('id', id);
       let model = this.props.newLuggData.find(function(model){
@@ -45,7 +47,7 @@ const CargoDisplay = React.createClass({
                      <p>Job Price: ${typeof model === 'object' && model.get('job_price')}</p>
 
                   <div className="btn-group">
-                        <button type="button" onClick = {this._acceptLugg} ref={'userid'} data-id={userid} className="btn btn-default">Accept Lugg</button>
+                        <button type="button" onClick = {this._acceptLugg} ref={'userid'} data-id={id} className="btn btn-default">Accept Lugg</button>
                         <a href="/#lugg-list"><button type="button" className="btn btn-default">Return</button></a>
                   </div>
                   </div>

@@ -5,7 +5,8 @@ import $ from 'jquery'
 
 const STORE = {
       luggData: {
-         newLuggData: []
+         newLuggData: [],
+         existingUserData: []
    },
 
    setStore: function(luggProp, maindata){
@@ -25,7 +26,8 @@ const STORE = {
     onChange: function(someFunc){
       Backbone.Events.on('shopChange', someFunc)
 
-   
    }
 }
+
+
 module.exports = STORE
