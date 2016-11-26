@@ -17,7 +17,6 @@ import TruckInfo from './truckinfo.js'
 
 const AppRouter = Backbone.Router.extend({
    routes: {
-
        "sandbox" : "showSandbox",
   "lugg-created" : "showLuggCreated",
     "user-login" : "showPackAuthView",

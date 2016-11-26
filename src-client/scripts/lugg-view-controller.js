@@ -9,7 +9,7 @@ import {LuggProfile, LuggView} from './lugg-list.js'
 import PackAuthView from './pack-auth-view.js'
 import LuggAuthView from './lugg-auth-view.js'
 import HomeView from './home-page.js'
-import {CreateLugg, PackView} from './create-lugg.js'
+import CreateLugg from './create-lugg.js'
 import LuggCreated from './display-created-lugg.js'
 import Sandbox from './sandbox.js'
 import TruckInfo from './truckinfo.js'
@@ -38,7 +38,7 @@ let AppController = React.createClass({
 
       switch(this.props.routedFrom){
          case "LuggAccept":
-            return <LuggerAccepted />
+            return <LuggAccept />
             break;
 
          case "CargoDisplay":
@@ -46,7 +46,7 @@ let AppController = React.createClass({
             break;
 
          case "LuggProfile":
-            return <LuggProfile newLuggData= {this.state.newLuggData} />
+            return <LuggProfile newLuggData= {this.state.newLuggData}/>
             break;
 
          case "HomeView":

@@ -1,14 +1,12 @@
 import React from 'react'
 import Backbone from 'backbone'
 import $ from 'jquery'
-
 import ACTIONS from './ACTIONS.js'
 
 const PackAuthView = React.createClass({
    _submitLogin: function(evt){
       console.log('evt', evt);
          evt.preventDefault()
-
 
          let newLogin = {
             useruser: this.refs.user_name2.value,
@@ -44,7 +42,7 @@ const PackAuthView = React.createClass({
                            <h2 className = "">Existing Packer Login </h2>
                         <div className = "form-group">
                            <label htmlFor = "new-username">Username</label>
-                           <input type = "text" className="form-control" name = "username" ref = "user_name2" placeholder = "Enter Username" />
+                           <input type = "text" className="form-control" name = "useruser" ref = "user_name2" placeholder = "Enter Username" />
                         </div>
                         <div className="form-group">
                            <label htmlFor = "new-password">Password</label>
