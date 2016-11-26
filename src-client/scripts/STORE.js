@@ -5,7 +5,8 @@ import $ from 'jquery'
 
 const STORE = {
       luggData: {
-         newLuggData: []
+         newLuggData: [],
+         existingUserData: []
    },
 
    setStore: function(luggProp, maindata){
@@ -28,4 +29,6 @@ const STORE = {
 
    }
 }
+
+
 module.exports = STORE

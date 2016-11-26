@@ -35,6 +35,7 @@ let AppController = React.createClass({
       },
 
    render: function(){
+      console.log("stateeee", this.state);
 
       switch(this.props.routedFrom){
          case "LuggAccept":
@@ -54,7 +55,7 @@ let AppController = React.createClass({
             break;
 
          case "LuggAuthView":
-            return <LuggAuthView />
+            return <LuggAuthView existingUserData = {this.state.existingUserData}/>
             break;
 
          case "PackAuthView":

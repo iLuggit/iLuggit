@@ -49,7 +49,22 @@ const CreateLugg = React.createClass({
          zoom: 13,
       }
       return(
-      <div className = "lugg-container">
+         <div className = "lugg-container">
+            <div className="container-fluid text-center packer-container ">
+                  <div className="container ">
+                     <h1>iLuggit</h1>
+                     <h3 className="lead">Tell us what you need moved, we'll find a Lugger!</h3>
+                  </div>
+            </div>
+
+            <div>
+               <h3>  Oustanding Packs </h3>
+                  <ul>
+                     { outstandingPacks }
+                  </ul>
+            </div>
+
+
             <div className ="row form-container">
                <form className = "col-xs-12 col-md-6 " id="create-lugg-form" onSubmit = {this._createLugg}>
                        <button type="button" onClick = {this._logout} className="btn btn-default">Logout</button>
@@ -79,19 +94,9 @@ const CreateLugg = React.createClass({
                   </div>
                </div>
             </div>
-               <div>
-                  <p>  Oustanding Packs </p>
-               </div>
-               <div className = "container">
-                  <div className = "row">
-                     <div className="col-xs-12 col-md-4">
-                        { outstandingPacks }
-                     </div>
-                  </div>
-               </div>
-      </div>
+         </div>
     );
-  }
+   }
 })
 
 module.exports = CreateLugg
