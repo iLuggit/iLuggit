@@ -32,7 +32,7 @@ const LuggProfile = React.createClass({
       }
       return(
          <div>
-            <div className = "main-container">
+            <div className = "lugger-container">
                      <div className="container text-center">
                      <button type="button" onClick = {this._logOut} className="btn btn-default">Logout</button>
                         <a href = "#"><i className = "fa fa-home fa-2x" aria-hidden = "true"></i></a>

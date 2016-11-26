@@ -50,7 +50,7 @@ const CreateLugg = React.createClass({
       }
       return(
          <div className = "lugg-container">
-            <div className="container-fluid text-center main-container ">
+            <div className="container-fluid text-center packer-container ">
                   <div className="container ">
                      <h1>iLuggit</h1>
                      <h3 className="lead">Tell us what you need moved, we'll find a Lugger!</h3>
@@ -94,8 +94,8 @@ const CreateLugg = React.createClass({
                      <SimpleMapPage {...CharlestonMap}/>
                   </div>
                </div>
-               </div>
             </div>
+         </div>
     );
    }
 })
