@@ -39,7 +39,7 @@ let AppController = React.createClass({
 
       switch(this.props.routedFrom){
          case "LuggAccept":
-            return <LuggerAccepted />
+            return <LuggAccept />
             break;
 
          case "CargoDisplay":
@@ -47,7 +47,7 @@ let AppController = React.createClass({
             break;
 
          case "LuggProfile":
-            return <LuggProfile newLuggData= {this.state.newLuggData} />
+            return <LuggProfile newLuggData= {this.state.newLuggData}/>
             break;
 
          case "HomeView":

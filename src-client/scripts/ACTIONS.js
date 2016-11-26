@@ -10,9 +10,6 @@ const ACTIONS = {
       let loginMod = new LoginModel()
       loginMod.set(newLogin)
       loginMod.save().then(function(serverRes){
-
-
-
       console.log('are we changing the route?', window.location);
          window.location.hash = '/create-lugg';
     })
@@ -67,13 +64,17 @@ const ACTIONS = {
    _acceptLugg: function(id){
       let acceptlugg = new CreateLuggModel()
       acceptlugg.url = `/accept-lugg/${id}`
-
       acceptlugg.save().then(function(serverRes){
          window.location.hash = '/create-lugg';
     })
   },
   _logOut: function(){
-         window.location.hash = '/logout'
+     $.ajax({
+        method: 'POST',
+        url: '/logout'
+     }).then(function(){
+        window.location.hash = ''
+     })
    }
 }
 

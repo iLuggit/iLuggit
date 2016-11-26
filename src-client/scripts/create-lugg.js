@@ -66,10 +66,10 @@ const CreateLugg = React.createClass({
 
 
             <div className ="row form-container">
-               <form className = "col-xs-12 col-md-6" id="create-lugg-form" onSubmit = {this._createLugg}>
+               <form className = "col-xs-12 col-md-6 " id="create-lugg-form" onSubmit = {this._createLugg}>
                        <button type="button" onClick = {this._logout} className="btn btn-default">Logout</button>
                        <a href = "#"><i className = "fa fa-home fa-2x" aria-hidden = "true"></i></a>
-                       <h2 className = "">Create a New Lugg </h2>
+                       <h2 className = "">Welcome back ${model.get('user').useruser}Create a New Lugg </h2>
                   <div className = "col-xs-12 form-group">
                        <label htmlFor = "startAddress"> </label>
                        <input type = "text" className="form-control" id = "s_address" ref = "start_address" placeholder = "Enter Starting Address" />
@@ -88,8 +88,7 @@ const CreateLugg = React.createClass({
                     </div>
                     <input type = "submit" className="btn btn-default" />
                </form>
-
-               <div className="col-xs-12 col-md-6 map-container">
+               <div className="map-container">
                   <div id= "map2">
                      <SimpleMapPage {...CharlestonMap}/>
                   </div>
