@@ -3,6 +3,7 @@ package com.theironyard.controllers;
 import com.google.maps.*;
 import com.google.maps.model.Distance;
 import com.google.maps.model.DistanceMatrix;
+import com.google.maps.model.GeocodingResult;
 import com.theironyard.entities.Job;
 import com.theironyard.entities.Review;
 import com.theironyard.entities.Truck;
@@ -197,13 +198,16 @@ public class iLuggitController {
         return reviews.findAll();
     }
 
-    @RequestMapping(path = "/test", method = RequestMethod.POST)
-    public String testRoute(){
+    @RequestMapping(path = "/test", method = RequestMethod.GET)
+    public String testRoute() throws Exception {
         GeoApiContext apiContext = new GeoApiContext();
         apiContext.setApiKey("AIzaSyB8QAVhBnoK5pQC-1hPqRCSvpiyLzmBNyo");
         String pickUpJob = "2312 Portside Way, Charleston, SC";
-        GeocodingApiRequest latlng = new GeocodingApiRequest(apiContext).address(pickUpJob);
-        System.out.println(latlng);
+        GeocodingResult[] latlng = GeocodingApi.newRequest(apiContext).address(pickUpJob).await();
+        Double latitude = latlng[0].geometry.location.lat;
+        Double longitude = latlng[0].geometry.location.lng;
+        System.out.println(latitude);
+        System.out.println(longitude);
         return "Test Ran";
     }
 }
