@@ -66,6 +66,52 @@ h1 h3{
  }
 
 
+.packer-container{
+	width: 100%;
+	margin: 0;
+	height: 400px;
+	padding-top: 50px;
+	padding-left: 20px;
+	margin-bottom: 0;
+	position: relative;
+	background: url('../images/moving-boxes.jpg') center center no-repeat fixed;
+	background-size: cover;
+		i{
+			color: #3A539B;
+		}
+		h1{
+			font-size: 30px;
+			text-shadow: 1px 1px #000;
+		}
+		h3{
+			text-shadow: 1px 1px #000;
+		}
+}
+
+.lugger-container{
+	width: 100%;
+	color: #fff;
+	margin: 0;
+	height: 400px;
+	padding-top: 50px;
+	padding-left: 20px;
+	margin-bottom: 0;
+	position: relative;
+	background: url('../images/truck-canoe.jpg') center center no-repeat fixed;
+	background-size: cover;
+		i{
+			color: #3A539B;
+		}
+		h1{
+			font-size: 30px;
+			text-shadow: 1px 1px #000;
+		}
+		h3{
+			text-shadow: 1px 1px #000;
+		}
+}
+
+
 .main-container{
 	   color: #3A539B;
 		width: 100%;
@@ -119,8 +165,6 @@ h1 h3{
 
 #map2{
 
-	position: absolute;
-	top: 10%;
 	right: 5%;
 	width: 40%;
 	height: 45%;
