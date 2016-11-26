@@ -26,6 +26,7 @@ const STORE = {
     onChange: function(someFunc){
       Backbone.Events.on('shopChange', someFunc)
 
+
    }
 }
 

@@ -2,15 +2,22 @@ import Backbone from 'backbone'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import $ from 'jquery'
-
+import ACTIONS from './ACTIONS.js'
 
 const HomeView = React.createClass({
 
+   _logOut: function(){
+      ACTIONS._logOut()
+   },
+
    render: function() {
+
+
 
     return (
       <div className="home-container">
          <div className="container-fluid text-center main-container ">
+         <button type="button" onClick = {this._logOut} className="btn btn-default">Logout</button>
                   <div className="container ">
                      <h1>iLuggit</h1>
                      <h3 className="lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
@@ -32,7 +39,6 @@ const HomeView = React.createClass({
               </div>
             </div>
          </div>
-
       <div className="container-fluid info-container">
          <div className="row">
             <div className="col-xs-12 col-md-4 text-center">
