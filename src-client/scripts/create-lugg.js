@@ -94,7 +94,7 @@ const CreateLugg = React.createClass({
                      <SimpleMapPage {...CharlestonMap}/>
                   </div>
                </div>
-
+               </div>
             </div>
     );
    }
