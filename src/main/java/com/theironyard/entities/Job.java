@@ -31,6 +31,10 @@ public class Job {
         public Truck truck;
         @Column
         public boolean truck_accept;
+        @Column
+        public double latitude;
+        @Column
+        public double longitude;
 
         public Job() {
         }
@@ -90,6 +94,21 @@ public class Job {
                 this.user = user;
                 this.truck = truck;
                 this.truck_accept = truck_accept;
+        }
+
+        public Job(int id, String[] pickup_address, String[] dropoff_address, String haul_description, String haul_img, Double job_price, User user, boolean user_accept, Truck truck, boolean truck_accept, double latitude, double longitude) {
+                this.id = id;
+                this.pickup_address = pickup_address;
+                this.dropoff_address = dropoff_address;
+                this.haul_description = haul_description;
+                this.haul_img = haul_img;
+                this.job_price = job_price;
+                this.user = user;
+                this.user_accept = user_accept;
+                this.truck = truck;
+                this.truck_accept = truck_accept;
+                this.latitude = latitude;
+                this.longitude = longitude;
         }
 
         public int getId() {
