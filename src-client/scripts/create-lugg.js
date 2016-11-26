@@ -10,10 +10,11 @@ import STORE from './STORE.js'
 
 const CreateLugg = React.createClass({
 
-   // componentWillMount: function(){
-   //        ACTIONS.fetchLuggData()
-   //        console.log('fetch')
-   //   },
+   componentWillMount: function(){
+        ACTIONS.fetchLuggData()
+        console.log('cr-lugg view', this.props);
+
+     },
 
    _createLugg: function(){
       let createNewLugg = {
@@ -31,10 +32,17 @@ const CreateLugg = React.createClass({
 
 
    render: function(){
-      // let userLuggs = this.props.newLuggData.map(function(model){
-      //   console.log('its me', userLuggs)
-      //
-      // })
+    console.log('props', this.props);
+    let outstandingPacks = this.props.newLuggData.map(function(model, i){
+
+
+         return (
+            <div key={i}>
+               <li >{typeof model === 'object' && model.get('haul_description') }</li>
+               <span>{model.get('user').useruser}</span>
+            </div>
+         )
+      })
 
       let CharlestonMap = {
          center: {lat: 32.784618, lng: -79.940918},
@@ -44,6 +52,7 @@ const CreateLugg = React.createClass({
       <div className = "lugg-container">
             <div className ="row form-container">
                <form className = "col-xs-12 col-md-6" id="create-lugg-form" onSubmit = {this._createLugg}>
+                       <button type="button" onClick = {this._logout} className="btn btn-default">Logout</button>
                        <a href = "#"><i className = "fa fa-home fa-2x" aria-hidden = "true"></i></a>
                        <h2 className = "">Create a New Lugg </h2>
                   <div className = "col-xs-12 form-group">
@@ -64,41 +73,28 @@ const CreateLugg = React.createClass({
                     </div>
                     <input type = "submit" className="btn btn-default" />
                </form>
-            </div>
-               <div className="map-container">
+
+               <div className="col-xs-12 col-md-6 map-container">
                   <div id= "map2">
                      <SimpleMapPage {...CharlestonMap}/>
                   </div>
                </div>
+            </div>
                <div>
-               <p> Oustanding Packs </p>
-               
+                  <p>  Oustanding Packs </p>
+               </div>
+               <div className = "container">
+                  <div className = "row">
+                     <div className="col-xs-12 col-md-4">
+                        { outstandingPacks }
+                     </div>
+                  </div>
                </div>
       </div>
     );
   }
 })
-//    const PackView = React.createClass({
-//
-//         render: function(){
-//            return(
-//                <div className="pack-container">
-//                   <div className="row">
-//                      <div className="col-xs-12 col-md-3">
-//                         <div className = "user-packs">
-//                            <p> Oustanding Packs </p>
-//                            <ul>
-//                            <li>{this.props.model.get('user') && this.props.model.get('user').useruser || ''} : {this.props.model.get('haul_description')}</li>
-//                            </ul>
-//                         </div>
-//                      </div>
-//                   </div>
-//                </div>
-//                )
-//             }
-// })
 
 module.exports = {
    CreateLugg,
-   // PackView
 }

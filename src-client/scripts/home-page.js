@@ -2,15 +2,22 @@ import Backbone from 'backbone'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import $ from 'jquery'
-
+import ACTIONS from './ACTIONS.js'
 
 const HomeView = React.createClass({
 
+   _logOut: function(){
+      ACTIONS._logOut()
+   },
+
    render: function() {
+
+
 
     return (
       <div className="home-container">
          <div className="container-fluid text-center main-container ">
+         <button type="button" onClick = {this._logOut} className="btn btn-default">Logout</button>
                   <div className="container ">
                      <h1>iLuggit</h1>
                      <h3 className="lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
@@ -32,7 +39,6 @@ const HomeView = React.createClass({
               </div>
             </div>
          </div>
-   
       <div className="container-fluid info-container">
          <div className="row">
             <div className="col-xs-12 col-md-4 text-center">
@@ -61,15 +67,13 @@ const HomeView = React.createClass({
    <div className="footer-container text-center">
       <div className="columns-container updates-section">
          <div className="todays-quote">
-            <h6>Quote of the Day</h6></div>
-         <div className="columns-container">
+            <h6>Quote of the Day</h6>
             <strong>We are all here to help others, what the others are here for I don't know! W.H.Auden</strong>
          </div>
       </div>
       <div className="news">
-         <h6>News</h6>
-         <p className="description">Featured Luggers<span className="extra-caret">»</span></p>
-         <h5>Trust Worthy Packers <span className="extra-caret">»</span></h5>
+         <p className="description">Featured Luggers<span className="extra-caret"> »</span></p>
+         <h5>Trust Worthy Packers <span className="extra-caret"> »</span></h5>
       </div>
    </div>
 </div>

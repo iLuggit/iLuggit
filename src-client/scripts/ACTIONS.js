@@ -64,6 +64,17 @@ const ACTIONS = {
       return luggCollInstance
    },
 
+   _acceptLugg: function(id){
+      let acceptlugg = new CreateLuggModel()
+      acceptlugg.url = `/accept-lugg/${id}`
+
+      acceptlugg.save().then(function(serverRes){
+         window.location.hash = '/create-lugg';
+    })
+  },
+  _logOut: function(){
+         window.location.hash = '/logout'
+   }
 }
 
 

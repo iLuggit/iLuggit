@@ -15,6 +15,9 @@ const LuggProfile = React.createClass({
          ACTIONS.fetchLuggData()
      },
 
+   _logOut: function(){
+      ACTIONS._logOut()
+   },
 
 
    render: function(){
@@ -31,6 +34,7 @@ const LuggProfile = React.createClass({
          <div>
             <div className = "main-container">
                      <div className="container text-center">
+                     <button type="button" onClick = {this._logOut} className="btn btn-default">Logout</button>
                         <a href = "#"><i className = "fa fa-home fa-2x" aria-hidden = "true"></i></a>
                         <h1 className="display-3">iLuggit</h1>
                         <h3 className="lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
@@ -38,7 +42,7 @@ const LuggProfile = React.createClass({
             </div>
               <div className = "row map-lugg-container">
                   <div className = "col-xs-12 col-md-6 lugg-list-container">
-                     <div className ="luggInfo">
+                     <div className ="lugg-data text-center ">
                         <p>LUGG ITEM</p>
                         { luggs }
                     </div>
@@ -60,9 +64,9 @@ const LuggProfile = React.createClass({
      render: function(){
         return(
              <div className="col-xs-12">
-               <div className = "lugg-data">
+               <div className = "lugg-data ">
                   <ul>
-                     <li><a href={`#cargo/${this.props.model.get('id')}`}>{this.props.model.get('user') && this.props.model.get('user').useruser || ''} : {this.props.model.get('haul_description')}</a></li>
+                     <li><a href={`#cargo/${this.props.model.get('id')}`}>{this.props.model.get('user').useruser} : {this.props.model.get('haul_description')}</a></li>
                   </ul>
                </div>
             </div>

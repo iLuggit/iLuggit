@@ -7,15 +7,23 @@ const CargoDisplay = React.createClass({
         ACTIONS.fetchLuggData()
         console.log(this.props);
      },
+     _acceptLugg: function(){
+
+      let userid = this.refs.userid.dataset.id
+      console.log('id', userid);
+
+         ACTIONS._acceptLugg(userid)
+     },
 
    render: function (){
       let id = this.props.id
       console.log('id', id);
       let model = this.props.newLuggData.find(function(model){
+
          return Number(model.get('id')) === Number(id)
       })
-      console.log('model', model);
-      console.log( typeof model === 'object' && model.get('haul_img')  )
+      // console.log('model', model);
+      // console.log( typeof model === 'object' && model.get('haul_img')  )
 
       return(
          <div>
@@ -26,9 +34,9 @@ const CargoDisplay = React.createClass({
                   <h3 className="lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
                </div>
             </div>
-            <div className="container pack-description">
+            <div className="container">
               <div className="row">
-                <div className="col-sm-offset-3 col-sm-6 text-center">
+                <div className="col-sm-offset-3 col-sm-6 text-center pack-description">
                   <div>
                      <p>Details Of Pack</p>
                      <p>Cargo Img: {typeof model === 'object'  &&  model.get('haul_img')}</p>
@@ -38,7 +46,7 @@ const CargoDisplay = React.createClass({
                      <p>Job Price: ${typeof model === 'object' && model.get('job_price')}</p>
 
                   <div className="btn-group">
-                        <button type="button" className="btn btn-default">Accept Lugg</button>
+                        <button type="button" onClick = {this._acceptLugg} ref={'userid'} data-id = {typeof model === 'object' && model.get('id')} className="btn btn-default">Accept Lugg</button>
                         <a href="/#lugg-list"><button type="button" className="btn btn-default">Return</button></a>
                   </div>
                   </div>
