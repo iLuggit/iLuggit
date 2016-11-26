@@ -9,7 +9,7 @@ const showWhatWeDo = React.createClass({
    render:function(){
       return(
          <div>
-            <p>on the page</p>
+            <p>thank for the fireball</p>
          </div>
       )
    }
