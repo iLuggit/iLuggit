@@ -98,7 +98,7 @@ public class iLuggitController {
         String user = (String) session.getAttribute("useruser");
         return jobs.findByUser(users.findFirstByUseruser(user));
     }
-    @RequestMapping(path = "/accept-lugg", method = RequestMethod.POST)
+    @RequestMapping(path = "/accept-lugg/{id}", method = RequestMethod.POST)
     public String acceptJob(HttpSession session, int id) {
         Job job1 = jobs.findFirstById(id);
         int truckId = (int) session.getAttribute("id");
