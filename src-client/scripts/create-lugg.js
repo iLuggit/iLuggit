@@ -37,10 +37,10 @@ const CreateLugg = React.createClass({
 
                      <div key={i}>
                         {model.get('user').useruser}<br/>
-                        {typeof model === 'object' && model.get('haul_description') }
+                        {typeof model === 'object' && model.get('haul_description')}
                      </div>
-         )
-      })
+               )
+         })
 
       let CharlestonMap = {
          center: {lat: 32.784618, lng: -79.940918},
@@ -56,16 +56,16 @@ const CreateLugg = React.createClass({
             </div>
 
             <div>
-               <h3>  Oustanding Packs </h3>
+               <h3>Oustanding Packs </h3>
                   <ul>
                      { outstandingPacks }
                   </ul>
             </div>
 
-
-            <div className ="row form-container">
-               <form className = "col-xs-12 col-md-6 " id="create-lugg-form" onSubmit = {this._createLugg}>
-                       <a href = "#"><i className = "fa fa-home fa-2x" aria-hidden = "true"></i></a>
+            <div className ="form-container">
+               <div className ="row ">
+                  <form className = "col-xs-12 col-md-6 " id="create-lugg-form" onSubmit = {this._createLugg}>
+                        <a href = "#"><i className = "fa fa-home fa-2x" aria-hidden = "true"></i></a>
                        <h2 className = "">Welcome back  Create a New Lugg </h2>
                   <div className = "col-xs-12 form-group">
                        <label htmlFor = "startAddress"> </label>
@@ -85,11 +85,12 @@ const CreateLugg = React.createClass({
                     </div>
                     <input type = "submit" className="btn btn-default" />
                </form>
-               <div className="map-container">
+               <div className="map-container2">
                   <div id= "map2">
                      <SimpleMapPage {...CharlestonMap}/>
                   </div>
                </div>
+              </div>
             </div>
          </div>
     );

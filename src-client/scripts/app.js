@@ -15,6 +15,7 @@ import showReviews from './reviews.js'
 import LuggCreated from './display-created-lugg.js'
 import Sandbox from './sandbox.js'
 import TruckInfo from './truckinfo.js'
+import showWhatWeDo from './whatwedo.js'
 
 const AppRouter = Backbone.Router.extend({
    routes: {
