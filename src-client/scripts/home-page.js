@@ -17,12 +17,9 @@ const HomeView = React.createClass({
     return (
       <div className="home-container">
          <div className="container-fluid text-center main-container ">
-                        <button type="button" onClick = {this._logOut} className="btn btn-default">Logout</button>
                   <div className="container ">
-                        <h1>iLuggit</h1>
+                        <img className="logo" src= "./images/logo1.png" alt="" />
                         <h3 className="lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
-                     <img className="logo" src= "./images/logo.png" alt="" />
-                     <h3 className="lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
                   </div>
             <div className="row">
                <div className ="profile-row">

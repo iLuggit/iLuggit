@@ -16,9 +16,16 @@ const showReviews = React.createClass({
       let reviews = this.props.newReviewData.map(function(model, i){
 
          return (
-            <div key={i}>
-               <li>{typeof model === 'object' && model.get('review')}</li>
+         <div key={i}>
+            <div className ="review-container">
+               <div className ="row">
+                  <div className ="col-xs-12 col-md-3">
+                     <p className ="thumbnail">{model.get('user').useruser}<br/>
+                     {typeof model === 'object' && model.get('review')}</p>
+                  </div>
+               </div>
             </div>
+         </div>
          )
 
       })
@@ -27,14 +34,14 @@ const showReviews = React.createClass({
          <div>
             <div className="home-container">
                <div className="container-fluid text-center main-container ">
-                  <button type="button" onClick = {this._logOut} className="btn btn-default">Logout</button>
-                  <div className="container ">
+                     <a href = "#"><i className = "fa fa-home fa-2x" aria-hidden = "true"></i></a>
+               <div className="container ">
                      <h3 className="lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
-                  </div>
+               </div>
                </div>
             </div>
-            <div>
-               <h3>User Reviews</h3>
+            <div className ="reviews-info">
+               <h3 className = "text-center">User Reviews</h3>
                   {reviews}
             </div>
          </div>
