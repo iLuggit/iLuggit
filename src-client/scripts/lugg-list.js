@@ -33,21 +33,21 @@ const LuggProfile = React.createClass({
       return(
          <div>
             <div className = "lugger-container">
-                     <div className="container text-center">
-                     <button type="button" onClick = {this._logOut} className="btn btn-default">Logout</button>
+                     <div className="container">
+                     <button type="button" onClick = {this._logOut} className="btn btn-right">Logout</button>
                         <a href = "#"><i className = "fa fa-home fa-2x" aria-hidden = "true"></i></a>
                         <h1 className="display-3">iLuggit</h1>
-                        <h3 className="lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
+                        <h3 className="lead">Bridges the gap etween someone with a truck and someone who needs a truck!</h3>
                      </div>
             </div>
               <div className = "row">
                   <div className = "col-xs-12 col-md-6 lugg-list-container">
                      <div className ="lugg-data text-center ">
-                        <p>LUGG ITEM</p>
-                        { luggs }
-                    </div>
-               </div>
-               <div id= "map" className =" col-xs-12 col-md-6 map-container">
+                           <p>LUGG ITEM</p>
+                           { luggs }
+                     </div>
+                  </div>
+               <div id= "map" className ="col-xs-12 col-md-6 map-container">
                   <SimpleMapPage {...CharlestonMap}/>
                </div>
             </div>
@@ -63,13 +63,13 @@ const LuggProfile = React.createClass({
 
      render: function(){
         return(
-             <div className="col-xs-12">
-               <div className = "lugg-data ">
-                  <ul>
-                     <li><a href={`#cargo/${this.props.model.get('id')}`}>{this.props.model.get('user').useruser} : {this.props.model.get('haul_description')}</a></li>
-                  </ul>
+               <div className = "thumbnail lugg-data">
+                     <a href={`#cargo/${this.props.model.get('id')}`}>{this.props.model.get('user').useruser}<br/>
+                     {this.props.model.get('haul_description')}</a>
                </div>
-            </div>
+
+
+
       )
    }
 })
