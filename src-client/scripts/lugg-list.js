@@ -31,24 +31,21 @@ const LuggProfile = React.createClass({
          zoom: 13,
       }
       return(
-         <div>
+         <div className = " lugg-map-container">
             <div className = "lugger-container">
-                     <div className="container">
-                     <button type="button" onClick = {this._logOut} className="btn btn-right">Logout</button>
                         <a href = "#"><i className = "fa fa-home fa-2x" aria-hidden = "true"></i></a>
                         <h1 className="display-3">iLuggit</h1>
-                        <h3 className="lead">Bridges the gap etween someone with a truck and someone who needs a truck!</h3>
-                     </div>
+                        <h3 className="lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
             </div>
               <div className = "row">
                   <div className = "col-xs-12 col-md-6 lugg-list-container">
                      <div className ="lugg-data text-center ">
-                           <p>LUGG ITEM</p>
-                           { luggs }
+                        <p>LUGG ITEM</p>
+                        { luggs }
                      </div>
                   </div>
                <div id= "map" className ="col-xs-12 col-md-6 map-container">
-                  <SimpleMapPage {...CharlestonMap}/>
+                        <SimpleMapPage {...CharlestonMap}/>
                </div>
             </div>
          </div>

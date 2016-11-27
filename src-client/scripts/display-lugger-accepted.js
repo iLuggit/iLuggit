@@ -18,7 +18,7 @@ const LuggerAccepted = React.createClass({
                      <p>Your lugg has been accepted.  A Lugger will be contacting you shortly.</p>
                   </div>
                   <div class="modal-footer">
-                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                     <a href="#"><button type="button" class="btn btn-default" data-dismiss="modal">Close</button></a>
                   </div>
                </div>
             </div>

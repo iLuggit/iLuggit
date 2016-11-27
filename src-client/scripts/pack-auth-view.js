@@ -37,8 +37,8 @@ const PackAuthView = React.createClass({
       return(
             <div className = "row">
                   <div className="pack-auth-form">
+                  <a href = "#"><i className="fa fa-home fa-2x " aria-hidden="true"></i></a>
                      <form className = "col-xs-12 col-sm-6 text-center" id="login-form" onSubmit = {this._submitLogin}>
-                           <a href = "#"><i className="fa fa-home fa-2x " aria-hidden="true"></i></a>
                            <h2 className = "">Existing Packer Login </h2>
                         <div className = "form-group">
                            <label htmlFor = "new-username">Username</label>
