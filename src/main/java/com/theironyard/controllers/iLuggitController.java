@@ -17,10 +17,7 @@ import org.h2.tools.Server;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -99,7 +96,7 @@ public class iLuggitController {
         return jobs.findByUser(users.findFirstByUseruser(user));
     }
     @RequestMapping(path = "/accept-lugg/{id}", method = RequestMethod.POST)
-    public String acceptJob(HttpSession session, int id) {
+    public String acceptJob(HttpSession session, @PathVariable("id") int id) {
         Job job1 = jobs.findFirstById(id);
         int truckId = (int) session.getAttribute("id");
         Truck truck1 = trucks.findFirstById(truckId);
