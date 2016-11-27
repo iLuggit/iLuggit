@@ -8,10 +8,10 @@ const CargoDisplay = React.createClass({
         ACTIONS.fetchLuggData()
         console.log(this.props);
      },
-     
+
      _acceptLugg: function(){
 
-      let userid = this.refs.userid.dataset.id
+      let userid = this.refs.id.dataset.id
       console.log('id', userid);
 
          ACTIONS._acceptLugg(userid)
@@ -25,8 +25,6 @@ const CargoDisplay = React.createClass({
 
          return Number(model.get('id')) === Number(id)
       })
-      // console.log('model', model);
-      // console.log( typeof model === 'object' && model.get('haul_img')  )
 
       return(
          <div>

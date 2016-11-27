@@ -24,7 +24,8 @@ let AppController = React.createClass({
 
      componentWillMount: function(){
          let self = this
-         ACTIONS.fetchLuggData()
+         ACTIONS.fetchLuggData(),
+         ACTIONS.fetchReview()
 
          STORE.onChange(function(){
 
@@ -83,7 +84,7 @@ let AppController = React.createClass({
             break;
 
          case "Reviews":
-               return <Reviews />
+               return <Reviews newReviewData = {this.state.newReviewData}/>
                break;
 
          default:
