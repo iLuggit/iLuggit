@@ -37,11 +37,26 @@ const Sandbox = React.createClass({
    return(
       <div>
          <p> this is a test</p>
+         <button type="button" className="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
+
+         <div className="modal fade bs-example-modal-lg" tabIndex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+           <div className="modal-dialog modal-lg" role="document">
+             <div className="modal-content">
+               ...
+             </div>
+           </div>
+         </div>
+
          <div style={{height: "300px", width: '100%'}}>
             <SimpleMapPage {...CharlestonMap} />
          </div>
       </div>
       )
    }
-})
+});
+
+
+
+
+
 module.exports = Sandbox

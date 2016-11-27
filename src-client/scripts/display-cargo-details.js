@@ -48,7 +48,7 @@ const CargoDisplay = React.createClass({
 
                   <div className="btn-group">
                         <button type="button" onClick = {this._acceptLugg} ref={'id'} data-id = {typeof model === 'object' && model.get('id')} className="btn btn-default">Accept Lugg</button>
-                        <a href="/#lugg-list"><button type="button" className="btn btn-default">Return</button></a>
+                        <a href="/#lugg-list"><button type="button"  className="btn btn-default">Return</button></a>
                   </div>
                   </div>
                 </div>
