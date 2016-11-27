@@ -25,8 +25,6 @@ const CargoDisplay = React.createClass({
 
          return Number(model.get('id')) === Number(id)
       })
-      // console.log('model', model);
-      // console.log( typeof model === 'object' && model.get('haul_img')  )
 
       return(
          <div>

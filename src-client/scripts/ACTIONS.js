@@ -2,7 +2,7 @@ import Backbone from 'backbone'
 import React from 'react'
 import $ from 'jquery'
 
-import {UserModel, UserCollection, LoginModel, CreateUserModel, TruckModel, CreateTruckModel, CreateLuggModel} from './lugg-model.js'
+import {UserModel, UserCollection, LoginModel, CreateUserModel, TruckModel, CreateTruckModel, CreateLuggModel, ReviewCollection} from './lugg-model.js'
 import STORE from './STORE.js'
 const ACTIONS = {
 
@@ -59,6 +59,15 @@ const ACTIONS = {
             console.log('fetch ', luggCollInstance);
       })
       return luggCollInstance
+   },
+
+   fetchReview: function(){
+      let reviewCollInstance = new ReviewCollection();
+         reviewCollInstance.fetch().then(function(){
+            STORE.setStore('newReviewData', reviewCollInstance.models);
+            console.log('review fetch', reviewCollInstance);
+         })
+         return reviewCollInstance
    },
 
    _acceptLugg: function(id){
