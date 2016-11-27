@@ -21,6 +21,8 @@ const HomeView = React.createClass({
                   <div className="container ">
                         <h1>iLuggit</h1>
                         <h3 className="lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
+                     <img className="logo" src= "./images/logo.png" alt="" />
+                     <h3 className="lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
                   </div>
             <div className="row">
                <div className ="profile-row">

@@ -61,6 +61,16 @@ const CreateLuggModel = Backbone.Model.extend({
 
       }
 })
+
+const ReviewCollection = Backbone.Collection.extend({
+   model: UserModel,
+   url: '/reviews',
+
+      initialize: function(){
+
+      }
+})
+
 module.exports = {
    UserModel,
    UserCollection,
@@ -68,6 +78,7 @@ module.exports = {
    CreateUserModel,
    CreateTruckModel,
    TruckModel,
-   CreateLuggModel
+   CreateLuggModel,
+   ReviewCollection
 
 }
