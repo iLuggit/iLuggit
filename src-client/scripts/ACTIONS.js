@@ -48,7 +48,7 @@ const ACTIONS = {
      let createLuggMod = new CreateLuggModel()
      createLuggMod.set(newLugg)
      createLuggMod.save().then(function(){
-        window.location.hash = '';
+        window.location.hash ='/display-created-lugg.js'
     })
   },
 
@@ -63,7 +63,7 @@ const ACTIONS = {
 
    _acceptLugg: function(id){
       let acceptlugg = new CreateLuggModel()
-      acceptlugg.url = `/accept-lugg/${id}`
+      acceptlugg.url = `/accept-lugg/{id}`
       acceptlugg.save().then(function(serverRes){
          window.location.hash = '/create-lugg';
     })

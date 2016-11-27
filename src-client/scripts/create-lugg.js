@@ -28,19 +28,17 @@ const CreateLugg = React.createClass({
 
       },
 
-
-
-
    render: function(){
     console.log('props', this.props);
     let outstandingPacks = this.props.newLuggData.map(function(model, i){
 
 
          return (
-            <div key={i}>
-               <li >{typeof model === 'object' && model.get('haul_description') }</li>
-               <span>{model.get('user').useruser}</span>
-            </div>
+
+                     <div key={i}>
+                        {model.get('user').useruser}<br/>
+                        {typeof model === 'object' && model.get('haul_description') }
+                     </div>
          )
       })
 
@@ -67,9 +65,8 @@ const CreateLugg = React.createClass({
 
             <div className ="row form-container">
                <form className = "col-xs-12 col-md-6 " id="create-lugg-form" onSubmit = {this._createLugg}>
-                       <button type="button" onClick = {this._logout} className="btn btn-default">Logout</button>
                        <a href = "#"><i className = "fa fa-home fa-2x" aria-hidden = "true"></i></a>
-                       <h2 className = "">Welcome back ${model.get('user').useruser}Create a New Lugg </h2>
+                       <h2 className = "">Welcome back  Create a New Lugg </h2>
                   <div className = "col-xs-12 form-group">
                        <label htmlFor = "startAddress"> </label>
                        <input type = "text" className="form-control" id = "s_address" ref = "start_address" placeholder = "Enter Starting Address" />

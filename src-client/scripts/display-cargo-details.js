@@ -8,10 +8,10 @@ const CargoDisplay = React.createClass({
         ACTIONS.fetchLuggData()
         console.log(this.props);
      },
-     
+
      _acceptLugg: function(){
 
-      let userid = this.refs.userid.dataset.id
+      let userid = this.refs.id.dataset.id
       console.log('id', userid);
 
          ACTIONS._acceptLugg(userid)
