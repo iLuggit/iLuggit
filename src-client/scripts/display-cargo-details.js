@@ -22,7 +22,7 @@ const CargoDisplay = React.createClass({
       let id = this.props.id
       console.log('id', id);
       let model = this.props.newLuggData.find(function(model){
-
+         console.log('newLuggData', model)
          return Number(model.get('id')) === Number(id)
       })
 
@@ -37,7 +37,7 @@ const CargoDisplay = React.createClass({
             </div>
             <div className="container">
               <div className="row">
-                <div className="col-sm-offset-3 col-sm-6 text-center pack-description">
+                <div className="col-sm-offset-3 col-sm-6 pack-description text-center">
                   <div>
                      <p>Details Of Pack</p>
                      <p>Cargo Img: {typeof model === 'object'  &&  model.get('haul_img')}</p>

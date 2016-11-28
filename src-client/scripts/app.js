@@ -87,6 +87,9 @@ const AppRouter = Backbone.Router.extend({
 
    initialize: function(){
    $.getJSON(`https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=${geocodeKey}`)
+   .then(function(serverRes){
+      console.log('googleApi', serverRes);
+}),
    Backbone.history.start();
 
    }

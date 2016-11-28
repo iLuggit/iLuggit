@@ -15,9 +15,6 @@ const LuggProfile = React.createClass({
          ACTIONS.fetchLuggData()
      },
 
-   _logOut: function(){
-      ACTIONS._logOut()
-   },
 
 
    render: function(){
@@ -60,7 +57,7 @@ const LuggProfile = React.createClass({
 
      render: function(){
         return(
-               <div className = "thumbnail lugg-data">
+               <div className = "lugg-data thumbnail">
                      <a href={`#cargo/${this.props.model.get('id')}`}>{this.props.model.get('user').useruser}<br/>
                      {this.props.model.get('haul_description')}</a>
                </div>
