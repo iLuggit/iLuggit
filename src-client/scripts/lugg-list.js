@@ -1,6 +1,6 @@
 import Backbone from 'backbone'
 import ReactDOM from 'react-dom'
-import ACTIONS from './ACTiONS.js'
+import ACTIONS from './ACTIONS.js'
 import STORE from './STORE.js'
 import AppController from './lugg-view-controller.js'
 import SimpleMapPage from './map-api.js'
@@ -11,22 +11,22 @@ import GoogleMap from 'google-map-react';
 
 
 const LuggProfile = React.createClass({
-   // componentWillMount: function(){
-   //        ACTIONS.fetchLuggData()
-   //   },
-
-
 
    render: function(){
 
-      let luggs = this.props.newLuggData.map(function(model){
-        //console.log('its me')
-         return <LuggView key = {model.cid} model={model} />
-      })
+
+      // let luggs = this.props.newLuggData.map(function(model){
+      //   //console.log('its me')
+      //    return <LuggView key = {model.cid} model={model} />
+      // })
+
       let CharlestonMap = {
          center: {lat: 32.784618, lng: -79.940918},
          zoom: 13,
-      }
+      }.
+
+
+
       return(
          <div className = " lugg-map-container">
             <div className = "lugger-container">
@@ -42,7 +42,7 @@ const LuggProfile = React.createClass({
                      </div>
                   </div>
                <div id= "map" className ="col-xs-12 col-md-6 map-container">
-                        <SimpleMapPage {...CharlestonMap}/>
+                        <SimpleMapPage mapConfig = {CharlestonMap }  luggData={this.props.newLuggData}/>
                </div>
             </div>
          </div>

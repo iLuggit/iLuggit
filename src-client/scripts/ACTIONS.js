@@ -58,7 +58,7 @@ const ACTIONS = {
             STORE.setStore('newLuggData', luggCollInstance.models);
             // console.log('fetch ', luggCollInstance);
       })
-      return luggCollInstance
+      // return luggCollInstance
    },
 
    fetchReview: function(){
