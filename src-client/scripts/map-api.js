@@ -8,9 +8,7 @@ import {bootstrapURLKeys} from './secrets.js'
 let Pin = React.createClass({
    render: function(){
       return (
-         <div style={{width: '40px', height: '40px', padding: "5px", color: '#fff', background: 'darkred'}}>
-            {this.props.text}
-         </div>
+         <div> <i className="fa fa-map-marker" aria-hidden="true"></i> </div>
       )
    }
 })
@@ -22,9 +20,11 @@ class SimpleMapPage extends Component {
         this.shouldComponentUpdate = shouldPureComponentUpdate
 
     }
-
     render() {
-      
+      let pins = this.props.luggData.map(function(model, i){
+         return <Pin key = {i} lat={model.get('pickUpLatitude')} lng={model.get('pickUpLongitude')} />
+      })
+
        return (
 
          <GoogleMap
@@ -33,7 +33,7 @@ class SimpleMapPage extends Component {
          }}
            defaultCenter = {this.props.center}
            defaultZoom = {this.props.zoom}>
-            <Pin lat={32.7869} lng={-79.9357} text={"Marion Square"}/>
+            { pins }
          </GoogleMap>
        );
     }

@@ -48,6 +48,8 @@ const CreateLugg = React.createClass({
          center: {lat: 32.784618, lng: -79.940918},
          zoom: 13,
       }
+
+
       return(
          <div className = "lugg-container">
             <div className="container-fluid text-center packer-container ">
@@ -101,7 +103,7 @@ const CreateLugg = React.createClass({
                </form>
                <div className="map-container2">
                   <div id= "map2">
-                     <SimpleMapPage {...CharlestonMap}/>
+                     <SimpleMapPage {...CharlestonMap} luggData={this.props.newLuggData}/>
                   </div>
                </div>
               </div>
