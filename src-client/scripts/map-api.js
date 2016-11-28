@@ -24,19 +24,7 @@ class SimpleMapPage extends Component {
     }
 
     render() {
-      // const location ={
-      //    lat: 32.784618,
-      //    lng: -79.940918,
-      //    zoom: 13
-      // }
-      // const marker = {
-      //       marker: {
-      //          lat: 32.784618,
-      //          lng: -79.940918
-      //       },
-      //       return <Marker {...marker}/>
-      //    },
-
+      
        return (
 
          <GoogleMap

@@ -10,7 +10,7 @@ const ACTIONS = {
       let loginMod = new LoginModel()
       loginMod.set(newLogin)
       loginMod.save().then(function(serverRes){
-      console.log('are we changing the route?', window.location);
+      // console.log('are we changing the route?', window.location);
          window.location.hash = '/create-lugg';
     })
   },
@@ -28,7 +28,7 @@ const ACTIONS = {
      truckLoginMod.set(loginTruck)
 
      truckLoginMod.save().then(function(serverRes){
-        console.log('am i even here?')
+      //   console.log('am i even here?')
 
         window.location.hash = '/lugg-list';
     })
@@ -38,7 +38,7 @@ const ACTIONS = {
      let truckCreateMod = new CreateTruckModel()
      truckCreateMod.set(createTruck)
      truckCreateMod.save().then(function(serverRes){
-        console.log('are we changing the route?', window.location);
+      //   console.log('are we changing the route?', window.location);
         window.location.hash = '/lugg-list';
     })
   },
@@ -48,7 +48,7 @@ const ACTIONS = {
      let createLuggMod = new CreateLuggModel()
      createLuggMod.set(newLugg)
      createLuggMod.save().then(function(){
-        window.location.hash ='/display-created-lugg.js'
+        window.location.hash ='#'
     })
   },
 
@@ -56,7 +56,7 @@ const ACTIONS = {
       let luggCollInstance = new UserCollection();
          luggCollInstance.fetch().then(function(){
             STORE.setStore('newLuggData', luggCollInstance.models);
-            console.log('fetch ', luggCollInstance);
+            // console.log('fetch ', luggCollInstance);
       })
       return luggCollInstance
    },
@@ -65,21 +65,20 @@ const ACTIONS = {
       let reviewCollInstance = new ReviewCollection();
          reviewCollInstance.fetch().then(function(){
             STORE.setStore('newReviewData', reviewCollInstance.models);
-            console.log('review fetch', reviewCollInstance);
+            // console.log('review fetch', reviewCollInstance);
          })
-         return reviewCollInstance
+      return reviewCollInstance
    },
 
    _acceptLugg: function(id){
       let acceptlugg = new CreateLuggModel()
       acceptlugg.url = `/accept-lugg/${id}`
-      console.log('saving teh lugg')
-
+      // console.log('saving teh lugg')
       acceptlugg.save().then(function(serverRes){
-         console.log("okay this should route somewhere else now")
+         // console.log("okay this should route somewhere else now")
          window.location.hash = '/create-lugg';
      }).fail(function(error){
-        console.log("did i fail??", error)
+      //   console.log("did i fail??", error)
      })
   },
   _logOut: function(){
