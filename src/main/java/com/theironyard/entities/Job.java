@@ -1,7 +1,5 @@
 package com.theironyard.entities;
 
-import com.google.maps.GeoApiContext;
-
 import javax.persistence.*;
 
 /**
@@ -14,9 +12,9 @@ public class Job {
         @GeneratedValue
         public int id;
         @Column(nullable = false)
-        public String[] pickup_address;
+        public String pickup_address;
         @Column(nullable = false)
-        public String[] dropoff_address;
+        public String dropoff_address;
         @Column(nullable = false)
         public String haul_description;
         @Column
@@ -32,14 +30,18 @@ public class Job {
         @Column
         public boolean truck_accept;
         @Column
-        public double latitude;
+        public double pickUpLatitude;
         @Column
-        public double longitude;
+        public double pickUpLongitude;
+        @Column
+        public double dropOffLatitude;
+        @Column
+        public double dropOffLongitude;
 
         public Job() {
         }
 
-        public Job(String[] pickup_address, String[] dropoff_address, String haul_description, String haul_img, Double job_price, User user) {
+        public Job(String pickup_address, String dropoff_address, String haul_description, String haul_img, Double job_price, User user) {
                 this.pickup_address = pickup_address;
                 this.dropoff_address = dropoff_address;
                 this.haul_description = haul_description;
@@ -48,7 +50,7 @@ public class Job {
                 this.user = user;
         }
 
-        public Job(int id, String[] pickup_address, String[] dropoff_address, String haul_description, String haul_img, Double job_price, User user, Truck truck) {
+        public Job(int id, String pickup_address, String dropoff_address, String haul_description, String haul_img, Double job_price, User user, Truck truck) {
                 this.id = id;
                 this.pickup_address = pickup_address;
                 this.dropoff_address = dropoff_address;
@@ -59,44 +61,7 @@ public class Job {
                 this.truck = truck;
         }
 
-        public Job(int id, String[] pickup_address, String[] dropoff_address, String haul_description, String haul_img, Double job_price, User user, boolean user_accept, Truck truck, boolean truck_accept) {
-                this.id = id;
-                this.pickup_address = pickup_address;
-                this.dropoff_address = dropoff_address;
-                this.haul_description = haul_description;
-                this.haul_img = haul_img;
-                this.job_price = job_price;
-                this.user = user;
-                this.user_accept = user_accept;
-                this.truck = truck;
-                this.truck_accept = truck_accept;
-        }
-
-        public Job(int id, String[] pickup_address, String[] dropoff_address, String haul_description, String haul_img, Double job_price, User user, boolean user_accept, Truck truck) {
-                this.id = id;
-                this.pickup_address = pickup_address;
-                this.dropoff_address = dropoff_address;
-                this.haul_description = haul_description;
-                this.haul_img = haul_img;
-                this.job_price = job_price;
-                this.user = user;
-                this.user_accept = user_accept;
-                this.truck = truck;
-        }
-
-        public Job(int id, String[] pickup_address, String[] dropoff_address, String haul_description, String haul_img, Double job_price, User user, Truck truck, boolean truck_accept) {
-                this.id = id;
-                this.pickup_address = pickup_address;
-                this.dropoff_address = dropoff_address;
-                this.haul_description = haul_description;
-                this.haul_img = haul_img;
-                this.job_price = job_price;
-                this.user = user;
-                this.truck = truck;
-                this.truck_accept = truck_accept;
-        }
-
-        public Job(int id, String[] pickup_address, String[] dropoff_address, String haul_description, String haul_img, Double job_price, User user, boolean user_accept, Truck truck, boolean truck_accept, double latitude, double longitude) {
+        public Job(int id, String pickup_address, String dropoff_address, String haul_description, String haul_img, Double job_price, User user, boolean user_accept, Truck truck, boolean truck_accept) {
                 this.id = id;
                 this.pickup_address = pickup_address;
                 this.dropoff_address = dropoff_address;
@@ -107,8 +72,47 @@ public class Job {
                 this.user_accept = user_accept;
                 this.truck = truck;
                 this.truck_accept = truck_accept;
-                this.latitude = latitude;
-                this.longitude = longitude;
+        }
+
+        public Job(int id, String pickup_address, String dropoff_address, String haul_description, String haul_img, Double job_price, User user, boolean user_accept, Truck truck) {
+                this.id = id;
+                this.pickup_address = pickup_address;
+                this.dropoff_address = dropoff_address;
+                this.haul_description = haul_description;
+                this.haul_img = haul_img;
+                this.job_price = job_price;
+                this.user = user;
+                this.user_accept = user_accept;
+                this.truck = truck;
+        }
+
+        public Job(int id, String pickup_address, String dropoff_address, String haul_description, String haul_img, Double job_price, User user, Truck truck, boolean truck_accept) {
+                this.id = id;
+                this.pickup_address = pickup_address;
+                this.dropoff_address = dropoff_address;
+                this.haul_description = haul_description;
+                this.haul_img = haul_img;
+                this.job_price = job_price;
+                this.user = user;
+                this.truck = truck;
+                this.truck_accept = truck_accept;
+        }
+
+        public Job(int id, String pickup_address, String dropoff_address, String haul_description, String haul_img, Double job_price, User user, boolean user_accept, Truck truck, boolean truck_accept, double pickUpLatitude, double pickUpLongitude, double dropOffLatitude, double dropOffLongitude) {
+                this.id = id;
+                this.pickup_address = pickup_address;
+                this.dropoff_address = dropoff_address;
+                this.haul_description = haul_description;
+                this.haul_img = haul_img;
+                this.job_price = job_price;
+                this.user = user;
+                this.user_accept = user_accept;
+                this.truck = truck;
+                this.truck_accept = truck_accept;
+                this.pickUpLatitude = pickUpLatitude;
+                this.pickUpLongitude = pickUpLongitude;
+                this.dropOffLatitude = dropOffLatitude;
+                this.dropOffLongitude = dropOffLongitude;
         }
 
         public int getId() {
@@ -119,20 +123,12 @@ public class Job {
                 this.id = id;
         }
 
-        public String[] getPickup_address() {
+        public String getPickup_address() {
                 return pickup_address;
         }
 
-        public void setPickup_address(String[] pickup_address) {
-                this.pickup_address = pickup_address;
-        }
-
-        public String[] getDropoff_address() {
+        public String getDropoff_address() {
                 return dropoff_address;
-        }
-
-        public void setDropoff_address(String[] dropoff_address) {
-                this.dropoff_address = dropoff_address;
         }
 
         public String getHaul_description() {
@@ -190,4 +186,45 @@ public class Job {
         public void setTruck_accept(boolean truck_accept) {
                 this.truck_accept = truck_accept;
         }
+
+        public void setPickup_address(String pickup_address) {
+                this.pickup_address = pickup_address;
+        }
+
+        public void setDropoff_address(String dropoff_address) {
+                this.dropoff_address = dropoff_address;
+        }
+
+        public double getPickUpLatitude() {
+                return pickUpLatitude;
+        }
+
+        public void setPickUpLatitude(double pickUpLatitude) {
+                this.pickUpLatitude = pickUpLatitude;
+        }
+
+        public double getPickUpLongitude() {
+                return pickUpLongitude;
+        }
+
+        public void setPickUpLongitude(double pickUpLongitude) {
+                this.pickUpLongitude = pickUpLongitude;
+        }
+
+        public double getDropOffLatitude() {
+                return dropOffLatitude;
+        }
+
+        public void setDropOffLatitude(double dropOffLatitude) {
+                this.dropOffLatitude = dropOffLatitude;
+        }
+
+        public double getDropOffLongitude() {
+                return dropOffLongitude;
+        }
+
+        public void setDropOffLongitude(double dropOffLongitude) {
+                this.dropOffLongitude = dropOffLongitude;
+        }
+
 }
