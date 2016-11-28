@@ -11,19 +11,16 @@ import GoogleMap from 'google-map-react';
 
 
 const LuggProfile = React.createClass({
-   componentWillMount: function(){
-         ACTIONS.fetchLuggData()
-     },
+   // componentWillMount: function(){
+   //        ACTIONS.fetchLuggData()
+   //   },
 
-   _logOut: function(){
-      ACTIONS._logOut()
-   },
 
 
    render: function(){
 
       let luggs = this.props.newLuggData.map(function(model){
-        console.log('its me')
+        //console.log('its me')
          return <LuggView key = {model.cid} model={model} />
       })
       let CharlestonMap = {
@@ -60,7 +57,7 @@ const LuggProfile = React.createClass({
 
      render: function(){
         return(
-               <div className = "thumbnail lugg-data">
+               <div className = "lugg-data thumbnail">
                      <a href={`#cargo/${this.props.model.get('id')}`}>{this.props.model.get('user').useruser}<br/>
                      {this.props.model.get('haul_description')}</a>
                </div>

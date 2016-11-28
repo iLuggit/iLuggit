@@ -11,15 +11,15 @@ import STORE from './STORE.js'
 const CreateLugg = React.createClass({
 
    componentWillMount: function(){
-        ACTIONS.fetchLuggData()
+      //   ACTIONS.fetchLuggData()
         console.log('cr-lugg view', this.props);
 
      },
 
    _createLugg: function(){
       let createNewLugg = {
-            pickup_address: [this.refs.start_address.value],
-            dropoff_address: [this.refs.end_address.value],
+            pickup_address: this.refs.start_address.value,
+            dropoff_address: this.refs.end_address.value,
             haul_description: this.refs.cargo_description.value,
             haul_img: this.refs.cargo_img.value,
          }
@@ -29,18 +29,20 @@ const CreateLugg = React.createClass({
       },
 
    render: function(){
-    console.log('props', this.props);
+   //  console.log('props', this.props);
     let outstandingPacks = this.props.newLuggData.map(function(model, i){
-
-      
-         return (
-
-                     <div key={i}>
-                        <p>User: {model.get('user').useruser}  - Haul: {typeof model === 'object' && model.get('haul_description')} - </p>
-
-                     </div>
-               )
-         })
+      let acceptedStatus
+      if (model.get('truck')){
+         acceptedStatus = 'Accepted'
+      } else {
+         acceptedStatus = "Pending"
+      }
+      return (
+             <div key={i}>
+                <p>User: {model.get('user').useruser}  - Haul: {typeof model === 'object' && model.get('haul_description')}  | {acceptedStatus} </p>
+             </div>
+       )
+      })
 
       let CharlestonMap = {
          center: {lat: 32.784618, lng: -79.940918},

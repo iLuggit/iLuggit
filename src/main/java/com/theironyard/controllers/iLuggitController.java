@@ -79,61 +79,79 @@ public class iLuggitController {
     public void destroy(){
         h2Server.stop();
     }
-
     @RequestMapping(path = "/luggs", method = RequestMethod.GET)
     public Iterable<Job> getJobs() {
         return jobs.findAll();
     }
-
     @RequestMapping(path = "/lugg", method = RequestMethod.GET)
     public Job getJob(int id) {
         return jobs.findFirstById(id);
     }
-
     @RequestMapping(path = "/user-luggs", method = RequestMethod.GET)
     public Iterable<Job> getUserJobs(HttpSession session){
         String user = (String) session.getAttribute("useruser");
         return jobs.findByUser(users.findFirstByUseruser(user));
     }
     @RequestMapping(path = "/accept-lugg/{id}", method = RequestMethod.POST)
-    public String acceptJob(HttpSession session, @PathVariable("id") int id) {
-        Job job1 = jobs.findFirstById(id);
-        int truckId = (int) session.getAttribute("id");
-        Truck truck1 = trucks.findFirstById(truckId);
-        job1.setTruck(truck1);
-        job1.setTruck_accept(true);
-        jobs.save(job1);
-        return "Job Accepted";
+    public ResponseEntity<Job> acceptJob(HttpSession session, @PathVariable("id") int id) {
+        if (session.getAttribute("usertruck") != null) {
+            Job job1 = jobs.findFirstById(id);
+            int truckId = (int) session.getAttribute("id");
+            Truck truck1 = trucks.findFirstById(truckId);
+            job1.setTruck(truck1);
+            job1.setTruck_accept(true);
+            jobs.save(job1);
+            return new ResponseEntity<Job>(job1, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.FORBIDDEN);
     }
     @RequestMapping(path = "/pay-lugg", method = RequestMethod.POST)
-    public String payJob(HttpSession session, int id) {
-        Job job1 = jobs.findFirstById(id);
-        int userId = (int) session.getAttribute("id");
-        User user1 = users.findFirstById(userId);
-        job1.setUser(user1);
-        job1.setUser_accept(true);
-        jobs.save(job1);
-        return "Job Paid";
+    public ResponseEntity<Job> payJob(HttpSession session, int id) {
+        if (session.getAttribute("useruser") != null) {
+            Job job1 = jobs.findFirstById(id);
+            int userId = (int) session.getAttribute("id");
+            User user1 = users.findFirstById(userId);
+            job1.setUser(user1);
+            job1.setUser_accept(true);
+            jobs.save(job1);
+            return new ResponseEntity<Job>(job1, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.FORBIDDEN);
     }
     @RequestMapping(path = "/create-lugg", method = RequestMethod.POST)
-    public String postJob(HttpSession session, @RequestBody Job job) throws Exception {
-        String[] origin = job.getPickup_address();
-        String[] destination = job.getDropoff_address();
-        GeoApiContext apiContext = new GeoApiContext();
-        apiContext.setApiKey("AIzaSyB8QAVhBnoK5pQC-1hPqRCSvpiyLzmBNyo");
-        DistanceMatrix request = DistanceMatrixApi.getDistanceMatrix(apiContext, origin, destination).await();
-        Distance distance = request.rows[0].elements[0].distance;
-        long inMeters = distance.inMeters;
-        double inMetersDouble = doubleValue(inMeters);
-        double price = ((inMetersDouble * 0.012) / 10) + 5;
-        String username = (String) session.getAttribute("useruser");
-        User user = users.findFirstByUseruser(username);
-        job.setJob_price(price);
-        job.setUser(user);
-        job.setUser_accept(false);
-        job.setTruck_accept(false);
-        jobs.save(job);
-        return "Job Created";
+    public ResponseEntity<Job> postJob(HttpSession session, @RequestBody Job job) throws Exception {
+        if (session.getAttribute("useruser") != null) {
+            GeoApiContext apiContext = new GeoApiContext();
+            apiContext.setApiKey("AIzaSyB8QAVhBnoK5pQC-1hPqRCSvpiyLzmBNyo");
+            String pickUpJob = job.getPickup_address();
+            String dropOffJob = job.getDropoff_address();
+            String origin = job.getPickup_address();
+            String destination = job.getDropoff_address();
+            GeocodingResult[] pickUpJobGeo = GeocodingApi.newRequest(apiContext).address(pickUpJob).await();
+            Double latitude = pickUpJobGeo[0].geometry.location.lat;
+            Double longitude = pickUpJobGeo[0].geometry.location.lng;
+            GeocodingResult[] dropOffJobGeo = GeocodingApi.newRequest(apiContext).address(dropOffJob).await();
+            Double latitude2 = dropOffJobGeo[0].geometry.location.lat;
+            Double longitude2 = dropOffJobGeo[0].geometry.location.lng;
+            DistanceMatrix request = DistanceMatrixApi.getDistanceMatrix(apiContext, new String[]{origin}, new String[]{destination}).await();
+            Distance distance = request.rows[0].elements[0].distance;
+            long inMeters = distance.inMeters;
+            double inMetersDouble = doubleValue(inMeters);
+            double price = ((inMetersDouble * 0.012) / 10) + 5;
+            String username = (String) session.getAttribute("useruser");
+            User user = users.findFirstByUseruser(username);
+            job.setPickUpLatitude(latitude);
+            job.setPickUpLongitude(longitude);
+            job.setDropOffLongitude(latitude2);
+            job.setDropOffLatitude(longitude2);
+            job.setJob_price(price);
+            job.setUser(user);
+            job.setUser_accept(false);
+            job.setTruck_accept(false);
+            jobs.save(job);
+            return new ResponseEntity<Job>(job, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.FORBIDDEN);
     }
     @RequestMapping(path = "/user-login", method = RequestMethod.POST)
     public ResponseEntity<User> postUser(HttpSession session, @RequestBody User user) throws Exception {
@@ -193,17 +211,22 @@ public class iLuggitController {
     public Iterable<Review> getReviews() {
         return reviews.findAll();
     }
-
-    @RequestMapping(path = "/test", method = RequestMethod.GET)
-    public String testRoute() throws Exception {
-        GeoApiContext apiContext = new GeoApiContext();
-        apiContext.setApiKey("AIzaSyB8QAVhBnoK5pQC-1hPqRCSvpiyLzmBNyo");
-        String pickUpJob = "2312 Portside Way, Charleston, SC";
-        GeocodingResult[] latlng = GeocodingApi.newRequest(apiContext).address(pickUpJob).await();
-        Double latitude = latlng[0].geometry.location.lat;
-        Double longitude = latlng[0].geometry.location.lng;
-        System.out.println(latitude);
-        System.out.println(longitude);
-        return "Test Ran";
+    @RequestMapping(path = "/auth-user", method = RequestMethod.GET)
+    public ResponseEntity<User> userAuth(HttpSession session) {
+        if (session.getAttribute("useruser") != null){
+            String name = (String) session.getAttribute("useruser");
+            User user = users.findFirstByUseruser(name);
+            return new ResponseEntity<> (user, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.FORBIDDEN);
+    }
+    @RequestMapping(path = "/auth-truck", method = RequestMethod.GET)
+    public ResponseEntity<Truck> truckAuth(HttpSession session) {
+        if (session.getAttribute("usertruck") != null){
+            String name = (String) session.getAttribute("usertruck");
+            Truck truck = trucks.findFirstByUsertruck(name);
+            return new ResponseEntity<> (truck, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.FORBIDDEN);
     }
 }
