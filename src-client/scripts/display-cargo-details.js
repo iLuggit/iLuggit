@@ -4,7 +4,7 @@ import ACTIONS from './ACTIONS.js'
 import LuggAuthView from './lugg-auth-view.js'
 import $ from 'jquery'
 const CargoDisplay = React.createClass({
-   
+
      _acceptLugg: function(){
 
       let userid = this.refs.id.dataset.id
@@ -56,15 +56,16 @@ const CargoDisplay = React.createClass({
                            </div>
                          </div>
                      </div>
+
                   </div>
-               </div>
-             </div>
-             </div>
-          </div>
-      </div>
-    );
-    }
-});
+                  </div>
+                </div>
+              </div>
+           </div>
+         </div>
+       );
+     }
+   });
 
 
 
