@@ -73,9 +73,14 @@ const ACTIONS = {
    _acceptLugg: function(id){
       let acceptlugg = new CreateLuggModel()
       acceptlugg.url = `/accept-lugg/${id}`
+      console.log('saving teh lugg')
+
       acceptlugg.save().then(function(serverRes){
+         console.log("okay this should route somewhere else now")
          window.location.hash = '/create-lugg';
-    })
+     }).fail(function(error){
+        console.log("did i fail??", error)
+     })
   },
   _logOut: function(){
      $.ajax({

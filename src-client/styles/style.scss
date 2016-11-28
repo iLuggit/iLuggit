@@ -29,11 +29,7 @@ h1 h3{
 
 }
 
-.logo{
-	width: 40%;
-	position: relative;
 
-}
 
 .pack-description{
 	width: 50%;
@@ -134,12 +130,14 @@ h1 h3{
 	   color: #3A539B;
 		width: 100%;
 		height: 500px;
-	   padding-top: 50px;
+	   padding-top: 100px;
 	   padding-left: 20px;
 	   margin-bottom: 0;
 	   position: relative;
 	   background: url('../images/MoverBox.jpg') center center no-repeat fixed;
 	   background-size: cover;
+		position: relative;
+
 			i{
 				color: #3A539B;
 			}
@@ -149,8 +147,13 @@ h1 h3{
 			}
 			h3{
 				text-shadow: 1px 1px #000;
-
 			}
+}
+.logo{
+	width: 20%;
+	position: absolute;
+	top: 62%;
+	left: 1%;
 }
 .main-faq-container{
 
@@ -316,8 +319,16 @@ h1 h3{
 				}
 			}
 }
+.review-container{
+	width: 100%;
+}
+.reviews-info{
+	background-color: #89C4F4;
+	padding-left: 20px;
 
 
+
+}
 .lugg-container{
 	width: 100%;
 }

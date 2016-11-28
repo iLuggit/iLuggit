@@ -4,6 +4,15 @@ import GoogleMap from 'google-map-react';
 
 
 
+let Pin = React.createClass({
+   render: function(){
+      return (
+         <div style={{width: '40px', height: '40px', padding: "5px", color: '#fff', background: 'darkred'}}>
+            {this.props.text}
+         </div>
+      )
+   }
+})
 
 class SimpleMapPage extends Component {
 
@@ -35,7 +44,7 @@ class SimpleMapPage extends Component {
          }}
            defaultCenter = {this.props.center}
            defaultZoom = {this.props.zoom}>
-
+            <Pin lat={32.7869} lng={-79.9357} text={"Marion Square"}/>
          </GoogleMap>
        );
     }
