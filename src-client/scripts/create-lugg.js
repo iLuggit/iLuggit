@@ -32,12 +32,12 @@ const CreateLugg = React.createClass({
     console.log('props', this.props);
     let outstandingPacks = this.props.newLuggData.map(function(model, i){
 
-
+      
          return (
 
                      <div key={i}>
-                        {model.get('user').useruser}<br/>
-                        {typeof model === 'object' && model.get('haul_description')}
+                        <p>User: {model.get('user').useruser}  - Haul: {typeof model === 'object' && model.get('haul_description')} - </p>
+
                      </div>
                )
          })
