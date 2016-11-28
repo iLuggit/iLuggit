@@ -117,17 +117,29 @@ public class iLuggitController {
     }
     @RequestMapping(path = "/create-lugg", method = RequestMethod.POST)
     public ResponseEntity<Job> postJob(HttpSession session, @RequestBody Job job) throws Exception {
-        String[] origin = job.getPickup_address();
-        String[] destination = job.getDropoff_address();
         GeoApiContext apiContext = new GeoApiContext();
         apiContext.setApiKey("AIzaSyB8QAVhBnoK5pQC-1hPqRCSvpiyLzmBNyo");
-        DistanceMatrix request = DistanceMatrixApi.getDistanceMatrix(apiContext, origin, destination).await();
+        String pickUpJob = job.getPickup_address();
+        String dropOffJob = job.getDropoff_address();
+        String origin = job.getPickup_address();
+        String destination = job.getDropoff_address();
+        GeocodingResult[] pickUpJobGeo = GeocodingApi.newRequest(apiContext).address(pickUpJob).await();
+        Double latitude = pickUpJobGeo[0].geometry.location.lat;
+        Double longitude = pickUpJobGeo[0].geometry.location.lng;
+        GeocodingResult[] dropOffJobGeo = GeocodingApi.newRequest(apiContext).address(dropOffJob).await();
+        Double latitude2 = dropOffJobGeo[0].geometry.location.lat;
+        Double longitude2 = dropOffJobGeo[0].geometry.location.lng;
+        DistanceMatrix request = DistanceMatrixApi.getDistanceMatrix(apiContext, new String[] {origin}, new String[] {destination}).await();
         Distance distance = request.rows[0].elements[0].distance;
         long inMeters = distance.inMeters;
         double inMetersDouble = doubleValue(inMeters);
         double price = ((inMetersDouble * 0.012) / 10) + 5;
         String username = (String) session.getAttribute("useruser");
         User user = users.findFirstByUseruser(username);
+        job.setPickUpLatitude(latitude);
+        job.setPickUpLongitude(longitude);
+        job.setDropOffLongitude(latitude2);
+        job.setDropOffLatitude(longitude2);
         job.setJob_price(price);
         job.setUser(user);
         job.setUser_accept(false);
