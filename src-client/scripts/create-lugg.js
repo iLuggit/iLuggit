@@ -31,16 +31,18 @@ const CreateLugg = React.createClass({
    render: function(){
    //  console.log('props', this.props);
     let outstandingPacks = this.props.newLuggData.map(function(model, i){
-
-
-         return (
-
-                     <div key={i}>
-                        {model.get('user').useruser}<br/>
-                        {typeof model === 'object' && model.get('haul_description')}
-                     </div>
-               )
-         })
+      let acceptedStatus
+      if (model.get('truck')){
+         acceptedStatus = 'Accepted'
+      } else {
+         acceptedStatus = "Pending"
+      }
+      return (
+             <div key={i}>
+                <p>User: {model.get('user').useruser}  - Haul: {typeof model === 'object' && model.get('haul_description')}  | {acceptedStatus} </p>
+             </div>
+       )
+      })
 
       let CharlestonMap = {
          center: {lat: 32.784618, lng: -79.940918},
