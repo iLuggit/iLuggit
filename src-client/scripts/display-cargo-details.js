@@ -2,13 +2,9 @@ import Backbone from 'backbone'
 import React from 'react'
 import ACTIONS from './ACTIONS.js'
 import LuggAuthView from './lugg-auth-view.js'
-
+import $ from 'jquery'
 const CargoDisplay = React.createClass({
-   // componentWillMount: function(){
-   //
-   //      console.log('props', this.props);
-   //   },
-
+   
      _acceptLugg: function(){
 
       let userid = this.refs.id.dataset.id
@@ -16,6 +12,7 @@ const CargoDisplay = React.createClass({
 
          ACTIONS._acceptLugg(userid)
      },
+
 
    render: function (){
       // console.log('username', existingUserData);
@@ -48,14 +45,14 @@ const CargoDisplay = React.createClass({
 
                   <div className="btn-group">
                      <button type="button" onClick = {this._acceptLugg}  ref={'id'} data-id = {typeof model === 'object' && model.get('id')} className="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-lg">Accept Lugg</button>
-                     <a href="/#lugg-list"><button type="button"  className="btn btn-default">Return</button></a>
+                     <a href="/lugg-list"><button type="button"  className="btn btn-default">Return</button></a>
 
-                     <div className="modal fade bs-example-modal-lg" tabIndex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                     <div className="modal fade bs-example-modal-lg" role="dialog" aria-labelledby="myLargeModalLabel">
                          <div className="modal-dialog modal-lg" role="document">
                          <div className="modal-content">
                            <h3>Thanks you for accepting this job</h3>
                            <p>Please be in contact with packer</p>
-                              <a href="/#lugg-list"><button type="button"  className="btn btn-default">Return</button></a>
+                              <a href="/lugg-list"><button type="button" className="btn btn-default">Return</button></a>
                            </div>
                          </div>
                      </div>

@@ -11,7 +11,7 @@ import STORE from './STORE.js'
 const CreateLugg = React.createClass({
 
    componentWillMount: function(){
-      //   ACTIONS.fetchLuggData()
+      ACTIONS.fetchLuggData()
         console.log('cr-lugg view', this.props);
 
      },
@@ -29,8 +29,10 @@ const CreateLugg = React.createClass({
       },
 
    render: function(){
-   //  console.log('props', this.props);
-    let outstandingPacks = this.props.newLuggData.map(function(model, i){
+
+
+
+      let outstandingPacks = this.props.newLuggData.map(function(model, i){
 
 
          return (
@@ -40,12 +42,23 @@ const CreateLugg = React.createClass({
                         {typeof model === 'object' && model.get('haul_description')}
                      </div>
                )
+
          })
 
       let CharlestonMap = {
          center: {lat: 32.784618, lng: -79.940918},
          zoom: 13,
       }
+
+      let pinsArray = this.props.newLuggData.map(function(model, i){
+         
+         return {
+             latitude: model.get('pickUpLatitude'),
+            longitude: model.get('pickUpLongitude'),
+            job_price: model.get('job_price')
+         }
+      })
+
       return(
          <div className = "lugg-container">
             <div className="container-fluid text-center packer-container ">
@@ -99,7 +112,7 @@ const CreateLugg = React.createClass({
                </form>
                <div className="map-container2">
                   <div id= "map2">
-                     <SimpleMapPage {...CharlestonMap}/>
+                     <SimpleMapPage mapConfig = {CharlestonMap} pinsData = {pinsArray} />
                   </div>
                </div>
               </div>
