@@ -11,7 +11,7 @@ let Pin = React.createClass({
 
       return (
          <div>
-            <i className="fa fa-map-marker fa-2x" aria-hidden="true"></i>
+            <i className="fa fa-map-marker fa-3x" aria-hidden="true"></i>
          </div>
       )
    }
