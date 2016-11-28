@@ -22,7 +22,7 @@ const CargoDisplay = React.createClass({
       let id = this.props.id
       console.log('id', id);
       let model = this.props.newLuggData.find(function(model){
-         console.log('newLuggData', model)
+         // console.log('model', model)
          return Number(model.get('id')) === Number(id)
       })
 
