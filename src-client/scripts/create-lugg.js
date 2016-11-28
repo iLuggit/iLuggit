@@ -28,21 +28,19 @@ const CreateLugg = React.createClass({
 
       },
 
-
-
-
    render: function(){
     console.log('props', this.props);
     let outstandingPacks = this.props.newLuggData.map(function(model, i){
 
 
          return (
-            <div key={i}>
-               <li >{typeof model === 'object' && model.get('haul_description') }</li>
-               <span>{model.get('user').useruser}</span>
-            </div>
-         )
-      })
+
+                     <div key={i}>
+                        {model.get('user').useruser}<br/>
+                        {typeof model === 'object' && model.get('haul_description')}
+                     </div>
+               )
+         })
 
       let CharlestonMap = {
          center: {lat: 32.784618, lng: -79.940918},
@@ -58,18 +56,17 @@ const CreateLugg = React.createClass({
             </div>
 
             <div>
-               <h3>  Oustanding Packs </h3>
+               <h3>Oustanding Packs </h3>
                   <ul>
                      { outstandingPacks }
                   </ul>
             </div>
 
-
-            <div className ="row form-container">
-               <form className = "col-xs-12 col-md-6 " id="create-lugg-form" onSubmit = {this._createLugg}>
-                       <button type="button" onClick = {this._logout} className="btn btn-default">Logout</button>
-                       <a href = "#"><i className = "fa fa-home fa-2x" aria-hidden = "true"></i></a>
-                       <h2 className = "">Welcome back ${model.get('user').useruser}Create a New Lugg </h2>
+            <div className ="form-container">
+               <div className ="row ">
+                  <form className = "col-xs-12 col-md-6 " id="create-lugg-form" onSubmit = {this._createLugg}>
+                        <a href = "#"><i className = "fa fa-home fa-2x" aria-hidden = "true"></i></a>
+                       <h2 className = "">Welcome back  Create a New Lugg </h2>
                   <div className = "col-xs-12 form-group">
                        <label htmlFor = "startAddress"> </label>
                        <input type = "text" className="form-control" id = "s_address" ref = "start_address" placeholder = "Enter Starting Address" />
@@ -86,13 +83,26 @@ const CreateLugg = React.createClass({
                        <label htmlFor = "cargoImg"></label>
                        <input type = "text" className="form-control" id = "cargo_img" ref = "cargo_img" placeholder="Image of Lugg (Optional)"/>
                     </div>
-                    <input type = "submit" className="btn btn-default" />
+                    <input type = "submit" className="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-lg" />
+
+                    <div className="modal fade bs-example-modal-lg" tabIndex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                        <div className="modal-dialog modal-lg" role="document">
+                        <div className="modal-content">
+                          <h3>Please enter a lugg</h3>
+                             <a href="/#create-lugg"><button type="button"  className="btn btn-default">Return</button></a>
+                          </div>
+                        </div>
+                    </div>
+
+
+
                </form>
-               <div className="map-container">
+               <div className="map-container2">
                   <div id= "map2">
                      <SimpleMapPage {...CharlestonMap}/>
                   </div>
                </div>
+              </div>
             </div>
          </div>
     );

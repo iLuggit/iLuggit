@@ -3,6 +3,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import $ from 'jquery'
 
+import {geocodeKey} from './secrets.js'
+
+
 import PackAuthView from './pack-auth-view.js'
 import LuggAuthView from './lugg-auth-view.js'
 import HomeView from './home-page.js'
@@ -11,9 +14,11 @@ import AppController from './lugg-view-controller.js'
 import CargoDisplay from './display-cargo-details.js'
 import CreateLugg from './create-lugg.js'
 import {LuggProfile, LuggView} from './lugg-list.js'
+import showReviews from './reviews.js'
 import LuggCreated from './display-created-lugg.js'
 import Sandbox from './sandbox.js'
 import TruckInfo from './truckinfo.js'
+import showWhatWeDo from './whatwedo.js'
 
 const AppRouter = Backbone.Router.extend({
    routes: {
@@ -82,6 +87,10 @@ const AppRouter = Backbone.Router.extend({
    },
 
    initialize: function(){
+   $.getJSON(`https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=${geocodeKey}`)
+   .then(function(serverRes){
+      console.log('googleApi', serverRes);
+   })
    Backbone.history.start();
 
    }

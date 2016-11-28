@@ -39,8 +39,8 @@ const LuggAuthView = React.createClass({
       return(
             <div className = "row">
                <div className ="lugg-auth-form">
+               <a href = "#"><i className="fa fa-home fa-2x " aria-hidden="true"></i></a>
                  <form className = "col-xs-12 col-sm-6 text-center" id="truck-login-form" onSubmit = {this._submitTruckLogin}>
-                          <a href = "#"><i className="fa fa-home fa-2x " aria-hidden="true"></i></a>
                           <h2 className = "exisiting-lugger">Existing Lugger Login </h2>
                      <div>
                        <div className = "form-group">

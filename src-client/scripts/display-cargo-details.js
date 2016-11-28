@@ -8,10 +8,10 @@ const CargoDisplay = React.createClass({
         ACTIONS.fetchLuggData()
         console.log(this.props);
      },
-     
+
      _acceptLugg: function(){
 
-      let userid = this.refs.userid.dataset.id
+      let userid = this.refs.id.dataset.id
       console.log('id', userid);
 
          ACTIONS._acceptLugg(userid)
@@ -25,8 +25,6 @@ const CargoDisplay = React.createClass({
 
          return Number(model.get('id')) === Number(id)
       })
-      // console.log('model', model);
-      // console.log( typeof model === 'object' && model.get('haul_img')  )
 
       return(
          <div>
@@ -49,17 +47,27 @@ const CargoDisplay = React.createClass({
                      <p>Job Price: ${typeof model === 'object' && model.get('job_price')}</p>
 
                   <div className="btn-group">
-                        <button type="button" onClick = {this._acceptLugg} ref={'id'} data-id = {typeof model === 'object' && model.get('id')} className="btn btn-default">Accept Lugg</button>
-                        <a href="/#lugg-list"><button type="button" className="btn btn-default">Return</button></a>
+                     <button type="button" onClick = {this._acceptLugg}  ref={'id'} data-id = {typeof model === 'object' && model.get('id')} className="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-lg">Accept Lugg</button>
+                     <a href="/#lugg-list"><button type="button"  className="btn btn-default">Return</button></a>
+
+                     <div className="modal fade bs-example-modal-lg" tabIndex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                         <div className="modal-dialog modal-lg" role="document">
+                         <div className="modal-content">
+                           <h3>Thanks you for accepting this job</h3>
+                           <p>Please be in contact with packer</p>
+                              <a href="/#lugg-list"><button type="button"  className="btn btn-default">Return</button></a>
+                           </div>
+                         </div>
+                     </div>
                   </div>
-                  </div>
-                </div>
-              </div>
-           </div>
-         </div>
-       );
-     }
-   });
+               </div>
+             </div>
+             </div>
+          </div>
+      </div>
+    );
+    }
+});
 
 
 

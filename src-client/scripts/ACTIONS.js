@@ -2,7 +2,7 @@ import Backbone from 'backbone'
 import React from 'react'
 import $ from 'jquery'
 
-import {UserModel, UserCollection, LoginModel, CreateUserModel, TruckModel, CreateTruckModel, CreateLuggModel} from './lugg-model.js'
+import {UserModel, UserCollection, LoginModel, CreateUserModel, TruckModel, CreateTruckModel, CreateLuggModel, ReviewCollection} from './lugg-model.js'
 import STORE from './STORE.js'
 const ACTIONS = {
 
@@ -48,7 +48,7 @@ const ACTIONS = {
      let createLuggMod = new CreateLuggModel()
      createLuggMod.set(newLugg)
      createLuggMod.save().then(function(){
-        window.location.hash = '';
+        window.location.hash ='/display-created-lugg.js'
     })
   },
 
@@ -61,12 +61,26 @@ const ACTIONS = {
       return luggCollInstance
    },
 
+   fetchReview: function(){
+      let reviewCollInstance = new ReviewCollection();
+         reviewCollInstance.fetch().then(function(){
+            STORE.setStore('newReviewData', reviewCollInstance.models);
+            console.log('review fetch', reviewCollInstance);
+         })
+         return reviewCollInstance
+   },
+
    _acceptLugg: function(id){
       let acceptlugg = new CreateLuggModel()
       acceptlugg.url = `/accept-lugg/${id}`
+      console.log('saving teh lugg')
+
       acceptlugg.save().then(function(serverRes){
+         console.log("okay this should route somewhere else now")
          window.location.hash = '/create-lugg';
-    })
+     }).fail(function(error){
+        console.log("did i fail??", error)
+     })
   },
   _logOut: function(){
      $.ajax({
