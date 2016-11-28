@@ -74,6 +74,7 @@ const ACTIONS = {
       let acceptlugg = new CreateLuggModel()
       acceptlugg.url = `/accept-lugg/${id}`
       console.log('saving teh lugg')
+
       acceptlugg.save().then(function(serverRes){
          console.log("okay this should route somewhere else now")
          window.location.hash = '/create-lugg';

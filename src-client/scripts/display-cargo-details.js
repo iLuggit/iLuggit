@@ -47,17 +47,27 @@ const CargoDisplay = React.createClass({
                      <p>Job Price: ${typeof model === 'object' && model.get('job_price')}</p>
 
                   <div className="btn-group">
-                        <button type="button" onClick = {this._acceptLugg} ref={'id'} data-id = {typeof model === 'object' && model.get('id')} className="btn btn-default">Accept Lugg</button>
-                        <a href="/#lugg-list"><button type="button" className="btn btn-default">Return</button></a>
+                     <button type="button" onClick = {this._acceptLugg}  ref={'id'} data-id = {typeof model === 'object' && model.get('id')} className="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-lg">Accept Lugg</button>
+                     <a href="/#lugg-list"><button type="button"  className="btn btn-default">Return</button></a>
+
+                     <div className="modal fade bs-example-modal-lg" tabIndex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                         <div className="modal-dialog modal-lg" role="document">
+                         <div className="modal-content">
+                           <h3>Thanks you for accepting this job</h3>
+                           <p>Please be in contact with packer</p>
+                              <a href="/#lugg-list"><button type="button"  className="btn btn-default">Return</button></a>
+                           </div>
+                         </div>
+                     </div>
                   </div>
-                  </div>
-                </div>
-              </div>
-           </div>
-         </div>
-       );
-     }
-   });
+               </div>
+             </div>
+             </div>
+          </div>
+      </div>
+    );
+    }
+});
 
 
 
