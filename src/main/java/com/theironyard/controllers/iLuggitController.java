@@ -214,7 +214,7 @@ public class iLuggitController {
     @RequestMapping(path = "/auth-user", method = RequestMethod.GET)
     public ResponseEntity<User> userAuth(HttpSession session) {
         if (session.getAttribute("useruser") != null){
-            String name = (String) session.getAttribute("username");
+            String name = (String) session.getAttribute("useruser");
             User user = users.findFirstByUseruser(name);
             return new ResponseEntity<> (user, HttpStatus.OK);
         }
@@ -223,7 +223,7 @@ public class iLuggitController {
     @RequestMapping(path = "/auth-truck", method = RequestMethod.GET)
     public ResponseEntity<Truck> truckAuth(HttpSession session) {
         if (session.getAttribute("usertruck") != null){
-            String name = (String) session.getAttribute("username");
+            String name = (String) session.getAttribute("usertruck");
             Truck truck = trucks.findFirstByUsertruck(name);
             return new ResponseEntity<> (truck, HttpStatus.OK);
         }
