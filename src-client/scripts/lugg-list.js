@@ -11,16 +11,16 @@ import GoogleMap from 'google-map-react';
 
 
 const LuggProfile = React.createClass({
-   componentWillMount: function(){
-         ACTIONS.fetchLuggData()
-     },
+   // componentWillMount: function(){
+   //        ACTIONS.fetchLuggData()
+   //   },
 
 
 
    render: function(){
 
       let luggs = this.props.newLuggData.map(function(model){
-        console.log('its me')
+        //console.log('its me')
          return <LuggView key = {model.cid} model={model} />
       })
       let CharlestonMap = {

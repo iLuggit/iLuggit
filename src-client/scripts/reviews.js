@@ -8,9 +8,9 @@ import AppController from './lugg-view-controller.js';
 
 
 const showReviews = React.createClass({
-   componentWillMount: function(){
-         ACTIONS.fetchLuggData()
-     },
+   // componentWillMount: function(){
+   //        ACTIONS.fetchReview()
+   //   },
 
    render:function(){
       let reviews = this.props.newReviewData.map(function(model, i){

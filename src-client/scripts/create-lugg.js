@@ -11,7 +11,7 @@ import STORE from './STORE.js'
 const CreateLugg = React.createClass({
 
    componentWillMount: function(){
-        ACTIONS.fetchLuggData()
+      //   ACTIONS.fetchLuggData()
         console.log('cr-lugg view', this.props);
 
      },
@@ -29,7 +29,7 @@ const CreateLugg = React.createClass({
       },
 
    render: function(){
-    console.log('props', this.props);
+   //  console.log('props', this.props);
     let outstandingPacks = this.props.newLuggData.map(function(model, i){
 
 

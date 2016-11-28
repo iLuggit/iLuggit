@@ -4,15 +4,15 @@ import ACTIONS from './ACTIONS.js'
 import LuggAuthView from './lugg-auth-view.js'
 
 const CargoDisplay = React.createClass({
-   componentWillMount: function(){
-        ACTIONS.fetchLuggData()
-        console.log(this.props);
-     },
+   // componentWillMount: function(){
+   //
+   //      console.log('props', this.props);
+   //   },
 
      _acceptLugg: function(){
 
       let userid = this.refs.id.dataset.id
-      console.log('id', userid);
+      // console.log('id', userid);
 
          ACTIONS._acceptLugg(userid)
      },
@@ -20,7 +20,7 @@ const CargoDisplay = React.createClass({
    render: function (){
       // console.log('username', existingUserData);
       let id = this.props.id
-      console.log('id', id);
+      // console.log('id', id);
       let model = this.props.newLuggData.find(function(model){
          // console.log('model', model)
          return Number(model.get('id')) === Number(id)
@@ -37,7 +37,7 @@ const CargoDisplay = React.createClass({
             </div>
             <div className="container">
               <div className="row">
-                <div className="col-sm-offset-3 col-sm-6 pack-description text-center">
+                <div className="col-sm-offset-3 col-sm-6 text-center pack-description ">
                   <div>
                      <p>Details Of Pack</p>
                      <p>Cargo Img: {typeof model === 'object'  &&  model.get('haul_img')}</p>
