@@ -116,7 +116,7 @@ public class iLuggitController {
         return "Job Paid";
     }
     @RequestMapping(path = "/create-lugg", method = RequestMethod.POST)
-    public String postJob(HttpSession session, @RequestBody Job job) throws Exception {
+    public ResponseEntity<Job> postJob(HttpSession session, @RequestBody Job job) throws Exception {
         String[] origin = job.getPickup_address();
         String[] destination = job.getDropoff_address();
         GeoApiContext apiContext = new GeoApiContext();
@@ -133,7 +133,8 @@ public class iLuggitController {
         job.setUser_accept(false);
         job.setTruck_accept(false);
         jobs.save(job);
-        return "Job Created";
+        return new ResponseEntity<Job>(job, HttpStatus.OK);
+
     }
     @RequestMapping(path = "/user-login", method = RequestMethod.POST)
     public ResponseEntity<User> postUser(HttpSession session, @RequestBody User user) throws Exception {
