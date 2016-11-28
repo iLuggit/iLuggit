@@ -12,7 +12,7 @@ const showTruckInfo = React.createClass({
 
       return (
          <div className="home-container">
-            <div className="container-fluid   ">
+            <div className="container-fluid">
             <a href = "#"><i className = "fa fa-home fa-2x" aria-hidden = "true"></i></a>
                      <div className="main-container text-center">
                         <h1>iLuggit, Our Story</h1>

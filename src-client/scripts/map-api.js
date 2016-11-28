@@ -41,7 +41,7 @@ class SimpleMapPage extends Component {
 
          <GoogleMap
          bootstrapURLKeys={{
-             key: {bootstrapURLKeys},
+             key: {bootstrapURLKeys}
          }}
            defaultCenter = {this.props.center}
            defaultZoom = {this.props.zoom}>
