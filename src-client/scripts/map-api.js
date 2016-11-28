@@ -2,6 +2,7 @@ import React, {PropTypes, Component} from 'react';
 import shouldPureComponentUpdate from 'react-pure-render/function';
 import GoogleMap from 'google-map-react';
 
+import {bootstrapURLKeys} from './secrets.js'
 
 
 let Pin = React.createClass({
@@ -40,7 +41,7 @@ class SimpleMapPage extends Component {
 
          <GoogleMap
          bootstrapURLKeys={{
-             key: 'AIzaSyAGoG15YaqO4Hp9Si4jUP2u_61EHK-jw-4',
+             key: {bootstrapURLKeys},
          }}
            defaultCenter = {this.props.center}
            defaultZoom = {this.props.zoom}>

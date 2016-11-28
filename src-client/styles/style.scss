@@ -20,7 +20,7 @@ h1 h3{
 		color: #000;
 }
 #app-container{
-
+   font-size: 0;
 	width: 1400px;
 	height: 100%;
 	margin-left: auto;
@@ -80,6 +80,7 @@ h1 h3{
 
 
 .packer-container{
+	font-size: medium;
 	width: 100%;
 	margin: 0;
 	height: 500px;
@@ -102,6 +103,7 @@ h1 h3{
 }
 
 .lugger-container{
+	font-size: medium;
 	width: 100%;
 	color: #fff;
 	margin: 0;
@@ -127,6 +129,7 @@ h1 h3{
 
 
 .main-container{
+	   font-size: medium;
 	   color: #3A539B;
 		width: 100%;
 		height: 500px;
@@ -156,7 +159,7 @@ h1 h3{
 	left: 1%;
 }
 .main-faq-container{
-
+	font-size: medium;
 	color: #000;
 	width: 100%;
 	height: 400px;
@@ -215,6 +218,7 @@ h1 h3{
 		}
 }
 .lugg-list-container{
+	font-size: medium;
 	padding: 0;
 	margin: 0;
 	width: 60%;
@@ -228,9 +232,11 @@ h1 h3{
 }
 
 .lug-map-container{
+	font-size: medium;
 	width: 100%;
 }
   	.map-container{
+		font-size: medium;
 		background-color: #89C4F4;
 		display: inline-block;
 		width: 39%;
@@ -245,6 +251,7 @@ h1 h3{
 
 
 .form-container{
+	font-size: medium;
 	width: 100%;
 	padding: 10px;
 	border: 2px solid black;
@@ -277,12 +284,14 @@ h1 h3{
 }
 
 .map-container{
+	font-size: medium;
 	display: inline-block;
 	vertical-align: top;
 	width: 49.5%;
 }
 
 .info-container{
+	font-size: medium;
 	background-color: #EBF1FB;
 	margin-top: 20px;
 		width: 100%;
@@ -320,6 +329,7 @@ h1 h3{
 			}
 }
 .review-container{
+	font-size: medium;
 	width: 100%;
 }
 .reviews-info{
@@ -330,6 +340,7 @@ h1 h3{
 
 }
 .lugg-container{
+	font-size: medium;
 	width: 100%;
 }
 
@@ -355,5 +366,6 @@ h1 h3{
 
 }
 .footer-container{
+	font-size: medium;
 	background-color: #89C4F4;
 }

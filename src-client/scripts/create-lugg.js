@@ -83,7 +83,7 @@ const CreateLugg = React.createClass({
                        <label htmlFor = "cargoImg"></label>
                        <input type = "text" className="form-control" id = "cargo_img" ref = "cargo_img" placeholder="Image of Lugg (Optional)"/>
                     </div>
-                    <input type = "submit" className="btn btn-default"data-toggle="modal" data-target=".bs-example-modal-lg" />
+                    <input type = "submit" className="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-lg" />
 
                     <div className="modal fade bs-example-modal-lg" tabIndex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                         <div className="modal-dialog modal-lg" role="document">
