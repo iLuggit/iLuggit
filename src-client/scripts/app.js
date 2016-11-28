@@ -3,8 +3,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import $ from 'jquery'
 
-import {geocodeKey} from './secrets.js'
-
+import {geocodeKey} from  './secrets.js'
 
 import PackAuthView from './pack-auth-view.js'
 import LuggAuthView from './lugg-auth-view.js'
