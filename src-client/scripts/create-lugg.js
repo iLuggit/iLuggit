@@ -62,12 +62,9 @@ const CreateLugg = React.createClass({
       return(
          <div className = "lugg-container">
             <div className="container-fluid text-center packer-container ">
-                  <div className="container ">
                      <h1>iLuggit</h1>
                      <h3 className="lead">Tell us what you need moved, we'll find a Lugger!</h3>
-                  </div>
             </div>
-
             <div>
                <h3>Oustanding Packs </h3>
                   <ul>
@@ -96,19 +93,7 @@ const CreateLugg = React.createClass({
                        <label htmlFor = "cargoImg"></label>
                        <input type = "text" className="form-control" id = "cargo_img" ref = "cargo_img" placeholder="Image of Lugg (Optional)"/>
                     </div>
-                    <input type = "submit" className="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-lg" />
-
-                    <div className="modal fade bs-example-modal-lg" tabIndex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                        <div className="modal-dialog modal-lg" role="document">
-                        <div className="modal-content">
-                          <h3>Please enter a lugg</h3>
-                             <a href="/#create-lugg"><button type="button"  className="btn btn-default">Return</button></a>
-                          </div>
-                        </div>
-                    </div>
-
-
-
+                    <input type = "submit" className="btn btn-default" />
                </form>
                <div className="map-container2">
                   <div id= "map2">

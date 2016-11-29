@@ -37,11 +37,15 @@ const LuggAuthView = React.createClass({
 
    render: function(){
       return(
+            <div className="lugg-auth-container ">
+                  <a href = "#"><i className="fa fa-home fa-2x " aria-hidden="true"></i></a>
+                  <img className ="lugg-auth-logo "src= "../images/logo1.png" alt="" />
+                  <h3 className="lugg-auth-lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
+
             <div className = "row">
                <div className ="lugg-auth-form">
-               <a href = "#"><i className="fa fa-home fa-2x " aria-hidden="true"></i></a>
                  <form className = "col-xs-12 col-sm-6 text-center" id="truck-login-form" onSubmit = {this._submitTruckLogin}>
-                          <h2 className = "exisiting-lugger">Existing Lugger Login </h2>
+                          <h2 className ="existing-lugger-form">Existing Lugger Login </h2>
                      <div>
                        <div className = "form-group">
                           <label htmlFor = "name">Username</label>
@@ -90,14 +94,14 @@ const LuggAuthView = React.createClass({
                                    <option value="Trailer">Trailer</option>
                               </select>
                            </div>
-
-
                             <input type = "submit" className="btn btn-default" />
                        </div>
                    </form>
                   </div>
               </div>
             </div>
+         </div>
+
       )
    }
 })
