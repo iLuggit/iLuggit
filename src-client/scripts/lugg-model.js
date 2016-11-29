@@ -70,6 +70,23 @@ const ReviewCollection = Backbone.Collection.extend({
 
       }
 })
+const AuthenticateUser = Backbone.Model.extend({
+   model: UserModel,
+   url: '/auth-user',
+
+      initialize: function(path){
+         this.url = path
+
+      }
+})
+const LogOut = Backbone.Model.extend({
+   model: UserModel,
+   url: '/logout',
+
+      initialize: function(path){
+         this.url = path
+      }
+})
 
 module.exports = {
    UserModel,
@@ -79,6 +96,8 @@ module.exports = {
    CreateTruckModel,
    TruckModel,
    CreateLuggModel,
-   ReviewCollection
+   ReviewCollection,
+   AuthenticateUser,
+   LogOut
 
 }

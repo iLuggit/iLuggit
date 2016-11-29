@@ -15,10 +15,9 @@ const HomeView = React.createClass({
 
 
     return (
-      <div className="home-container">
-         <div className="container-fluid text-center main-container ">
-                  <div className="container ">
-                  </div>
+      <div className="container-fluid">
+         <div className="main-container text-center">
+
             <div className="row">
                <div className ="profile-row">
                   <div className="col-xs-12 col-md-6 ">
@@ -37,10 +36,10 @@ const HomeView = React.createClass({
               </div>
             </div>
          </div>
-         <img className ="home-page-logo" src= "../images/logo1.png" alt="" />
-         <h3 className="home-page-lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
-
+               <img className ="home-page-logo" src= "../images/logo1.png" alt="" />
+               <h3 className="home-page-lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
       </div>
+
       <div className="container-fluid info-container">
          <div className="row">
             <div className="col-xs-12 col-md-4 text-center">

@@ -17,9 +17,8 @@ import Reviews from './reviews.js'
 
 let AppController = React.createClass({
    getInitialState: function(){
-      // if(!this.props.newLuggData){
-      //    return(<p>loading</p>)
-      // }
+
+         // ACTIONS._authenticateUser()
          return STORE.getLuggData()
      },
 
