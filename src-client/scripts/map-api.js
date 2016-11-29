@@ -26,7 +26,7 @@ class SimpleMapPage extends Component {
 
     render() {
       let pinsJSXArray = this.props.pinsData.map(function(obj, i){
-         return <Pin lat={obj.latitude} lng={obj.longitude} key = {i} />
+         return <Pin key i = {i} lat={obj.latitude} lng={obj.longitude}  />
       })
        return (
 

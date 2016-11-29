@@ -2,7 +2,7 @@ import Backbone from 'backbone'
 import React from 'react'
 import $ from 'jquery'
 
-import {UserModel, UserCollection, LoginModel, CreateUserModel, TruckModel, CreateTruckModel, CreateLuggModel, ReviewCollection} from './lugg-model.js'
+import {UserModel, UserCollection, LoginModel, CreateUserModel, TruckModel, CreateTruckModel, CreateLuggModel, ReviewCollection, AuthenticateUser, LogOut} from './lugg-model.js'
 import STORE from './STORE.js'
 const ACTIONS = {
 
@@ -11,7 +11,7 @@ const ACTIONS = {
       loginMod.set(newLogin)
       loginMod.save().then(function(serverRes){
       // console.log('are we changing the route?', window.location);
-         window.location.hash = '/create-lugg';
+         window.location = '/create-lugg';
     })
   },
 
@@ -19,7 +19,7 @@ const ACTIONS = {
       let createMod = new CreateUserModel()
       createMod.set(newCreate)
       createMod.save().then(function(serverRes){
-         window.location.hash = '/create-lugg';
+         window.location = '/create-lugg';
     })
   },
 
@@ -30,7 +30,7 @@ const ACTIONS = {
      truckLoginMod.save().then(function(serverRes){
       //   console.log('am i even here?')
 
-        window.location.hash = '/lugg-list';
+        window.location = '/lugg-list';
     })
   },
 
@@ -39,7 +39,7 @@ const ACTIONS = {
      truckCreateMod.set(createTruck)
      truckCreateMod.save().then(function(serverRes){
       //   console.log('are we changing the route?', window.location);
-        window.location.hash = '/lugg-list';
+        window.location = '/lugg-list';
     })
   },
 
@@ -48,7 +48,7 @@ const ACTIONS = {
      let createLuggMod = new CreateLuggModel()
      createLuggMod.set(newLugg)
      createLuggMod.save().then(function(){
-        window.location.hash ='#'
+        window.location ='#'
     })
   },
 
@@ -76,18 +76,30 @@ const ACTIONS = {
       // console.log('saving teh lugg')
       acceptlugg.save().then(function(serverRes){
          // console.log("okay this should route somewhere else now")
-         window.location.hash = '/lugg-list';
+         window.location = '/lugg-list';
      }).fail(function(error){
       //   console.log("did i fail??", error)
      })
   },
+
   _logOut: function(){
      $.ajax({
         method: 'POST',
         url: '/logout'
      }).then(function(){
-        window.location.hash = ''
+        window.location = ''
      })
+  },
+
+   _authenticateUser: function(){
+      let currentUser = new AuthenticateUser()
+      currentUser.set(currentUser)
+      currentUser.save().then(function(){
+         STORE.setStore('currentUser', currentUser)
+         window.location = '';
+
+
+      })
    }
 }
 
