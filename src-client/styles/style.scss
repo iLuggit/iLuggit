@@ -128,6 +128,8 @@ h1 h3{
 
 .main-container{
 	   color: #3A539B;
+		margin:0;
+		padding: 0;
 		width: 100%;
 		height: 500px;
 	   padding-top: 100px;
@@ -137,7 +139,6 @@ h1 h3{
 	   background: url('../images/MoverBox.jpg') center center no-repeat fixed;
 	   background-size: cover;
 		position: relative;
-
 			i{
 				color: #3A539B;
 			}
@@ -148,12 +149,13 @@ h1 h3{
 			h3{
 				text-shadow: 1px 1px #000;
 			}
+			.logo{
+				width: 10%;
+					img{
+						padding: 0;
+						margin: 0;
+  			}
 }
-.logo{
-	width: 20%;
-	position: absolute;
-	top: 62%;
-	left: 1%;
 }
 .main-faq-container{
 	color: #000;
@@ -180,7 +182,6 @@ h1 h3{
 	margin: 0, auto;
 	padding: 0;
 		p{
-			font-family: fantasy;
 			font-size: 30px;
 		}
 }
@@ -230,12 +231,12 @@ h1 h3{
   	.map-container{
 		background-color: #89C4F4;
 		display: inline-block;
-		width: 39%;
+		width: 10%;
 }
 	#map{
 		display: inline-block;
 		vertical-align: top;
-		width: 555px;
+		width: 600px;
 		height: 400px;
 	  }
 
@@ -250,7 +251,7 @@ h1 h3{
 		.map-container2{
 			background-color: #89C4F4;
 			display: inline-block;
-			width: 39%;
+			width: 10%;
 		}
 		#map2{
 			margin-top: 10px;
@@ -258,8 +259,8 @@ h1 h3{
 			margin-left: 50%;
 			display: inline-block;
 			vertical-align: top;
-			width: 400px;
-			height: 400px;
+			width: 600px;
+			height: 425px;
 
 		}
 }

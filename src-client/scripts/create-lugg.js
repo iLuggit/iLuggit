@@ -47,7 +47,7 @@ const CreateLugg = React.createClass({
 
       let CharlestonMap = {
          center: {lat: 32.784618, lng: -79.940918},
-         zoom: 13,
+         zoom: 10,
       }
 
       let pinsArray = this.props.newLuggData.map(function(model, i){
