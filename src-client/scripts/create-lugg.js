@@ -60,6 +60,14 @@ const CreateLugg = React.createClass({
       })
 
       return(
+         <div className="container-fluid home-container">
+            <nav className="navbar navbar-default">
+            <a className="navbar-brand " href="#"><img className ="navbar-logo" src="../images/logo1.png" alt = "" /></a>
+            <ul className="nav navbar-nav navbar-right">
+            <li><a href="#">Home</a></li>
+            <li><a onClick = {this._logOut}>Logout</a></li>
+            </ul>
+         </nav>
          <div className = "lugg-container">
             <div className="container-fluid text-center packer-container ">
                      <h1>iLuggit</h1>
@@ -102,6 +110,7 @@ const CreateLugg = React.createClass({
                </div>
               </div>
             </div>
+         </div>
          </div>
     );
    }

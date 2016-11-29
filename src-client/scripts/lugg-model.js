@@ -70,22 +70,22 @@ const ReviewCollection = Backbone.Collection.extend({
 
       }
 })
-const AuthenticateUser = Backbone.Model.extend({
-   model: UserModel,
-   url: '/auth-user',
-
-      initialize: function(path){
-         this.url = path
-
-      }
-})
+// const AuthenticateUser = Backbone.Model.extend({
+//    model: UserModel,
+//    url: '/auth-user',
+//
+//       initialize: function(path){
+//          this.url = path
+//
+//       }
+// })
 const LogOut = Backbone.Model.extend({
    model: UserModel,
    url: '/logout',
 
-      initialize: function(path){
-         this.url = path
-      }
+      // initialize: function(path){
+      //    this.url = path
+      // }
 })
 
 module.exports = {
@@ -97,7 +97,7 @@ module.exports = {
    TruckModel,
    CreateLuggModel,
    ReviewCollection,
-   AuthenticateUser,
+   // AuthenticateUser,
    LogOut
 
 }

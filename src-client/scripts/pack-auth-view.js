@@ -36,7 +36,15 @@ const PackAuthView = React.createClass({
    render: function(){
       return(
          <div>
-         <a href = "#"><i className="fa fa-home fa-2x " aria-hidden="true"></i></a>
+            <div className="container-fluid home-container">
+               <nav className="navbar navbar-default">
+                  <a className="navbar-brand " href="#"><img className ="navbar-logo" src="../images/logo1.png" alt = "" /></a>
+                  <ul className="nav navbar-nav navbar-right">
+                     <li><a href="#">Home</a></li>
+                     <li><a href="#">Logout</a></li>
+
+                  </ul>
+               </nav>
          <div className="container-fluid pack-auth-container ">
                <img className = "pack-auth-logo" src= "../images/logo1.png" alt="" />
                <h3 className = "pack-auth-lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
@@ -88,6 +96,7 @@ const PackAuthView = React.createClass({
             </div>
          </div>
       </div>
+   </div>
       )
    }
 })

@@ -38,7 +38,14 @@ const LuggAuthView = React.createClass({
    render: function(){
       return(
          <div>
-         <a href = "#"><i className="fa fa-home fa-2x " aria-hidden="true"></i></a>
+            <div className="container-fluid home-container">
+               <nav className="navbar navbar-default">
+                  <a className="navbar-brand " href="#"><img className ="navbar-logo" src="../images/logo1.png" alt = "" /></a>
+                  <ul className="nav navbar-nav navbar-right">
+                     <li><a href="#">Home</a></li>
+                     <li><a onClick = {this._logOut}>Logout</a></li>
+                  </ul>
+               </nav>
             <div className="container-fluid lugg-auth-container ">
                   <img className ="lugg-auth-logo "src= "../images/logo1.png" alt="" />
                   <h3 className="lugg-auth-lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
@@ -103,6 +110,7 @@ const LuggAuthView = React.createClass({
             </div>
          </div>
       </div>
+   </div>
 
       )
    }

@@ -11,7 +11,7 @@ const ACTIONS = {
       loginMod.set(newLogin)
       loginMod.save().then(function(serverRes){
       // console.log('are we changing the route?', window.location);
-         window.location = '/create-lugg';
+         window.location.hash = '/create-lugg';
     })
   },
 
@@ -19,7 +19,7 @@ const ACTIONS = {
       let createMod = new CreateUserModel()
       createMod.set(newCreate)
       createMod.save().then(function(serverRes){
-         window.location = '/create-lugg';
+         window.location.hash = '/create-lugg';
     })
   },
 
@@ -30,7 +30,7 @@ const ACTIONS = {
      truckLoginMod.save().then(function(serverRes){
       //   console.log('am i even here?')
 
-        window.location = '/lugg-list';
+        window.location.hash = '/lugg-list';
     })
   },
 
@@ -39,7 +39,7 @@ const ACTIONS = {
      truckCreateMod.set(createTruck)
      truckCreateMod.save().then(function(serverRes){
       //   console.log('are we changing the route?', window.location);
-        window.location = '/lugg-list';
+        window.location.hash = '/lugg-list';
     })
   },
 
@@ -48,7 +48,7 @@ const ACTIONS = {
      let createLuggMod = new CreateLuggModel()
      createLuggMod.set(newLugg)
      createLuggMod.save().then(function(){
-        window.location ='#'
+        window.location.hash ='#'
     })
   },
 
@@ -76,7 +76,7 @@ const ACTIONS = {
       // console.log('saving teh lugg')
       acceptlugg.save().then(function(serverRes){
          // console.log("okay this should route somewhere else now")
-         window.location = '/lugg-list';
+         window.location.hash = '/lugg-list';
      }).fail(function(error){
       //   console.log("did i fail??", error)
      })
@@ -87,20 +87,20 @@ const ACTIONS = {
         method: 'POST',
         url: '/logout'
      }).then(function(){
-        window.location = ''
+        window.location.hash = ''
      })
   },
 
-   _authenticateUser: function(){
-      let currentUser = new AuthenticateUser()
-      currentUser.set(currentUser)
-      currentUser.save().then(function(){
-         STORE.setStore('currentUser', currentUser)
-         window.location = '';
-
-
-      })
-   }
+   // _authenticateUser: function(){
+   //    let currentUser = new AuthenticateUser()
+   //    currentUser.set(currentUser)
+   //    currentUser.save().then(function(){
+   //       STORE.setStore('currentUser', currentUser)
+   //       window.location.hash = '';
+   //
+   //
+   //    })
+   // }
 }
 
 
