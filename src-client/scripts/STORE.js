@@ -7,7 +7,7 @@ const STORE = {
       luggData: {
          newLuggData: [],
          newReviewData: [],
-         currentUser: []
+         // currentUser: []
    },
 
    setStore: function(luggProp, maindata){

@@ -24,7 +24,7 @@ body{
 	height: auto;
 	margin-left: auto;
 	margin-right: auto;
-	background-color: #FAFAFA;
+	background-color: #A4B8E9;
 
 }
 
@@ -80,7 +80,13 @@ body{
 				}
 		}
 }
-
+.home-container{
+}
+.navbar-logo{
+	display: inline-block;
+	margin-left: 3px;
+	width: 30%;
+	}
 
 
 
@@ -93,7 +99,7 @@ body{
 	background-size: cover;
 
 	.lugg-auth-lead{
-		font-size: 30px;
+		font-size: 25px;
 		display: inline-block;
 	}
 		h3{

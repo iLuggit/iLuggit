@@ -24,7 +24,14 @@ const showReviews = React.createClass({
 
       return(
          <div>
-            <a href = "#"><i className = "fa fa-home fa-2x" aria-hidden = "true"></i></a>
+         <div className="container-fluid home-container">
+            <nav className="navbar navbar-default">
+               <a className="navbar-brand " href="#"><img className ="navbar-logo" src="../images/logo1.png" alt = "" /></a>
+               <ul className="nav navbar-nav navbar-right">
+               <li><a href="#">Home</a></li>
+               <li><a onClick = {this._logOut}>Logout</a></li>
+               </ul>
+            </nav>
                <div className="container-fluid review-container">
                         <img className ="review-logo" src= "../images/logo1.png" alt="" />
                         <h1 className ="review-lead">User Reviews</h1>
@@ -37,6 +44,7 @@ const showReviews = React.createClass({
                   </div>
             </div>
          </div>
+      </div>
       )
    }
 });

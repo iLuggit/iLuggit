@@ -9,7 +9,14 @@ const showWhatWeDo = React.createClass({
    render:function(){
       return(
          <div className ="main-faq-container">
-            <a href = "#"><i className="fa fa-home fa-2x " aria-hidden="false"></i></a>
+         <div className="container-fluid home-container">
+            <nav className="navbar navbar-default">
+               <a className="navbar-brand " href="#"><img className ="navbar-logo" src="../images/logo1.png" alt = "" /></a>
+               <ul className="nav navbar-nav navbar-right">
+               <li><a href="#">Home</a></li>
+               <li><a onClick = {this._logOut}>Logout</a></li>
+               </ul>
+            </nav>
                <div className="container-fluid faq-logo-container">
                      <img className ="faq-logo" src= "../images/logo1.png" alt="" />
                      <h1 className ="faq-lead">FAQ's</h1>
@@ -29,7 +36,7 @@ const showWhatWeDo = React.createClass({
                            but does not own a truck</p>
                </div>
          </div>
-
+      </div>
 
       )
    }

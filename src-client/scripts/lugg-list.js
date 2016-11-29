@@ -36,7 +36,14 @@ const LuggProfile = React.createClass({
 
       return(
          <div className = "lugg-map-container">
-                  <a href = "#"><i className = "fa fa-home fa-2x" aria-hidden = "true"></i></a>
+         <div className="container-fluid home-container">
+            <nav className="navbar navbar-default">
+               <a className="navbar-brand " href="#"><img className ="navbar-logo" src="../images/logo1.png" alt = "" /></a>
+               <ul className="nav navbar-nav navbar-right">
+               <li><a href="#">Home</a></li>
+               <li><a onClick = {this._logOut}>Logout</a></li>
+               </ul>
+            </nav>
             <div className = "lugger-container">
                         <h1>iLuggit</h1>
                         <h3 className="lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
@@ -53,7 +60,7 @@ const LuggProfile = React.createClass({
                </div>
             </div>
          </div>
-
+      </div>
 
       );
    }
