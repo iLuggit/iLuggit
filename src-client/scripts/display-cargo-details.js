@@ -37,25 +37,20 @@ const CargoDisplay = React.createClass({
                 <div className="col-sm-offset-3 col-sm-6 text-center pack-description ">
                   <div>
                      <p>Details Of Pack</p>
-                     <p>Cargo Img: {typeof model === 'object'  &&  model.get('haul_img')}</p>
+                     <p>First Name: {typeof model === 'object' && model.get('user').first_name}</p>
+                     <p>email: {typeof model === 'object' && model.get('user').email}</p>
+                     <p>Phone Number: {typeof model === 'object' && model.get('user').phone_number}</p>
                      <p>Haul Description: {typeof model === 'object' && model.get('haul_description')}</p>
                      <p>Pickup address: {typeof model === 'object' && model.get('pickup_address')}</p>
                      <p>Drop off address: {typeof model === 'object' && model.get('dropoff_address')}</p>
                      <p>Job Price: ${typeof model === 'object' && model.get('job_price')}</p>
 
-                  <div className="btn-group">
-                     <button type="button" onClick = {this._acceptLugg}  ref={'id'} data-id = {typeof model === 'object' && model.get('id')} className="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-lg">Accept Lugg</button>
-                     <a href="/lugg-list"><button type="button"  className="btn btn-default">Return</button></a>
 
-                     <div className="modal fade bs-example-modal-lg" role="dialog" aria-labelledby="myLargeModalLabel">
-                         <div className="modal-dialog modal-lg" role="document">
-                         <div className="modal-content">
-                           <h3>Thanks you for accepting this job</h3>
-                           <p>Please be in contact with packer</p>
-                              <a href="/lugg-list"><button type="button" className="btn btn-default">Return</button></a>
-                           </div>
-                         </div>
-                     </div>
+                  <div className="btn-group">
+                     <button type="button" onClick = {this._acceptLugg}  ref={'id'} data-id = {typeof model === 'object' && model.get('id')} className="btn btn-default">Accept Lugg</button>
+                     <a href="/#lugg-list"><button type="button"  className="btn btn-default">Return</button></a>
+
+
 
                   </div>
                   </div>

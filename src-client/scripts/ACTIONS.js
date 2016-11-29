@@ -76,7 +76,7 @@ const ACTIONS = {
       // console.log('saving teh lugg')
       acceptlugg.save().then(function(serverRes){
          // console.log("okay this should route somewhere else now")
-         window.location.hash = '/create-lugg';
+         window.location.hash = '/lugg-list';
      }).fail(function(error){
       //   console.log("did i fail??", error)
      })

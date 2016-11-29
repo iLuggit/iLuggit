@@ -15,17 +15,24 @@ const LuggProfile = React.createClass({
    render: function(){
 
 
-      // let luggs = this.props.newLuggData.map(function(model){
-      //   //console.log('its me')
-      //    return <LuggView key = {model.cid} model={model} />
-      // })
+      let luggs = this.props.newLuggData.map(function(model){
+        //console.log('its me')
+         return <LuggView key = {model.cid} model={model} />
+      })
 
       let CharlestonMap = {
          center: {lat: 32.784618, lng: -79.940918},
          zoom: 13,
-      }.
+      }
 
+      let pinsArray = this.props.newLuggData.map(function(model, i){
 
+         return {
+            latitude: model.get('pickUpLatitude'),
+            longitude: model.get('pickUpLongitude'),
+            job_price: model.get('job_price')
+         }
+      })
 
       return(
          <div className = " lugg-map-container">
@@ -42,7 +49,7 @@ const LuggProfile = React.createClass({
                      </div>
                   </div>
                <div id= "map" className ="col-xs-12 col-md-6 map-container">
-                        <SimpleMapPage mapConfig = {CharlestonMap }  luggData={this.props.newLuggData}/>
+               <SimpleMapPage mapConfig = {CharlestonMap} pinsData = {pinsArray} />
                </div>
             </div>
          </div>

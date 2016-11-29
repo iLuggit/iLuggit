@@ -3,7 +3,6 @@ import shouldPureComponentUpdate from 'react-pure-render/function';
 import GoogleMap from 'google-map-react';
 
 import {bootstrapURLKeys} from './secrets.js'
-import ACTIONS from './ACTIONS.js'
 
 let Pin = React.createClass({
 
