@@ -26,11 +26,9 @@ const CargoDisplay = React.createClass({
       return(
          <div>
             <div className="container-fluid text-center lugger-container">
-               <div className="container">
                   <a href = "#"><i className="fa fa-home fa-2x " aria-hidden="true"></i></a>
                   <h1 className="display-3">One Lugg</h1>
                   <h3 className="lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
-               </div>
             </div>
             <div className="container">
               <div className="row">

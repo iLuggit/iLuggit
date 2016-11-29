@@ -35,21 +35,21 @@ const LuggProfile = React.createClass({
       })
 
       return(
-         <div className = " lugg-map-container">
+         <div className = "lugg-map-container">
+                  <a href = "#"><i className = "fa fa-home fa-2x" aria-hidden = "true"></i></a>
             <div className = "lugger-container">
-                        <a href = "#"><i className = "fa fa-home fa-2x" aria-hidden = "true"></i></a>
-                        <h1 className="display-3">iLuggit</h1>
+                        <h1>iLuggit</h1>
                         <h3 className="lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
             </div>
               <div className = "row">
-                  <div className = "col-xs-12 col-md-6 lugg-list-container">
-                     <div className ="lugg-data text-center ">
+                  <div className = "col-xs-12 col-md-6 text-center lugg-list-container">
                         <p>LUGG ITEM</p>
+                     <div>
                         { luggs }
                      </div>
                   </div>
                <div id= "map" className ="col-xs-12 col-md-6 map-container">
-               <SimpleMapPage mapConfig = {CharlestonMap} pinsData = {pinsArray} />
+                        <SimpleMapPage mapConfig = {CharlestonMap} pinsData = {pinsArray} />
                </div>
             </div>
          </div>
@@ -64,7 +64,7 @@ const LuggProfile = React.createClass({
 
      render: function(){
         return(
-               <div className = "lugg-data thumbnail">
+               <div className = "lugg-data thumbnail text-center">
                      <a href={`#cargo/${this.props.model.get('id')}`}>{this.props.model.get('user').useruser}<br/>
                      {this.props.model.get('haul_description')}</a>
                </div>

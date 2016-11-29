@@ -18,9 +18,6 @@ const HomeView = React.createClass({
       <div className="home-container">
          <div className="container-fluid text-center main-container ">
                   <div className="container ">
-                     <h1>iLuggit</h1>
-                     <img className ="logo "src= "../images/logo1.png" alt="" />
-                     <h3 className="lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
                   </div>
             <div className="row">
                <div className ="profile-row">
@@ -40,6 +37,9 @@ const HomeView = React.createClass({
               </div>
             </div>
          </div>
+         <img className ="home-page-logo" src= "../images/logo1.png" alt="" />
+         <h3 className="home-page-lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
+
       </div>
       <div className="container-fluid info-container">
          <div className="row">
@@ -67,18 +67,13 @@ const HomeView = React.createClass({
          </div>
       </div>
    <div className="footer-container text-center">
-      <div className="columns-container updates-section">
          <div className="todays-quote">
             <h6>Quote of the Day</h6>
             <strong>We are all here to help others, what the others are here for I don't know! W.H.Auden</strong>
          </div>
       </div>
-      <div className="news">
-         <p className="description">Featured Luggers<span className="extra-caret"> »</span></p>
-         <h5>Trust Worthy Packers <span className="extra-caret"> »</span></h5>
-      </div>
+
    </div>
-</div>
 
 
          )
