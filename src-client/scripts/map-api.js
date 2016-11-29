@@ -3,38 +3,41 @@ import shouldPureComponentUpdate from 'react-pure-render/function';
 import GoogleMap from 'google-map-react';
 
 import {bootstrapURLKeys} from './secrets.js'
-
+import ACTIONS from './ACTIONS.js'
 
 let Pin = React.createClass({
+
    render: function(){
+
       return (
-         <div> <i className="fa fa-map-marker" aria-hidden="true"></i> </div>
+         <div>
+            <i className="fa fa-map-marker fa-3x" aria-hidden="true"></i>
+         </div>
       )
    }
 })
 
 class SimpleMapPage extends Component {
 
-    constructor(props) {
+   constructor(props) {
         super(props),
         this.shouldComponentUpdate = shouldPureComponentUpdate
 
     }
     render() {
-      let pins = this.props.luggData.map(function(model, i){
-         return <Pin key = {i} lat={model.get('pickUpLatitude')} lng={model.get('pickUpLongitude')} />
+      let pinsJSXArray = this.props.pinsData.map(function(obj, i){
+         return <Pin lat={obj.latitude} lng={obj.longitude} key = {i} />
       })
-
        return (
 
          <GoogleMap
-         bootstrapURLKeys={{
-             key: {bootstrapURLKeys}
-         }}
-           defaultCenter = {this.props.center}
-           defaultZoom = {this.props.zoom}>
-            { pins }
-         </GoogleMap>
+            bootstrapURLKeys={{
+               key: {bootstrapURLKeys}
+            }}
+            defaultCenter = {this.props.mapConfig.center}
+            defaultZoom = {this.props.mapConfig.zoom}>
+            {pinsJSXArray}
+        </GoogleMap>
        );
     }
 };
