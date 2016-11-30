@@ -6,7 +6,15 @@ import $ from 'jquery'
 const STORE = {
       luggData: {
          newLuggData: [],
-         newReviewData: []
+         newReviewData: [],
+         modalWindowSettings : {
+            isShowing: false,
+            payload: {
+               email: 'paul@gmail.com'
+            }
+
+         }
+
    },
 
    setStore: function(luggProp, maindata){

@@ -35,11 +35,23 @@ const PackAuthView = React.createClass({
 
    render: function(){
       return(
+         <div>
+            <div className="container-fluid home-container">
+               <nav className="navbar navbar-default">
+                  <a className="navbar-brand " href="#"><img className ="navbar-logo" src="../images/logo1.png" alt = "" /></a>
+                  <ul className="nav navbar-nav navbar-right">
+                     <li><a href="#">Home</a></li>
+                     <li><a href="#">Logout</a></li>
+
+                  </ul>
+               </nav>
+         <div className="container-fluid pack-auth-container ">
+               <img className = "pack-auth-logo" src= "../images/logo1.png" alt="" />
+               <h3 className = "pack-auth-lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
             <div className = "row">
                   <div className="pack-auth-form">
-                  <a href = "#"><i className="fa fa-home fa-2x " aria-hidden="true"></i></a>
                      <form className = "col-xs-12 col-sm-6 text-center" id="login-form" onSubmit = {this._submitLogin}>
-                           <h2 className = "">Existing Packer Login </h2>
+                           <h2 className = "existing-packer-form">Existing Packer Login </h2>
                         <div className = "form-group">
                            <label htmlFor = "new-username">Username</label>
                            <input type = "text" className="form-control" name = "useruser" ref = "user_name2" placeholder = "Enter Username" />
@@ -52,7 +64,7 @@ const PackAuthView = React.createClass({
                      </form>
                   <div className = "row ">
                      <form className = "col-xs-12 col-sm-6 text-center" id="create-form" onSubmit = {this._submitCreate}>
-                           <h2 className = "">Create New Packer </h2>
+                           <h2 className = "create-packer-form">Create New Packer </h2>
                         <div className = "form-group">
                            <label htmlFor = "firstname">First Name </label>
                            <input type = "text" className="form-control" name = "firstname" ref = "first_name2" placeholder = "Enter First Name" />
@@ -82,6 +94,9 @@ const PackAuthView = React.createClass({
                   </div>
                </div>
             </div>
+         </div>
+      </div>
+   </div>
       )
    }
 })

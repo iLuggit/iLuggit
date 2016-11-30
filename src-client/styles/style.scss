@@ -14,21 +14,19 @@ body{
 	background-color: #FAFAFA;
 
 }
-h1 h3{
-		font-size: 150px;
-		text-align: center;
-		color: #000;
-}
+// h1 h3{
+// 		font-size: 150px;
+// 		text-align: center;
+// 		color: #000;
+// }
 #app-container{
 	width: 1400px;
-	height: 100%;
+	height: auto;
 	margin-left: auto;
 	margin-right: auto;
-	background-color: #FAFAFA;
+	background-color: #A4B8E9;
 
 }
-
-
 
 .pack-description{
 	width: 50%;
@@ -40,90 +38,102 @@ h1 h3{
 	background-color: #89C4F4;
 
 }
-.lugg-auth-form{
-	width: 100%;
-	border: 2px solid black;
-	background-color: #89C4F4;
-}
-.existing-lugger{
-	margin-top: 100px;
-}
-.builderPro{
-	width: 100%;
-	background-color: #89C4F4;
-}
 
-#login-form {
-	margin-top: 30px;
-	width: 50%;
-	display: inline-block;
-}
-
-#create-form {
-	width: 50%;
-	display: inline-block;
-	vertical-align: top;
-}
-
-#truck-login-form{
-	margin-top: 30px;
-	width: 50%;
-	display: inline-block;
-}
-
-#truck-create-form{
-	width: 50%;
- 	display: inline-block;
- 	vertical-align: top;
- }
-
-
-.packer-container{
-
-	width: 100%;
-	margin: 0;
+.pack-auth-container{
+	color: #3A539B;
 	height: 500px;
-	padding-top: 50px;
-	padding-left: 20px;
-	margin-bottom: 0;
-	position: relative;
-	background: url('../images/moving-boxes.jpg') center center no-repeat fixed;
+	padding-top: 300px;
+	background: url('../images/MoverBox.jpg');
 	background-size: cover;
-		i{
-			color: #3A539B;
-		}
-		h1{
+		.pack-auth-lead{
 			font-size: 30px;
-			text-shadow: 1px 1px #000;
+			display: inline-block;
+				h3{
+					margin-top: 50px;
+					font-size: 40px;
+					font-weight: 600;
+				}
+			}
+		.pack-auth-logo{
+			padding-top: 45px;
+			display: inline-block;
+			width: 15%;
 		}
+		.pack-auth-form{
+			border: 2px solid black;
+			background-color: #89C4F4;
+
+				.create-packer-form{
+					h2{
+						padding-top: 60px;
+					}
+				}
+				#login-form {
+					width: 50%;
+					display: inline-block;
+				}
+
+				#create-form {
+					width: 50%;
+					display: inline-block;
+					vertical-align: top;
+				}
+		}
+}
+.home-container{
+}
+.navbar-logo{
+	display: inline-block;
+	margin-left: 3px;
+	width: 30%;
+	}
+
+
+
+
+.lugg-auth-container{
+	color: #3A539B;
+	height: 500px;
+	padding-top: 300px;
+	background: url('../images/MoverBox.jpg');
+	background-size: cover;
+
+	.lugg-auth-lead{
+		font-size: 25px;
+		display: inline-block;
+	}
 		h3{
-			text-shadow: 1px 1px #000;
+			font-size: 25px;
+			font-weight: 600;
+		}
+	.lugg-auth-logo{
+		padding-top: 15px;
+		display: inline-block;
+		width: 15%;
+
+	}
+	.lugg-auth-form{
+		border: 2px solid black;
+		background-color: #89C4F4;
+
+			.create-lugg-form{
+				h2{
+					padding-top: 60px;
+				}
+			}
+			#truck-login-form{
+				width: 50%;
+				display: inline-block;
+
+			}
+			#truck-create-form{
+				width: 50%;
+	 			display: inline-block;
+	 			vertical-align: top;
+	 		}
 		}
 }
 
-.lugger-container{
-	width: 100%;
-	color: #fff;
-	margin: 0;
-	height: 400px;
-	padding-top: 50px;
-	padding-left: 20px;
-	margin-bottom: 0;
-	position: relative;
-	background: url('../images/truck-canoe.jpg') center center no-repeat fixed;
-	background-size: cover;
-		i{
-			color: #3A539B;
-		}
-		h1{
-			font-size: 30px;
-			text-shadow: 1px 1px #000;
-		}
-		h3{
-			text-shadow: 1px 1px #000;
-		}
-
-}
 
 
 .main-container{
@@ -131,126 +141,160 @@ h1 h3{
 		width: 100%;
 		height: 500px;
 	   padding-top: 100px;
-	   padding-left: 20px;
-	   margin-bottom: 0;
-	   position: relative;
 	   background: url('../images/MoverBox.jpg') center center no-repeat fixed;
 	   background-size: cover;
-		position: relative;
-
 			i{
 				color: #3A539B;
 			}
-			h1{
+
+			.profile-row{
+			 width: 100%;
+			 padding-top: 80px;
+			 	.luggerProfile, .packerProfile{
+					h3, p{
+						color: #FFF;
+						font-size: 20px;
+						font-weight: 600;
+					}
+			 	}
+			}
+			.home-page-lead{
+				padding-top: 65px;
+				display: inline-block;
 				font-size: 30px;
-				text-shadow: 1px 1px #000;
+				font-weight: 600;
+				color: #083B66
+
 			}
-			h3{
-				text-shadow: 1px 1px #000;
-			}
+			.home-page-logo{
+				float: left;
+				padding-top: 50px;
+				display: inline-block;
+				width: 15%;
+					img{
+					}
+				}
 }
-.logo{
-	width: 20%;
-	position: absolute;
-	top: 62%;
-	left: 1%;
+.footer-container{
+	background-color: #A4B8E9;
 }
-.main-faq-container{
-	color: #000;
-	width: 100%;
-	height: 400px;
-	padding-top: 100px;
-	padding-left: 20px;
-	margin-bottom: 0;
-	position: relative;
+
+.faq-logo-container{
+	height: 380px;
 	background: url('../images/MoverBox.jpg')center no-repeat fixed;
 	background-size: cover;
-	h1, h3{
-		font-size: 30px;
-	}
-}
-
-.faq-container{
-	margin: 0, auto;
-	padding: 0;
-}
-
-.faq-info{
-	background-color: #EBF1FB;
-	margin: 0, auto;
-	padding: 0;
-		p{
-			font-family: fantasy;
+		h1, h3{
 			font-size: 30px;
 		}
-}
-.outstanding-info{
-	display: inline;
-}
-.luggProfile{
-	margin: 0;
-	padding: 5px;
-	background-color: #89C4F4;
 
-}
-
-.profile-row{
-	width: 100%;
-	padding-top: 50px;
-}
-
-.lugg-data{
-	width: 50%;
-	display: inline-block;
-	  li{
-		list-style-type: none;
+		.faq-logo{
+			padding-top: 250px;
+			float: left;
+			display: inline-block;
+			width: 15%;
 		}
-		a{
-		color: #000;
-		text-decoration: none;
 
+		.faq-lead{
+			padding-top: 255px;
+			display: inline-block;
+			font-size: 50px;
+			font-weight: 600;
+			color: #083B66;
 		}
-}
-.lugg-list-container{
-	padding: 0;
-	margin: 0;
-	width: 60%;
-	height: 400px;
-	background-color: #89C4F4;
-	display: inline-block;
-	vertical-align: top;
-	p{
-		font-size: 20px;
 	}
+		.faq-container{
+			background-color: #CAD6F2;
+			color: #083B66;
+				p{
+					font-size: 25px;
+				}
+		}
+
+.lugger-container{
+	height: 400px;
+	background: url('../images/chevrolet-pickup.jpg') center center no-repeat fixed;
+	background-size: cover;
+		h3{
+			padding-left: 30px;
+		}
 }
 
-.lug-map-container{
-	width: 100%;
+.logo-lugger{
+	margin: 0;
+	padding-top: 30px;
+	width: 15%;
+	display: inline-block;
+	background-color: #89C4F4;
+	margin-left: 0;
+		img{
+			width: 10%;
+		}
 }
-  	.map-container{
-		background-color: #89C4F4;
-		display: inline-block;
-		width: 39%;
-}
+
+
 	#map{
-		display: inline-block;
-		vertical-align: top;
-		width: 555px;
+
+		width: 600px;
 		height: 400px;
+		margin-top: 25px;
 	  }
 
 
-
-.form-container{
+.lugg-container{
 	width: 100%;
-	padding: 10px;
-	border: 2px solid black;
-	background-color: #89C4F4;
-	display: inline-block;
+}
+
+.lugg-list-container{
+	margin-top: 25px;
+
+	.map-container{
+		background-color: #89C4F4;
+		display: inline-block;
+		width: 10%;
+	}
+	#map{
+		margin-right: 10px;
+		margin-left: 50%;
+		display: inline-block;
+		vertical-align: top;
+		width: 600px;
+		height: 400px;
+	}
+
+}
+
+ 	.packer-container{
+	  	width: 100%;
+	  	height: 500px;
+	  	padding-top: 50px;
+	  	padding-left: 20px;
+	  	background: url('../images/moving-boxes.jpg') center center no-repeat fixed;
+	  	background-size: cover;
+	  		i{
+	  			color: #3A539B;
+	  		}
+	  		h1{
+	  			font-size: 30px;
+	  		}
+
+	  }
+
+	.form-container{
+		width: 100%;
+		padding: 10px;
+		border: 2px solid black;
+		background-color: #89C4F4;
+		display: inline-block;
+			#create-lugg-form{
+				padding: 10px;
+			#s_address, #e_address, #cargo_description, #cargo_img{
+				width: 50%;
+			}
+		}
 		.map-container2{
 			background-color: #89C4F4;
 			display: inline-block;
-			width: 39%;
+			width: 10%;
 		}
 		#map2{
 			margin-top: 10px;
@@ -258,33 +302,19 @@ h1 h3{
 			margin-left: 50%;
 			display: inline-block;
 			vertical-align: top;
-			width: 400px;
+			width: 600px;
 			height: 400px;
-
 		}
 }
 
-
-#create-lugg-form{
-	padding: 10px;
-}
-
-#s_address, #e_address, #cargo_description, #cargo_img{
-	width: 50%;
-}
-
-.map-container{
-	display: inline-block;
-	vertical-align: top;
-	width: 49.5%;
-}
-
 .info-container{
-	background-color: #EBF1FB;
-	margin-top: 20px;
+	font-size: 0;
+	   background-color: #D8E2FA;
+	   margin-top: 20px;
 		width: 100%;
 
 			.truck-info{
+				font-size: medium;
 				padding: 20px;
 				display: inline-block;
 				width: 33.3%;
@@ -295,6 +325,7 @@ h1 h3{
 				}
 			}
 			.FAQ{
+				font-size: medium;
 				padding: 20px;
 				display: inline-block;
 				vertical-align: top;
@@ -306,6 +337,7 @@ h1 h3{
 				}
 			}
 			.pack-reviews{
+				font-size: medium;
 				padding: 20px;
 				display: inline-block;
 				vertical-align: top;
@@ -317,40 +349,107 @@ h1 h3{
 			}
 }
 .review-container{
+	height: 380px;
+	background: url('../images/MoverBox.jpg')center no-repeat fixed;
+	background-size: cover;
+	.review-logo{
+		float: left;
+		padding-top: 270px;
+		display: inline-block;
+		width: 15%;
+		}
+	.review-lead{
+		padding-top: 285px;
+		display: inline-block;
+		font-size: 40px;
+		font-weight: 600;
+		color: #083B66
+	}
+}
+	.reviews-info{
+		padding-top: 50px;
+		background-color: #D0DDF4;
+		padding-left: 20px;
+	}
+
+
+
+.about-container{
+	height: 500px;
+	background: url('../images/MoverBox.jpg')center no-repeat fixed;
+	background-size: cover;
+}
+
+.userNameList {
+	color:#FFF;
+	font-size: 25px;
+}
+
+.modal-container{
+	&.is-hidden{
+		display: none;
+	}
+	position: fixed;
+	height: 100%;
 	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 2000;
+
+	.overlay{
+		position: fixed;
+		top: 0;
+		left: 0;
+		width:100%;
+		height: 100%;
+		background: rgba(50,50,50,.5);
+	}
+
+	.window{
+		padding: 20px;
+		background: #fff;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
 }
-.reviews-info{
+
+.builderPro{
 	background-color: #89C4F4;
-	padding-left: 20px;
-
-
-
-}
-.lugg-container{
-	width: 100%;
-}
-
-
-.profileImg1{
-	border-radius: 100%;
-	height: 80%;
-	width: 80%;
-
-}
-
-.profileImg2{
-	border-radius: 100%;
-	height: 71%;
-	width: 71%;
-
-}
-
-.profileImg3{
-	border-radius: 100%;
-	height: 75%;
-	width: 75%;
-
-}
-.footer-container{
-	background-color: #89C4F4;
-}
+	display: inline-block;
+		.thumbnail{
+			background-color: #D0DDF4;
+		}
+		.profileImg1{
+			display: inline-block;
+			border-radius: 100%;
+			height: 80%;
+			width: 80%;
+			}
+		.profileImg2{
+			display: inline-block;
+			border-radius: 100%;
+			height: 73%;
+			width: 73%;
+			}
+		.profileImg3{
+			display: inline-block;
+			border-radius: 100%;
+			height: 95%;
+			width: 95%;
+			}
+		}
+	.truck-info-logo{
+		float: left;
+		padding-top: 392px;
+		display: inline-block;
+		width: 15%;
+		}
+	.truck-info-lead{
+		padding-top: 400px;
+		display: inline-block;
+		font-size: 30px;
+		font-weight: 600;
+		color: #083B66
+	}

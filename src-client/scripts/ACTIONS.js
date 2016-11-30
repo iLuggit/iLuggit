@@ -2,7 +2,7 @@ import Backbone from 'backbone'
 import React from 'react'
 import $ from 'jquery'
 
-import {UserModel, UserCollection, LoginModel, CreateUserModel, TruckModel, CreateTruckModel, CreateLuggModel, ReviewCollection} from './lugg-model.js'
+import {UserModel, UserCollection, LoginModel, CreateUserModel, TruckModel, CreateTruckModel, CreateLuggModel, ReviewCollection, AuthenticateUser, LogOut} from './lugg-model.js'
 import STORE from './STORE.js'
 const ACTIONS = {
 
@@ -58,7 +58,7 @@ const ACTIONS = {
             STORE.setStore('newLuggData', luggCollInstance.models);
             // console.log('fetch ', luggCollInstance);
       })
-      return luggCollInstance
+      // return luggCollInstance
    },
 
    fetchReview: function(){
@@ -76,11 +76,12 @@ const ACTIONS = {
       // console.log('saving teh lugg')
       acceptlugg.save().then(function(serverRes){
          // console.log("okay this should route somewhere else now")
-         window.location.hash = '/create-lugg';
+         window.location.hash = '/lugg-list';
      }).fail(function(error){
       //   console.log("did i fail??", error)
      })
   },
+
   _logOut: function(){
      $.ajax({
         method: 'POST',
@@ -88,7 +89,26 @@ const ACTIONS = {
      }).then(function(){
         window.location.hash = ''
      })
-   }
+  },
+
+  setModal:function(showingStatus, modalData){
+     console.log(modalData)
+     STORE.setStore('modalWindowSettings', {
+        isShowing:showingStatus,
+        payload: modalData,
+     })
+ }
+
+   // _authenticateUser: function(){
+   //    let currentUser = new AuthenticateUser()
+   //    currentUser.set(currentUser)
+   //    currentUser.save().then(function(){
+   //       STORE.setStore('currentUser', currentUser)
+   //       window.location.hash = '';
+   //
+   //
+   //    })
+   // }
 }
 
 

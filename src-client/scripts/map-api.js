@@ -4,12 +4,13 @@ import GoogleMap from 'google-map-react';
 
 import {bootstrapURLKeys} from './secrets.js'
 
-
 let Pin = React.createClass({
+
    render: function(){
+
       return (
-         <div style={{width: '40px', height: '40px', padding: "5px", color: '#fff', background: 'darkred'}}>
-            {this.props.text}
+         <div>
+            <i className="fa fa-map-marker fa-3x" aria-hidden="true"></i>
          </div>
       )
    }
@@ -17,24 +18,25 @@ let Pin = React.createClass({
 
 class SimpleMapPage extends Component {
 
-    constructor(props) {
+   constructor(props) {
         super(props),
         this.shouldComponentUpdate = shouldPureComponentUpdate
 
     }
-
     render() {
-      
+      let pinsJSXArray = this.props.pinsData.map(function(obj, i){
+         return <Pin key i = {i} lat={obj.latitude} lng={obj.longitude}  />
+      })
        return (
 
          <GoogleMap
-         bootstrapURLKeys={{
-             key: {bootstrapURLKeys}
-         }}
-           defaultCenter = {this.props.center}
-           defaultZoom = {this.props.zoom}>
-            <Pin lat={32.7869} lng={-79.9357} text={"Marion Square"}/>
-         </GoogleMap>
+            bootstrapURLKeys={{
+               key: {bootstrapURLKeys}
+            }}
+            defaultCenter = {this.props.mapConfig.center}
+            defaultZoom = {this.props.mapConfig.zoom}>
+            {pinsJSXArray}
+        </GoogleMap>
        );
     }
 };

@@ -11,17 +11,22 @@ const showTruckInfo = React.createClass({
    render: function (){
 
       return (
-         <div className="home-container">
-            <div className="container-fluid">
-            <a href = "#"><i className = "fa fa-home fa-2x" aria-hidden = "true"></i></a>
-                     <div className="main-container text-center">
-                        <h1>iLuggit, Our Story</h1>
-                        <h3 className="lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
-                     </div>
-            </div>
-               <div className= "builderPro">
+         <div className="container-fluid">
+         <div className="container-fluid home-container">
+            <nav className="navbar navbar-default">
+               <a className="navbar-brand " href="#"><img className ="navbar-logo" src="../images/logo1.png" alt = "" /></a>
+               <ul className="nav navbar-nav navbar-right">
+               <li><a href="#">Home</a></li>
+               <li><a onClick = {this._logOut}>Logout</a></li>
+               </ul>
+            </nav>
+                  <div className ="container-fluid about-container">
+                     <img className ="truck-info-logo" src= "../images/logo1.png" alt="" />
+                     <h1 className ="truck-info-lead">iLuggit, Our Story</h1>
+                  </div>
+               <div className= "container-fluid builderPro">
                   <div className="col-xs-12 col-md-4 luggProfile">
-                        <div className=" thumbnail text-center">
+                        <div className="thumbnail text-center">
                            <h3>Jon Gammon</h3>
                            <img className="profileImg1" src="http://st.motortrend.com/uploads/sites/5/2014/06/2014-Dodge-Demon-Challenger-SRT8-Dee-Snider.jpg"/>
                            <p>Front End Engineer, Jon, loving perforamce cars, has never had the ablility to move large items when he need. Wished he had a truck to move his cars.</p>
@@ -37,12 +42,12 @@ const showTruckInfo = React.createClass({
                   <div className="col-xs-12 col-md-4 luggProfile">
                         <div className=" thumbnail text-center">
                            <h3>Barry Daniels</h3>
-                           <img className="profileImg3" src="http://hd.wallpaperswide.com/thumbs/world_of_warcraft_lich_king-t1.jpg"/>
+                           <img className="profileImg3" src="./images/WoW!.jpeg"/>
                            <p>Back End Engineer Barry has moved several times, but his moves have never warranted a moving service. Would have been easier with a truck.</p>
                         </div>
                   </div>
                </div>
-
+            </div>
          </div>
       )
    }
