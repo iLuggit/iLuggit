@@ -30,8 +30,9 @@ const showReviews = React.createClass({
       return(
          <div>
             <div className="home-container">
+            <a href = "#"><i className = "fa fa-home fa-2x" aria-hidden = "true"></i></a>
+
                <div className="container-fluid text-center main-container ">
-                     <a href = "#"><i className = "fa fa-home fa-2x" aria-hidden = "true"></i></a>
                <div className="container ">
                      <h3 className="lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
                </div>
