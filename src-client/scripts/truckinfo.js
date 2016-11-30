@@ -21,7 +21,6 @@ const showTruckInfo = React.createClass({
                </ul>
             </nav>
                   <div className ="container-fluid about-container">
-                     <img className ="truck-info-logo" src= "../images/logo1.png" alt="" />
                      <h1 className ="truck-info-lead">iLuggit, Our Story</h1>
                   </div>
                <div className= "container-fluid builderPro">

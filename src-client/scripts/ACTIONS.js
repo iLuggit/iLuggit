@@ -6,10 +6,12 @@ import {UserModel, UserCollection, LoginModel, CreateUserModel, TruckModel, Crea
 import STORE from './STORE.js'
 const ACTIONS = {
 
-   _loginUser: function(newLogin){
+   _authenticateUser: function(loginPack){
       let loginMod = new LoginModel()
-      loginMod.set(newLogin)
+      loginMod.set(loginPack)
       loginMod.save().then(function(serverRes){
+       STORE.setStore('currentUser', loginPack)
+
       // console.log('are we changing the route?', window.location);
          location.hash = '/create-lugg';
     })
@@ -23,11 +25,12 @@ const ACTIONS = {
     })
   },
 
-  _loginTruck: function(loginTruck){
+  _authenticateTruck: function(loginTruck){
      let truckLoginMod = new TruckModel()
      truckLoginMod.set(loginTruck)
-
      truckLoginMod.save().then(function(serverRes){
+        STORE.setStore('currentTruck', loginTruck)
+
       //   console.log('am i even here?')
 
         location.hash = '/lugg-list';
@@ -91,11 +94,37 @@ const ACTIONS = {
      })
   },
 
+  setModal:function(showingStatus, modalData){
+      console.log(modalData)
+      STORE.setStore('modalWindowSettings', {
+        isShowing:showingStatus,
+        payload: modalData,
+     })
+ },
+
+   getCurrentUser: function(){
+      let uMod = new UserModel()
+      let tMod = new TruckModel()
+      tMod.checkAuth().then(function(servRes){
+         STORE.setStore('currentTruck', tMod)
+         console.log('truck auth', servRes)
+   })
+      uMod.checkAuth().then(function(servRes){
+         console.log('packer auth', servRes)
+         STORE.setStore('currentUser', uMod)
+   })
+
+
+
+
+
+
+}
+
    // _authenticateUser: function(){
    //    let currentUser = new AuthenticateUser()
    //    currentUser.set(currentUser)
    //    currentUser.save().then(function(){
-   //       STORE.setStore('currentUser', currentUser)
    //       location.hash = '';
    //
    //

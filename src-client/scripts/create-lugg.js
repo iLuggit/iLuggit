@@ -6,6 +6,7 @@ import React, {PropTypes, Component} from 'react';
 import shouldPureComponentUpdate from 'react-pure-render/function';
 import GoogleMap from 'google-map-react';
 import STORE from './STORE.js'
+import ModalWindow from './modal-window.js'
 
 
 const CreateLugg = React.createClass({
@@ -21,29 +22,38 @@ const CreateLugg = React.createClass({
             pickup_address: this.refs.start_address.value,
             dropoff_address: this.refs.end_address.value,
             haul_description: this.refs.cargo_description.value,
-            haul_img: this.refs.cargo_img.value,
          }
 
          ACTIONS.createLugg(createNewLugg)
 
       },
 
-   render: function(){
+   _modalDisplayLugger: function(jobMod){
+      console.log(jobMod);
+      ACTIONS.setModal(true, jobMod.get('truck'))
+   },
 
+   render: function(){
+      let component = this
    //  console.log('props', this.props);
     let outstandingPacks = this.props.newLuggData.map(function(model, i){
       let acceptedStatus
       if (model.get('truck')){
-         acceptedStatus = 'Accepted'
+         acceptedStatus = <button onClick={ function(){component._modalDisplayLugger(model) } } type='button' className='btn btn-primary' data-toggle='modal' data-target='.modal-lg'> Accepted By: {model.get('truck').first_name} {model.get('truck').last_name}</button>
       } else {
-         acceptedStatus = "Pending"
+         acceptedStatus = <button type='button' className='btn btn-primay pendingBtn'>Pending</button>
       }
+
       return (
              <div key={i}>
-                <p>User: {model.get('user').useruser}  - Haul: {typeof model === 'object' && model.get('haul_description')}  | {acceptedStatus} </p>
+                <h4><span className ="userNameList"> {model.get('user').first_name}</span>, you're moving <span className="userNameList">  {typeof model === 'object' && model.get('haul_description')} </span> {acceptedStatus} </h4>
              </div>
        )
-      })
+    });
+
+
+
+
 
       let CharlestonMap = {
          center: {lat: 32.784618, lng: -79.940918},
@@ -59,8 +69,9 @@ const CreateLugg = React.createClass({
          }
       })
 
+
       return(
-         <div className="container-fluid home-container">
+         <div className="container-fluid home-container2">
             <nav className="navbar navbar-default">
             <a className="navbar-brand " href="#"><img className ="navbar-logo" src="../images/logo1.png" alt = "" /></a>
             <ul className="nav navbar-nav navbar-right">
@@ -69,6 +80,7 @@ const CreateLugg = React.createClass({
             </ul>
          </nav>
          <div className = "lugg-container">
+            <ModalWindow modalSettings={this.props.modalWindowInfo}/>
             <div className="container-fluid text-center packer-container ">
                      <h1>iLuggit</h1>
                      <h3 className="lead">Tell us what you need moved, we'll find a Lugger!</h3>
@@ -83,7 +95,6 @@ const CreateLugg = React.createClass({
             <div className ="form-container">
                <div className ="row ">
                   <form className = "col-xs-12 col-md-6 " id="create-lugg-form" onSubmit = {this._createLugg}>
-                        <a href = "#"><i className = "fa fa-home fa-2x" aria-hidden = "true"></i></a>
                        <h2 className = "">Welcome back  Create a New Lugg </h2>
                   <div className = "col-xs-12 form-group">
                        <label htmlFor = "startAddress"> </label>
@@ -97,10 +108,7 @@ const CreateLugg = React.createClass({
                        <label htmlFor = "cargoDescription"> </label>
                        <input type = "text" className="form-control" id = "cargo_description" ref = "cargo_description" placeholder = "Enter Description of Lugg" />
                     </div>
-                    <div className="col-xs-12 form-group">
-                       <label htmlFor = "cargoImg"></label>
-                       <input type = "text" className="form-control" id = "cargo_img" ref = "cargo_img" placeholder="Image of Lugg (Optional)"/>
-                    </div>
+
                     <input type = "submit" className="btn btn-default" />
                </form>
                <div className="map-container2">

@@ -22,13 +22,13 @@ const LuggProfile = React.createClass({
 
       let CharlestonMap = {
          center: {lat: 32.784618, lng: -79.940918},
-         zoom: 13,
-      }
-
+         zoom: 10,
+      };
       let pinsArray = this.props.newLuggData.map(function(model, i){
 
+
          return {
-            latitude: model.get('pickUpLatitude'),
+             latitude: model.get('pickUpLatitude'),
             longitude: model.get('pickUpLongitude'),
             job_price: model.get('job_price')
          }
@@ -45,19 +45,26 @@ const LuggProfile = React.createClass({
                </ul>
             </nav>
             <div className = "lugger-container">
-                        <h1>iLuggit</h1>
-                        <h3 className="lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
+               <h3 className="lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
             </div>
               <div className = "row">
                   <div className = "col-xs-12 col-md-6 text-center lugg-list-container">
-                        <p>LUGG ITEM</p>
+                        <p>Lugg Item</p>
                      <div>
                         { luggs }
                      </div>
                   </div>
-               <div id= "map" className ="col-xs-12 col-md-6 map-container">
-                        <SimpleMapPage mapConfig = {CharlestonMap} pinsData = {pinsArray} />
-               </div>
+                  <div className ="map-container text-center">
+                        <div id= "map" className ="col-xs-12 col-md-6 ">
+                        <div>
+                           <p>Lugger Map</p>
+                        </div>
+                           <SimpleMapPage mapConfig = {CharlestonMap} pinsData = {pinsArray} />
+                        <div>
+                           <p>*Markers indicate Starting Address of the Lugg</p>
+                        </div>
+                     </div>
+                  </div>
             </div>
          </div>
       </div>

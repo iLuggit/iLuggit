@@ -14,7 +14,7 @@ const PackAuthView = React.createClass({
          }
          console.log(newLogin)
 
-         ACTIONS._loginUser(newLogin)
+         ACTIONS._authenticateUser(newLogin)
       },
       _submitCreate: function(evt){
             evt.preventDefault()

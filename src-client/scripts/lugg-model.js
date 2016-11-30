@@ -4,18 +4,23 @@ import $ from 'jquery';
 const UserModel = Backbone.Model.extend({
    url: '',
 
-      initialize: function(){
+   initialize: function(){
 
-      }
+   },
+
+   checkAuth: function(){
+      this.url = '/auth-user'
+      return this.fetch()
+   }
 })
 
 const UserCollection = Backbone.Collection.extend({
    model: UserModel,
    url: '/luggs',
 
-      initialize: function(){
+   initialize: function(){
 
-      }
+   }
 })
 
 const LoginModel = Backbone.Model.extend({
@@ -39,9 +44,13 @@ const TruckModel = Backbone.Model.extend({
    model: UserModel,
    url: '/truck-login',
 
-      initialize: function(){
+   initialize: function(){
 
-      }
+   },
+   checkAuth: function(){
+      this.url = '/auth-truck'
+      return this.fetch()
+   }
 })
 
 const CreateTruckModel = Backbone.Model.extend({
@@ -70,22 +79,30 @@ const ReviewCollection = Backbone.Collection.extend({
 
       }
 })
-// const AuthenticateUser = Backbone.Model.extend({
-//    model: UserModel,
-//    url: '/auth-user',
-//
-//       initialize: function(path){
-//          this.url = path
-//
-//       }
-// })
+const AuthenticateUser = Backbone.Model.extend({
+   model: UserModel,
+   url: '/auth-user',
+
+      initialize: function(path){
+         this.url = path
+
+      }
+})
+const AuthenticateTruck = Backbone.Model.extend({
+   model: UserModel,
+   url: '/auth-truck',
+
+      initialize: function(path2){
+         this.url = path2
+   }
+})
 const LogOut = Backbone.Model.extend({
    model: UserModel,
    url: '/logout',
 
-      // initialize: function(path){
-      //    this.url = path
-      // }
+      initialize: function(path){
+         this.url = path
+      }
 })
 
 module.exports = {

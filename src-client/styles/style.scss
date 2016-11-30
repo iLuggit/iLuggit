@@ -14,26 +14,18 @@ body{
 	background-color: #FAFAFA;
 
 }
-// h1 h3{
-// 		font-size: 150px;
-// 		text-align: center;
-// 		color: #000;
-// }
+
 #app-container{
 	width: 1400px;
 	height: auto;
 	margin-left: auto;
 	margin-right: auto;
-	background-color: #CAD6F2;
 
 }
 .pack-description-container{
+	font-size: 18px;
 	padding-top: 50px;
 
-}
-.pack-description{
-	width: 50%;
-	border: 2px solid #000;
 }
 .pack-auth-form{
 	border: 2px solid black;
@@ -83,18 +75,23 @@ body{
 		}
 }
 .home-container{
+	background-color: #434343;
+}
+.home-container2{
+	background-color: #31536E;
 }
 .navbar-logo{
 	display: inline-block;
 	margin-left: 3px;
-	width: 30%;
+	width: 50%;
 	}
 
 
 
 
 .lugg-auth-container{
-	color: #3A539B;
+	color: #FFF;
+	text-shadow: 1px 1px black;
 	height: 500px;
 	padding-top: 300px;
 	background: url('../images/MoverBox.jpg');
@@ -139,10 +136,11 @@ body{
 
 
 .main-container{
-	   color: #3A539B;
+		color: #FFF;
+		text-shadow: 1px 1px black;
 		width: 100%;
 		height: 500px;
-	   padding-top: 100px;
+	   padding-top: 55px;
 	   background: url('../images/MoverBox.jpg') center center no-repeat fixed;
 	   background-size: cover;
 			i{
@@ -154,8 +152,8 @@ body{
 			 padding-top: 80px;
 			 	.luggerProfile, .packerProfile{
 					h3, p{
-						color: #FFF;
-						font-size: 20px;
+						color: #3A539B;
+						font-size: 25px;
 						font-weight: 600;
 					}
 			 	}
@@ -165,7 +163,7 @@ body{
 				display: inline-block;
 				font-size: 30px;
 				font-weight: 600;
-				color: #083B66
+				color: #FFF;
 
 			}
 			.home-page-logo{
@@ -178,14 +176,14 @@ body{
 				}
 }
 .footer-container{
+	color: #FFF;
+	text-shadow: 1px 1px black;
 	background-color: #A4B8E9;
 }
 
-
-
-
-
 .faq-logo-container{
+	color: #FFF;
+	text-shadow: 1px 1px black;
 	height: 380px;
 	background: url('../images/MoverBox.jpg')center no-repeat fixed;
 	background-size: cover;
@@ -216,17 +214,27 @@ body{
 				}
 		}
 
-
-
-
-
-
-
-
 .lugger-container{
+	color: #FFF;
+	text-shadow: 1px 1px black;
 	height: 400px;
-	background: url('../images/truck-canoe.jpg') center center no-repeat fixed;
+	background: url('../images/chevrolet-pickup.jpg') center center no-repeat fixed;
 	background-size: cover;
+		h3{
+			padding-left: 30px;
+		}
+}
+
+.logo-lugger{
+	margin: 0;
+	padding-top: 30px;
+	width: 15%;
+	display: inline-block;
+	background-color: #89C4F4;
+	margin-left: 0;
+		img{
+			width: 10%;
+		}
 }
 
 
@@ -234,13 +242,50 @@ body{
 
 		width: 600px;
 		height: 400px;
+		margin-top: 25px;
 	  }
 
 
-.lugg-container{
+.lugger-container{
+	color: #FFF;
 	width: 100%;
+	.lead{
+		font-size: 30px;
+		color: #FFF;
+	}
 }
+
+.lugg-list-container{
+	color: #FFF;
+	font-size: 20px;
+	font-weight: 600;
+	margin-top: 25px;
+}
+.map-container{
+	display: inline-block;
+	width: 10%;
+		p{
+			font-size: 20px;
+			font-weight: 600;
+			color: #FFF;
+
+
+		}
+	}
+	#map{
+		margin-right: 10px;
+		margin-left: 50%;
+		display: inline-block;
+		vertical-align: top;
+		width: 600px;
+		height: 400px;
+	}
+
+
+
  	.packer-container{
+		color: #FFF;
+		text-shadow: 1px 1px black;
 	  	width: 100%;
 	  	height: 500px;
 	  	padding-top: 50px;
@@ -257,6 +302,8 @@ body{
 	  }
 
 	.form-container{
+		color: #FFF;
+		text-shadow: 1px 1px black;
 		width: 100%;
 		padding: 10px;
 		border: 2px solid black;
@@ -285,7 +332,9 @@ body{
 }
 
 .info-container{
-	font-size: 0;
+	   color: #3A539B;
+	   text-shadow: 1px 1px black;
+		font-size: 0;
 	   background-color: #D8E2FA;
 	   margin-top: 20px;
 		width: 100%;
@@ -295,6 +344,9 @@ body{
 				padding: 20px;
 				display: inline-block;
 				width: 33.3%;
+				h3, p{
+					font-size: 20px;
+				}
 				img{
 					border: 1px solid #000;
 					border-radius: 100%;
@@ -307,6 +359,9 @@ body{
 				display: inline-block;
 				vertical-align: top;
 				width: 33.3%;
+				h3, p{
+					font-size: 20px;
+				}
 				img{
 					border: 1px solid #000;
 					border-radius: 100%;
@@ -319,6 +374,9 @@ body{
 				display: inline-block;
 				vertical-align: top;
 				width: 33.3%;
+				h3, p{
+					font-size: 20px;
+				}
 				img{
 					border: 1px solid #000;
 					border-radius: 100%;
@@ -326,6 +384,8 @@ body{
 			}
 }
 .review-container{
+	color: #FFF;
+	text-shadow: 1px 1px black;
 	height: 380px;
 	background: url('../images/MoverBox.jpg')center no-repeat fixed;
 	background-size: cover;
@@ -352,11 +412,51 @@ body{
 
 
 .about-container{
+	color: #FFF;
+	text-shadow: 1px 1px black;
 	height: 500px;
 	background: url('../images/MoverBox.jpg')center no-repeat fixed;
 	background-size: cover;
 }
+
+.userNameList {
+	color:#FFF;
+	font-size: 25px;
+}
+
+.modal-container{
+	&.is-hidden{
+		display: none;
+	}
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 2000;
+
+	.overlay{
+		position: fixed;
+		top: 0;
+		left: 0;
+		width:100%;
+		height: 100%;
+		background: rgba(50,50,50,.5);
+	}
+
+	.window{
+		padding: 20px;
+		background: #fff;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
 .builderPro{
+	color: #FFF;
+	text-shadow: 1px 1px black;
 	background-color: #89C4F4;
 	display: inline-block;
 		.thumbnail{

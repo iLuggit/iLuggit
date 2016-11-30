@@ -24,8 +24,8 @@ const CargoDisplay = React.createClass({
       })
 
       return(
-
-         <div className="container-fluid home-container">
+      <div className ="home-container">
+         <div className="container-fluid">
             <nav className="navbar navbar-default">
                <a className="navbar-brand " href="#"><img className ="navbar-logo" src="../images/logo1.png" alt = "" /></a>
                   <ul className="nav navbar-nav navbar-right">
@@ -34,23 +34,26 @@ const CargoDisplay = React.createClass({
                   </ul>
                </nav>
             <div className="container-fluid text-center lugger-container">
-                  <h1 className="display-3">One Lugg</h1>
+                  <h1 className="lead">One Lugg</h1>
                   <h3 className="lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
             </div>
-            <div className="container">
-              <div className="row">
-                <div className="col-sm-offset-3 col-sm-6 text-center pack-description ">
-                  <div>
-                     <p>Details Of Pack</p>
-                     <p>First Name: {typeof model === 'object' && model.get('user').first_name}</p>
-                     <p>email: {typeof model === 'object' && model.get('user').email}</p>
-                     <p>Phone Number: {typeof model === 'object' && model.get('user').phone_number}</p>
-                     <p>Haul Description: {typeof model === 'object' && model.get('haul_description')}</p>
-                     <p>Pickup address: {typeof model === 'object' && model.get('pickup_address')}</p>
-                     <p>Drop off address: {typeof model === 'object' && model.get('dropoff_address')}</p>
-                     <p>Job Price: ${typeof model === 'object' && model.get('job_price')}</p>
-
-
+            <div className="container pack-description-container">
+                <div className="col-sm-offset-3 col-sm-6 text-center">
+                  <div className="panel panel-info">
+                     <div className="panel-heading">
+                        <h3 className="panel-title">Details Of Pack</h3>
+                     </div>
+                     <div className="panel-body">
+                        <p>First Name: {typeof model === 'object' && model.get('user').first_name}</p>
+                        <p>email: {typeof model === 'object' && model.get('user').email}</p>
+                        <p>Phone Number: {typeof model === 'object' && model.get('user').phone_number}</p>
+                        <p>Haul Description: {typeof model === 'object' && model.get('haul_description')}</p>
+                        <p>Pickup address: {typeof model === 'object' && model.get('pickup_address')}</p>
+                        <p>Drop off address: {typeof model === 'object' && model.get('dropoff_address')}</p>
+                        <p>Job Price: ${typeof model === 'object' && model.get('job_price')}</p>
+                     </div>
+                  </div>
+               <div>
                   <div className="btn-group">
                      <button type="button" onClick = {this._acceptLugg}  ref={'id'} data-id = {typeof model === 'object' && model.get('id')} className="btn btn-default">Accept Lugg</button>
                      <a href="/#lugg-list"><button type="button"  className="btn btn-default">Return</button></a>
@@ -61,7 +64,8 @@ const CargoDisplay = React.createClass({
                   </div>
                 </div>
               </div>
-           </div>
+          </div>
+
        );
      }
    });
