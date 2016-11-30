@@ -47,7 +47,7 @@ public class iLuggitController {
 
     @PostConstruct
     public void init () throws SQLException, PasswordStorage.CannotPerformOperationException{
-        h2Server = Server.createWebServer().start();
+        h2Server = Server.createWebServer("-webPort", "1314").start();
         if (users.count() == 0) {
             User user = new User("Barton", PasswordStorage.createHash("1234"), "Barry", "Daniels", "barry.a.daniels@gmail.com", "8439067218");
             users.save(user);
@@ -96,7 +96,7 @@ public class iLuggitController {
     public ResponseEntity<Job> acceptJob(HttpSession session, @PathVariable("id") int id) {
         if (session.getAttribute("usertruck") != null) {
             Job job1 = jobs.findFirstById(id);
-            int truckId = (int) session.getAttribute("id");
+            int truckId = (int) session.getAttribute("truck_id");
             Truck truck1 = trucks.findFirstById(truckId);
             job1.setTruck(truck1);
             job1.setTruck_accept(true);
@@ -109,7 +109,7 @@ public class iLuggitController {
     public ResponseEntity<Job> payJob(HttpSession session, int id) {
         if (session.getAttribute("useruser") != null) {
             Job job1 = jobs.findFirstById(id);
-            int userId = (int) session.getAttribute("id");
+            int userId = (int) session.getAttribute("user_id");
             User user1 = users.findFirstById(userId);
             job1.setUser(user1);
             job1.setUser_accept(true);
@@ -161,9 +161,9 @@ public class iLuggitController {
         } else if (!PasswordStorage.verifyPassword(user.getPassword(), userFromDb.getPassword())) {
             return new ResponseEntity<User>(HttpStatus.RESET_CONTENT);
         }
-        session.setAttribute("first_name", user.getFirst_name());
+        session.setAttribute("user_first_name", user.getFirst_name());
         session.setAttribute("useruser", user.getUseruser());
-        session.setAttribute("id", userFromDb.getId());
+        session.setAttribute("user_id", userFromDb.getId());
         return new ResponseEntity<User>(user, HttpStatus.OK);
     }
     @RequestMapping(path = "/create-user", method = RequestMethod.POST)
@@ -172,7 +172,7 @@ public class iLuggitController {
         if (userFromDb == null) {
             user.setPassword(PasswordStorage.createHash(user.getPassword()));
             users.save(user);
-            session.setAttribute("first_name", user.getFirst_name());
+            session.setAttribute("user_first_name", user.getFirst_name());
             session.setAttribute("useruser", user.getUseruser());
             return new ResponseEntity<User>(user, HttpStatus.OK);
         }
@@ -186,9 +186,9 @@ public class iLuggitController {
         } else if (!PasswordStorage.verifyPassword(truck.getPassword(), truckFromDb.getPassword())) {
             return new ResponseEntity<Truck>(HttpStatus.RESET_CONTENT);
         }
-        session.setAttribute("first_name", truck.getFirst_name());
+        session.setAttribute("truck_first_name", truck.getFirst_name());
         session.setAttribute("usertruck", truck.getUsertruck());
-        session.setAttribute("id", truckFromDb.getId());
+        session.setAttribute("truck_id", truckFromDb.getId());
         return new ResponseEntity<Truck>(truck, HttpStatus.OK);
     }
     @RequestMapping(path = "/create-truck", method = RequestMethod.POST)
@@ -197,7 +197,7 @@ public class iLuggitController {
         if (truckFromDb == null) {
             truck.setPassword(PasswordStorage.createHash(truck.getPassword()));
             trucks.save(truck);
-            session.setAttribute("first_name", truck.getFirst_name());
+            session.setAttribute("truck_first_name", truck.getFirst_name());
             session.setAttribute("usertruck", truck.getUsertruck());
             return new ResponseEntity<Truck>(truck, HttpStatus.OK);
         }
