@@ -46,17 +46,15 @@ const CreateLugg = React.createClass({
 
 
       return (
-         <div className="row">
 
                <div className="col-xs-6 col-md-4 ">
-
                   <div key={i} className="list-group">
                      <div className="list-group-item">
                         <h4 ><span className ="userNameList"> {model.get('user').first_name}</span>, you're moving <span className="userNameList">  {typeof model === 'object' && model.get('haul_description')} </span> {acceptedStatus} </h4>
+                        <br/>
                      </div>
                   </div>
                </div>
-         </div>
 
        )
     });
@@ -97,9 +95,11 @@ const CreateLugg = React.createClass({
             </div>
             <div>
                <h3>Oustanding Packs </h3>
+               <div className="row">
                   <ul>
                      { outstandingPacks }
                   </ul>
+               </div>
             </div>
 
             <div className ="form-container">
