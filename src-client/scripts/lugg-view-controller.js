@@ -64,7 +64,7 @@ let AppController = React.createClass({
             break;
 
          case "CreateLugg" :
-            return <CreateLugg newLuggData={this.state.newLuggData} />
+            return <CreateLugg newLuggData={this.state.newLuggData} modalWindowInfo ={this.state.modalWindowSettings} />
             break;
 
          case "Sandbox":

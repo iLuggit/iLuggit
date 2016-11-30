@@ -91,6 +91,14 @@ const ACTIONS = {
      })
   },
 
+  setModal:function(showingStatus, modalData){
+     console.log(modalData)
+     STORE.setStore('modalWindowSettings', {
+        isShowing:showingStatus,
+        payload: modalData,
+     })
+ }
+
    // _authenticateUser: function(){
    //    let currentUser = new AuthenticateUser()
    //    currentUser.set(currentUser)

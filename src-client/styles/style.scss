@@ -179,10 +179,6 @@ body{
 	background-color: #A4B8E9;
 }
 
-
-
-
-
 .faq-logo-container{
 	height: 380px;
 	background: url('../images/MoverBox.jpg')center no-repeat fixed;
@@ -214,17 +210,25 @@ body{
 				}
 		}
 
-
-
-
-
-
-
-
 .lugger-container{
 	height: 400px;
-	background: url('../images/truck-canoe.jpg') center center no-repeat fixed;
+	background: url('../images/chevrolet-pickup.jpg') center center no-repeat fixed;
 	background-size: cover;
+		h3{
+			padding-left: 30px;
+		}
+}
+
+.logo-lugger{
+	margin: 0;
+	padding-top: 30px;
+	width: 15%;
+	display: inline-block;
+	background-color: #89C4F4;
+	margin-left: 0;
+		img{
+			width: 10%;
+		}
 }
 
 
@@ -232,12 +236,33 @@ body{
 
 		width: 600px;
 		height: 400px;
+		margin-top: 25px;
 	  }
 
 
 .lugg-container{
 	width: 100%;
 }
+
+.lugg-list-container{
+	margin-top: 25px;
+
+	.map-container{
+		background-color: #89C4F4;
+		display: inline-block;
+		width: 10%;
+	}
+	#map{
+		margin-right: 10px;
+		margin-left: 50%;
+		display: inline-block;
+		vertical-align: top;
+		width: 600px;
+		height: 400px;
+	}
+
+}
+
  	.packer-container{
 	  	width: 100%;
 	  	height: 500px;
@@ -354,6 +379,42 @@ body{
 	background: url('../images/MoverBox.jpg')center no-repeat fixed;
 	background-size: cover;
 }
+
+.userNameList {
+	color:#FFF;
+	font-size: 25px;
+}
+
+.modal-container{
+	&.is-hidden{
+		display: none;
+	}
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 2000;
+
+	.overlay{
+		position: fixed;
+		top: 0;
+		left: 0;
+		width:100%;
+		height: 100%;
+		background: rgba(50,50,50,.5);
+	}
+
+	.window{
+		padding: 20px;
+		background: #fff;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
 .builderPro{
 	background-color: #89C4F4;
 	display: inline-block;
