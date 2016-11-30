@@ -2,7 +2,7 @@ import Backbone from 'backbone'
 import React from 'react'
 import $ from 'jquery'
 
-import {UserModel, UserCollection, LoginModel, CreateUserModel, TruckModel, CreateTruckModel, CreateLuggModel, ReviewCollection} from './lugg-model.js'
+import {UserModel, UserCollection, LoginModel, CreateUserModel, TruckModel, CreateTruckModel, CreateLuggModel, ReviewCollection, AuthenticateUser, LogOut} from './lugg-model.js'
 import STORE from './STORE.js'
 const ACTIONS = {
 
@@ -81,6 +81,7 @@ const ACTIONS = {
       //   console.log("did i fail??", error)
      })
   },
+
   _logOut: function(){
      $.ajax({
         method: 'POST',
@@ -89,6 +90,7 @@ const ACTIONS = {
         window.location.hash = ''
      })
   },
+
   setModal:function(showingStatus, modalData){
      console.log(modalData)
      STORE.setStore('modalWindowSettings', {
@@ -96,6 +98,17 @@ const ACTIONS = {
         payload: modalData,
      })
  }
+
+   // _authenticateUser: function(){
+   //    let currentUser = new AuthenticateUser()
+   //    currentUser.set(currentUser)
+   //    currentUser.save().then(function(){
+   //       STORE.setStore('currentUser', currentUser)
+   //       window.location.hash = '';
+   //
+   //
+   //    })
+   // }
 }
 
 

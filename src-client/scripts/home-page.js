@@ -15,12 +15,17 @@ const HomeView = React.createClass({
 
 
     return (
-      <div className="home-container">
-         <div className="container-fluid text-center main-container ">
-                  <div className="container ">
-                  </div>
-            <div className="row">
-               <div className ="profile-row">
+      <div className="container-fluid home-container">
+         <nav className="navbar navbar-default">
+            <a className="navbar-brand " href="#"><img className ="navbar-logo" src="../images/logo1.png" alt = "" /></a>
+            <ul className="nav navbar-nav navbar-right">
+            <li><a href="#">Home</a></li>
+            <li><a onClick = {this._logOut}>Logout</a></li>
+            </ul>
+         </nav>
+            <div className="main-container text-center">
+               <div className="row">
+                  <div className ="profile-row">
                   <div className="col-xs-12 col-md-6 ">
                      <div className="luggerProfile text-center">
                         <a href="/#truck-login"><i className="fa fa-truck fa-5x" aria-hidden="true"></i></a>
@@ -37,10 +42,10 @@ const HomeView = React.createClass({
               </div>
             </div>
          </div>
-         <img className ="home-page-logo" src= "../images/logo1.png" alt="" />
-         <h3 className="home-page-lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
-
+               <img className ="home-page-logo" src= "../images/logo1.png" alt="" />
+               <h3 className="home-page-lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
       </div>
+
       <div className="container-fluid info-container">
          <div className="row">
             <div className="col-xs-12 col-md-4 text-center">
@@ -72,8 +77,8 @@ const HomeView = React.createClass({
             <strong>We are all here to help others, what the others are here for I don't know! W.H.Auden</strong>
          </div>
       </div>
-
    </div>
+
 
 
          )

@@ -54,7 +54,7 @@ const CreateLugg = React.createClass({
 
       return (
              <div key={i}>
-                <h4><span className ="userNameList"> {model.get('user').first_name}</span> is moving <span className="userNameList">  {typeof model === 'object' && model.get('haul_description')} </span> {acceptedStatus} </h4>
+                <h4><span className ="userNameList"> {model.get('user').first_name}</span>, you're moving <span className="userNameList">  {typeof model === 'object' && model.get('haul_description')} </span> {acceptedStatus} </h4>
              </div>
        )
     });
@@ -79,6 +79,14 @@ const CreateLugg = React.createClass({
 
 
       return(
+         <div className="container-fluid home-container">
+            <nav className="navbar navbar-default">
+            <a className="navbar-brand " href="#"><img className ="navbar-logo" src="../images/logo1.png" alt = "" /></a>
+            <ul className="nav navbar-nav navbar-right">
+            <li><a href="#">Home</a></li>
+            <li><a onClick = {this._logOut}>Logout</a></li>
+            </ul>
+         </nav>
          <div className = "lugg-container">
             <ModalWindow modalSettings={this.props.modalWindowInfo}/>
             <div className="container-fluid text-center packer-container ">
@@ -119,6 +127,7 @@ const CreateLugg = React.createClass({
                </div>
               </div>
             </div>
+         </div>
          </div>
     );
    }

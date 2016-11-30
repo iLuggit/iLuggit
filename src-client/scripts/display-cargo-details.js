@@ -24,7 +24,15 @@ const CargoDisplay = React.createClass({
       })
 
       return(
-         <div>
+
+         <div className="container-fluid home-container">
+            <nav className="navbar navbar-default">
+               <a className="navbar-brand " href="#"><img className ="navbar-logo" src="../images/logo1.png" alt = "" /></a>
+                  <ul className="nav navbar-nav navbar-right">
+                     <li><a href="#">Home</a></li>
+                     <li><a href="#">Logout</a></li>
+                  </ul>
+               </nav>
             <div className="container-fluid text-center lugger-container">
                   <a href = "#"><i className="fa fa-home fa-2x " aria-hidden="true"></i></a>
                   <h1 className="display-3">One Lugg</h1>
@@ -49,13 +57,12 @@ const CargoDisplay = React.createClass({
                      <a href="/#lugg-list"><button type="button"  className="btn btn-default">Return</button></a>
 
 
-
-                  </div>
+                     </div>
+                   </div>
                   </div>
                 </div>
               </div>
            </div>
-         </div>
        );
      }
    });

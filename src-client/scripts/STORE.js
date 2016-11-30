@@ -14,6 +14,7 @@ const STORE = {
             }
 
          }
+
    },
 
    setStore: function(luggProp, maindata){

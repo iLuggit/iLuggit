@@ -13,36 +13,38 @@ const showReviews = React.createClass({
       let reviews = this.props.newReviewData.map(function(model, i){
 
          return (
-         <div key={i}>
-            <div className ="review-container">
-               <div className ="row">
-                  <div className ="col-xs-12 col-md-3">
+               <div className ="col-xs-6 col-md-4 " key={i}>
                      <p className ="thumbnail">{model.get('user').useruser}<br/>
                      {typeof model === 'object' && model.get('review')}</p>
-                  </div>
                </div>
-            </div>
-         </div>
+
          )
 
       })
 
       return(
          <div>
-            <div className="home-container">
-            <a href = "#"><i className = "fa fa-home fa-2x" aria-hidden = "true"></i></a>
-
-               <div className="container-fluid text-center main-container ">
-               <div className="container ">
-                     <h3 className="lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
+         <div className="container-fluid home-container">
+            <nav className="navbar navbar-default">
+               <a className="navbar-brand " href="#"><img className ="navbar-logo" src="../images/logo1.png" alt = "" /></a>
+               <ul className="nav navbar-nav navbar-right">
+               <li><a href="#">Home</a></li>
+               <li><a onClick = {this._logOut}>Logout</a></li>
+               </ul>
+            </nav>
+               <div className="container-fluid review-container">
+                        <img className ="review-logo" src= "../images/logo1.png" alt="" />
+                        <h1 className ="review-lead">User Reviews</h1>
                </div>
-               </div>
-            </div>
-            <div className ="reviews-info">
-               <h3 className = "text-center">User Reviews</h3>
-                  {reviews}
+                  <div className = "container-fluid reviews-info">
+                     <div className ="row">
+                        <div >
+                           {reviews}
+                        </div>
+                  </div>
             </div>
          </div>
+      </div>
       )
    }
 });
