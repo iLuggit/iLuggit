@@ -138,13 +138,16 @@ public class iLuggitController {
             long inMeters = distance.inMeters;
             double inMetersDouble = doubleValue(inMeters);
             double price = ((inMetersDouble * 0.012) / 10) + 5;
+            System.out.println(price);
+            double finalPrice = (double) Math.round(price * 100) / 100;
             String username = (String) session.getAttribute("useruser");
             User user = users.findFirstByUseruser(username);
             job.setPickUpLatitude(latitude);
             job.setPickUpLongitude(longitude);
             job.setDropOffLongitude(latitude2);
             job.setDropOffLatitude(longitude2);
-            job.setJob_price(price);
+            job.setJob_price(finalPrice);
+            System.out.println(finalPrice);
             job.setUser(user);
             job.setUser_accept(false);
             job.setTruck_accept(false);
