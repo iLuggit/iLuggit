@@ -44,18 +44,20 @@ const CreateLugg = React.createClass({
          acceptedStatus = <button type='button' className='btn btn-primay pendingBtn'>Pending</button>
       }
 
-      <div class="modal fade modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-        <div class="modal-dialog modal-lg" role="document">
-          <div class="modal-content">
-            dummy data
-          </div>
-        </div>
-      </div>
 
       return (
-             <div key={i}>
-                <h4><span className ="userNameList"> {model.get('user').first_name}</span>, you're moving <span className="userNameList">  {typeof model === 'object' && model.get('haul_description')} </span> {acceptedStatus} </h4>
-             </div>
+         <div className="row">
+
+               <div className="col-xs-6 col-md-4 ">
+
+                  <div key={i} className="list-group">
+                     <div className="list-group-item">
+                        <h4 ><span className ="userNameList"> {model.get('user').first_name}</span>, you're moving <span className="userNameList">  {typeof model === 'object' && model.get('haul_description')} </span> {acceptedStatus} </h4>
+                     </div>
+                  </div>
+               </div>
+         </div>
+
        )
     });
 
