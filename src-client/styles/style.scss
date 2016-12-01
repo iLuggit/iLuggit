@@ -127,7 +127,7 @@ body{
 
 	.lugg-auth-form{
 		border: 2px solid black;
-		background-color:  rgba(118,213,77,.5);
+		background-color:  rgba(118,213,77,.3);
 		min-height: 100vh;
 			.create-lugg-form{
 				h2{
@@ -281,11 +281,20 @@ body{
 		}
 		.lugg-item{
 			width: 50%;
+				p{
+
+				}
+
 		}
 }
 .lugg-data{
-	width: 100px;
-	height: 75px;
+	width: 100%;
+	height: 100px;
+	overflow: scroll;
+	background: rgba(137,196,244,.9);
+	border-radius: 5px;
+	color: #083B66;
+	text-shadow: 1px 1px #000;
 }
 
 .map-container{

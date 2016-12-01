@@ -82,7 +82,7 @@ const LuggProfile = React.createClass({
 
      render: function(){
         return(
-            <div className ="col-xs-12 col-md-4">
+            <div className ="col-xs-12 col-sm-6">
                <div className = "lugg-data thumbnail text-center">
                      <a href={`#cargo/${this.props.model.get('id')}`}>{this.props.model.get('user').useruser}<br/>
                      {this.props.model.get('haul_description')}</a>
