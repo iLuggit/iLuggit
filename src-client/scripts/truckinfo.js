@@ -12,7 +12,6 @@ const showTruckInfo = React.createClass({
 
       return (
          <div className="container-fluid">
-         <div className="container-fluid">
             <nav className="navbar navbar-default">
                <a className="navbar-brand " href="#"><img className ="navbar-logo" src="../images/logo1.png" alt = "" /></a>
                <ul className="nav navbar-nav navbar-right">
@@ -28,7 +27,7 @@ const showTruckInfo = React.createClass({
                         <div className="thumbnail text-center">
                            <h3>Jon Gammon</h3>
                            <img className="profileImg1" src="http://st.motortrend.com/uploads/sites/5/2014/06/2014-Dodge-Demon-Challenger-SRT8-Dee-Snider.jpg"/>
-                           <p>Front End Engineer, Jon, loving perforamce cars, has never had the ablility to move large items when he need. Wished he had a truck to move his cars.</p>
+                           <p>Front End Engineer, Jon, loving performance cars, has never had the ablility to move large items when he needed. He wished he had a truck to move his cars.</p>
                         </div>
                   </div>
                   <div className="col-xs-12 col-md-4 luggProfile ">
@@ -42,12 +41,11 @@ const showTruckInfo = React.createClass({
                         <div className=" thumbnail text-center">
                            <h3>Barry Daniels</h3>
                            <img className="profileImg3" src="./images/WoW!.jpeg"/>
-                           <p>Back End Engineer Barry has moved several times, but his moves have never warranted a moving service. Would have been easier with a truck.</p>
+                           <p>Back End Engineer Barry has moved several times, but his moves have never warranted a moving service. It would have been easier with a truck.</p>
                         </div>
                   </div>
                </div>
             </div>
-         </div>
       )
    }
 })
