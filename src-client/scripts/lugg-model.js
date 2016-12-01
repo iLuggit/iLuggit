@@ -96,14 +96,7 @@ const AuthenticateTruck = Backbone.Model.extend({
          this.url = path2
    }
 })
-const LogOut = Backbone.Model.extend({
-   model: UserModel,
-   url: '/logout',
 
-      initialize: function(path){
-         this.url = path
-      }
-})
 
 module.exports = {
    UserModel,
@@ -114,7 +107,7 @@ module.exports = {
    TruckModel,
    CreateLuggModel,
    ReviewCollection,
-   // AuthenticateUser,
-   LogOut
+   AuthenticateUser,
+
 
 }

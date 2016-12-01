@@ -15,12 +15,12 @@ const HomeView = React.createClass({
 
 
     return (
-      <div className="container-fluid home-container">
+      <div className="container-fluid">
          <nav className="navbar navbar-default">
             <a className="navbar-brand " href="#"><img className ="navbar-logo" src="../images/logo1.png" alt = "" /></a>
             <ul className="nav navbar-nav navbar-right">
             <li><a href="#">Home</a></li>
-            <li><a onClick = {this._logOut}>Logout</a></li>
+            <li onClick = {this._logOut}>Logout</li>
             </ul>
          </nav>
             <div className="main-container text-center">

@@ -33,38 +33,69 @@ const CargoDisplay = React.createClass({
                      <li><a href="#">Logout</a></li>
                   </ul>
                </nav>
-            <div className="container-fluid text-center lugger-container">
-                  <h1 className="lead">One Lugg</h1>
-                  <h3 className="lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
-            </div>
+
             <div className="container pack-description-container">
-                <div className="col-sm-offset-3 col-sm-6 text-center">
+                <div className="col-sm-offset-3 col-sm-6">
                   <div className="panel panel-info">
                      <div className="panel-heading">
                         <h3 className="panel-title">Details Of Pack</h3>
                      </div>
                      <div className="panel-body">
-                        <p>First Name: {typeof model === 'object' && model.get('user').first_name}</p>
-                        <p>email: {typeof model === 'object' && model.get('user').email}</p>
-                        <p>Phone Number: {typeof model === 'object' && model.get('user').phone_number}</p>
-                        <p>Haul Description: {typeof model === 'object' && model.get('haul_description')}</p>
-                        <p>Pickup address: {typeof model === 'object' && model.get('pickup_address')}</p>
-                        <p>Drop off address: {typeof model === 'object' && model.get('dropoff_address')}</p>
-                        <p>Job Price: ${typeof model === 'object' && model.get('job_price')}</p>
-                     </div>
-                  </div>
-               <div>
-                  <div className="btn-group">
-                     <button type="button" onClick = {this._acceptLugg}  ref={'id'} data-id = {typeof model === 'object' && model.get('id')} className="btn btn-default">Accept Lugg</button>
-                     <a href="/#lugg-list"><button type="button"  className="btn btn-default">Return</button></a>
+                     <table class="table table-striped table-hover">
 
-
+                       <thead>
+                         <tr>
+                           <th>Packer Info</th>
+                           <th>Packer Description</th>
+                         </tr>
+                       </thead>
+                       <tbody>
+                         <tr >
+                           <td>First Name: &nbsp; &nbsp;</td>
+                           <td>{typeof model === 'object' && model.get('user').first_name}</td>
+                        </tr>
+                        <tr>
+                           <td>email: &nbsp; &nbsp;</td>
+                           <td>{typeof model === 'object' && model.get('user').email}</td>
+                        </tr>
+                        <tr>
+                           <td>Phone Number: &nbsp; &nbsp;</td>
+                           <td>{typeof model === 'object' && model.get('user').phone_number}</td>
+                        </tr>
+                        <tr>
+                           <td>Haul Description: &nbsp; &nbsp;</td>
+                           <td>{typeof model === 'object' && model.get('haul_description')}</td>
+                        </tr>
+                        <tr>
+                           <td>Pickup address: &nbsp; &nbsp; </td>
+                           <td>{typeof model === 'object' && model.get('pickup_address')}</td>
+                        </tr>
+                        <tr>
+                           <td>Drop off address: &nbsp; &nbsp;</td>
+                           <td>{typeof model === 'object' && model.get('dropoff_address')}</td>
+                        </tr>
+                        <tr>
+                           <td>Job Price: &nbsp; &nbsp;</td>
+                           <td> ${typeof model === 'object' && model.get('job_price')}</td>
+                        </tr>
+                     </tbody>
+                  </table>
                      </div>
+                  <div>
+                     <div className="btn-group">
+                        <button type="button" onClick = {this._acceptLugg}  ref={'id'} data-id = {typeof model === 'object' && model.get('id')} className="btn btn-success accept-button">Accept Lugg</button>
+                        <a href="/#lugg-list"><button type="button"  className="btn btn-info return-button">Return</button></a>
+                     </div>
+                     </div>
+                    <div className="container-fluid text-right oneLugg-container">
+                        <h1 className="lead">...One Lugg</h1>
+                    </div>
                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
 
        );
      }

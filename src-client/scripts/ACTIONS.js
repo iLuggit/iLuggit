@@ -90,6 +90,8 @@ const ACTIONS = {
         method: 'POST',
         url: '/logout'
      }).then(function(){
+        STORE.setStore('currentUser', {})
+        STORE.setStore('currentTruck', {  })
         location.hash = ''
      })
   },

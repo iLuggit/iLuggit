@@ -16,20 +16,19 @@ body{
 }
 
 #app-container{
-	width: 1400px;
+	width: 100%;
 	height: auto;
 	margin-left: auto;
 	margin-right: auto;
+	overflow: hidden;
 
 }
 .pack-description-container{
 	font-size: 18px;
 	padding-top: 50px;
-
-}
-.pack-auth-form{
-	border: 2px solid black;
-	background-color: #89C4F4;
+		.return-button{
+		margin-left: 325px;
+		}
 
 }
 
@@ -74,11 +73,24 @@ body{
 				}
 		}
 }
+.oneLugg-container{
+	color: #FFF;
+	padding-top: 100px;
+}
 .home-container{
-	background-color: #434343;
+	background: url(../images/chevrolet-pickup.jpg) center top no-repeat;
+	background-size: cover;
+	height: 100vh;
+	display: block;
+	max-width: 100%;
+	padding-left: 0;
+	padding-right: 0;
 }
 .home-container2{
 	background-color: #31536E;
+}
+.navbar{
+	opacity: .5;
 }
 .navbar-logo{
 	display: inline-block;
@@ -217,70 +229,59 @@ body{
 .lugger-container{
 	color: #FFF;
 	text-shadow: 1px 1px black;
-	height: 400px;
-	background: url('../images/chevrolet-pickup.jpg') center center no-repeat fixed;
-	background-size: cover;
 		h3{
 			padding-left: 30px;
 		}
 }
 
 .logo-lugger{
-	margin: 0;
 	padding-top: 30px;
 	width: 15%;
 	display: inline-block;
 	background-color: #89C4F4;
-	margin-left: 0;
 		img{
 			width: 10%;
 		}
 }
 
-
-	#map{
-
-		width: 600px;
-		height: 400px;
-		margin-top: 25px;
-	  }
-
-
-.lugger-container{
-	color: #FFF;
+.lugg-map-container{
+	background-color: rgba(0,0,0,0.4);
 	width: 100%;
-	.lead{
-		font-size: 30px;
-		color: #FFF;
-	}
+	margin-top: 90px;
 }
-
 .lugg-list-container{
 	color: #FFF;
 	font-size: 20px;
 	font-weight: 600;
-	margin-top: 25px;
+		i{
+			color: #000;
+		}
+		.lugg-item{
+			width: 50%;
+		}
 }
+.lugg-data{
+	width: 50%;
+}
+
 .map-container{
 	display: inline-block;
-	width: 10%;
+	width: 49.5%;
 		p{
 			font-size: 20px;
 			font-weight: 600;
-			color: #FFF;
-
-
 		}
-	}
-	#map{
-		margin-right: 10px;
-		margin-left: 50%;
-		display: inline-block;
-		vertical-align: top;
-		width: 600px;
-		height: 400px;
-	}
 
+		#map{
+			margin-top: 10%;
+			margin-right: 10px;
+			margin-left: 40px;
+			display: inline-block;
+			vertical-align: top;
+			width: 500px;
+			height: 300px;
+		}
+  	}
 
 
  	.packer-container{
