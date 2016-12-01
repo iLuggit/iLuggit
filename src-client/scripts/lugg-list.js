@@ -22,7 +22,7 @@ const LuggProfile = React.createClass({
 
       let CharlestonMap = {
          center: {lat: 32.784618, lng: -79.940918},
-         zoom: 13,
+         zoom: 10,
       };
       let pinsArray = this.props.newLuggData.map(function(model, i){
 
@@ -35,7 +35,7 @@ const LuggProfile = React.createClass({
       })
 
       return(
-         <div className = "lugg-map-container">
+         <div >
          <div className="container-fluid home-container">
             <nav className="navbar navbar-default">
                <a className="navbar-brand " href="#"><img className ="navbar-logo" src="../images/logo1.png" alt = "" /></a>
@@ -44,18 +44,27 @@ const LuggProfile = React.createClass({
                <li><a onClick = {this._logOut}>Logout</a></li>
                </ul>
             </nav>
-            <div className = "lugger-container">
-               <h3 className="lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
-            </div>
-              <div className = "row ">
-                  <div className = "col-xs-12 col-md-6 text-center lugg-list-container">
-                        <p>LUGG ITEM</p>
-                     <div>
-                        { luggs }
+            <div className = "lugg-map-container">
+              <div className = "row">
+                  <div className ="lugg-list-container text-center ">
+                     <div className = "col-xs-12 col-md-6 lugg-item">
+                           <p>Lugg Item</p>
+                           { luggs }
+                     </div>
+                     <div className ="map-container text-center">
+                        <div className ="col-xs-12 col-md-6">
+                           <div>
+                              <p>Lugger Map</p>
+                           </div>
+                           <div id="map">
+                              <SimpleMapPage mapConfig = {CharlestonMap} pinsData = {pinsArray} />
+                           </div>
+                           <div>
+                           <p>*Markers are the Starting Address's of the Packers</p>
+                           </div>
+                        </div>
                      </div>
                   </div>
-               <div id= "map" className ="col-xs-12 col-md-6 map-container">
-                        <SimpleMapPage mapConfig = {CharlestonMap} pinsData = {pinsArray} />
                </div>
             </div>
          </div>
@@ -70,10 +79,13 @@ const LuggProfile = React.createClass({
 
      render: function(){
         return(
+            <div className ="col-xs-12 col-md-4">
                <div className = "lugg-data thumbnail text-center">
                      <a href={`#cargo/${this.props.model.get('id')}`}>{this.props.model.get('user').useruser}<br/>
                      {this.props.model.get('haul_description')}</a>
                </div>
+            </div>
+
 
 
 

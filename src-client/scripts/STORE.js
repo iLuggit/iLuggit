@@ -4,16 +4,19 @@ import ReactDOM from 'react-dom'
 import $ from 'jquery'
 
 const STORE = {
-      luggData: {
-         newLuggData: [],
-         newReviewData: [],
-         modalWindowSettings : {
-            isShowing: false,
-            payload: {
-               email: 'paul@gmail.com'
-            }
 
+   luggData: {
+      currentUser: {},
+      currentTruck: {},
+      newLuggData: [],
+      newReviewData: [],
+      modalWindowSettings : {
+         isShowing: false,
+         payload: {
+            email: 'paul@gmail.com'
          }
+
+      }
 
    },
 

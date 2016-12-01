@@ -44,14 +44,6 @@ const CreateLugg = React.createClass({
          acceptedStatus = <button type='button' className='btn btn-primay pendingBtn'>Pending</button>
       }
 
-      <div class="modal fade modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-        <div class="modal-dialog modal-lg" role="document">
-          <div class="modal-content">
-            dummy data
-          </div>
-        </div>
-      </div>
-
       return (
              <div key={i}>
                 <h4><span className ="userNameList"> {model.get('user').first_name}</span>, you're moving <span className="userNameList">  {typeof model === 'object' && model.get('haul_description')} </span> {acceptedStatus} </h4>
@@ -79,7 +71,7 @@ const CreateLugg = React.createClass({
 
 
       return(
-         <div className="container-fluid home-container">
+         <div className="container-fluid home-container2">
             <nav className="navbar navbar-default">
             <a className="navbar-brand " href="#"><img className ="navbar-logo" src="../images/logo1.png" alt = "" /></a>
             <ul className="nav navbar-nav navbar-right">
@@ -103,7 +95,6 @@ const CreateLugg = React.createClass({
             <div className ="form-container">
                <div className ="row ">
                   <form className = "col-xs-12 col-md-6 " id="create-lugg-form" onSubmit = {this._createLugg}>
-                        <a href = "#"><i className = "fa fa-home fa-2x" aria-hidden = "true"></i></a>
                        <h2 className = "">Welcome back  Create a New Lugg </h2>
                   <div className = "col-xs-12 form-group">
                        <label htmlFor = "startAddress"> </label>

@@ -17,8 +17,6 @@ import Reviews from './reviews.js'
 
 let AppController = React.createClass({
    getInitialState: function(){
-
-         // ACTIONS._authenticateUser()
          return STORE.getLuggData()
      },
 
@@ -26,7 +24,9 @@ let AppController = React.createClass({
          let self = this
 
          ACTIONS.fetchLuggData(),
-         ACTIONS.fetchReview()
+         ACTIONS.fetchReview(),
+         ACTIONS.getCurrentUser()
+
 
          STORE.onChange(function(){
 

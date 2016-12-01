@@ -15,12 +15,12 @@ const HomeView = React.createClass({
 
 
     return (
-      <div className="container-fluid home-container">
+      <div className="container-fluid">
          <nav className="navbar navbar-default">
             <a className="navbar-brand " href="#"><img className ="navbar-logo" src="../images/logo1.png" alt = "" /></a>
             <ul className="nav navbar-nav navbar-right">
             <li><a href="#">Home</a></li>
-            <li><a onClick = {this._logOut}>Logout</a></li>
+            <li onClick = {this._logOut}>Logout</li>
             </ul>
          </nav>
             <div className="main-container text-center">
@@ -42,8 +42,6 @@ const HomeView = React.createClass({
               </div>
             </div>
          </div>
-               <img className ="home-page-logo" src= "../images/logo1.png" alt="" />
-               <h3 className="home-page-lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
       </div>
 
       <div className="container-fluid info-container">
@@ -76,6 +74,11 @@ const HomeView = React.createClass({
             <h6>Quote of the Day</h6>
             <strong>We are all here to help others, what the others are here for I don't know! W.H.Auden</strong>
          </div>
+         <div>
+          <a href="https://www.facebook.com/"><i className="fa fa-facebook-official fa-4x multi-icons" aria-hidden="true"></i></a>
+          <a href="https://twitter.com/"><i className="fa fa-twitter-square fa-4x multi-icons" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/?hl=en"><i className="fa fa-instagram fa-4x multi-icons" aria-hidden="true"></i></a>
+        </div>
       </div>
    </div>
 

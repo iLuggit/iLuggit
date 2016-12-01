@@ -33,7 +33,6 @@ const showReviews = React.createClass({
                </ul>
             </nav>
                <div className="container-fluid review-container">
-                        <img className ="review-logo" src= "../images/logo1.png" alt="" />
                         <h1 className ="review-lead">User Reviews</h1>
                </div>
                   <div className = "container-fluid reviews-info">
