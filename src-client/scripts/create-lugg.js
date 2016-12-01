@@ -17,7 +17,8 @@ const CreateLugg = React.createClass({
 
      },
 
-   _createLugg: function(){
+   _createLugg: function(evt){
+      evt.preventDefault()
       let createNewLugg = {
             pickup_address: this.refs.start_address.value,
             dropoff_address: this.refs.end_address.value,
@@ -39,22 +40,21 @@ const CreateLugg = React.createClass({
     let outstandingPacks = this.props.newLuggData.map(function(model, i){
       let acceptedStatus
       if (model.get('truck')){
-         acceptedStatus = <button onClick={ function(){component._modalDisplayLugger(model) } } type='button' className='btn btn-primary' data-toggle='modal' data-target='.modal-lg'> Accepted By: {model.get('truck').first_name} {model.get('truck').last_name}</button>
+         acceptedStatus = <button onClick={ function(){component._modalDisplayLugger(model) } } type='button' className='btn btn-primary status-btn' data-toggle='modal' data-target='.modal-lg'> Accepted By: {model.get('truck').first_name} {model.get('truck').last_name}</button>
       } else {
-         acceptedStatus = <button type='button' className='btn btn-primay pendingBtn'>Pending</button>
+         acceptedStatus = <button type='button' className='btn btn-primay pendingBtn status-btn'>Pending</button>
       }
 
 
       return (
 
-               <div className="col-xs-6 col-md-4 ">
+
                   <div key={i} className="list-group">
                      <div className="list-group-item">
-                        <h4 ><span className ="userNameList"> {model.get('user').first_name}</span>, you're moving <span className="userNameList">  {typeof model === 'object' && model.get('haul_description')} </span> {acceptedStatus} </h4>
-                        <br/>
+                        <h4 ><span className ="userNameList"> {model.get('user').first_name}</span>, you're moving <span className="userNameList">  {typeof model === 'object' && model.get('haul_description')} </span> {acceptedStatus} </h4> <br/>
                      </div>
                   </div>
-               </div>
+
 
        )
     });
@@ -79,7 +79,7 @@ const CreateLugg = React.createClass({
 
 
       return(
-         <div className="container-fluid home-container">
+         <div>
             <nav className="navbar navbar-default">
             <a className="navbar-brand " href="#"><img className ="navbar-logo" src="../images/logo1.png" alt = "" /></a>
             <ul className="nav navbar-nav navbar-right">
@@ -87,7 +87,7 @@ const CreateLugg = React.createClass({
             <li><a onClick = {this._logOut}>Logout</a></li>
             </ul>
          </nav>
-         <div className = "lugg-container">
+         <div className = "lugg-home-container">
             <ModalWindow modalSettings={this.props.modalWindowInfo}/>
             <div className="container-fluid text-center packer-container ">
                      <h1>iLuggit</h1>
@@ -105,8 +105,7 @@ const CreateLugg = React.createClass({
             <div className ="form-container">
                <div className ="row ">
                   <form className = "col-xs-12 col-md-6 " id="create-lugg-form" onSubmit = {this._createLugg}>
-                        <a href = "#"><i className = "fa fa-home fa-2x" aria-hidden = "true"></i></a>
-                       <h2 className = "">Welcome back  Create a New Lugg </h2>
+                       <h2 className = "">Welcome, Create a New Lugg </h2>
                   <div className = "col-xs-12 form-group">
                        <label htmlFor = "startAddress"> </label>
                        <input type = "text" className="form-control" id = "s_address" ref = "start_address" placeholder = "Enter Starting Address" />

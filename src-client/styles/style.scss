@@ -28,60 +28,68 @@ body{
 
 }
 
+.main-logo-header{
+	color: #76D54D;
+	font-size: 70px;
+	font-family: 'Sanchez', 'Baskervilles', serif;
+	border: 2px solid #3A539B;
+	background-color: rgba(8,59,102,.8);
+	padding: 40px;
+}
+
 .pack-description{
 	width: 50%;
 	border: 2px solid #000;
 }
-.pack-auth-form{
-	width: 100%;
-	border: 2px solid black;
-	background-color: #89C4F4;
+// .pack-auth-form{
+// 	width: 100%;
+// 	border: 2px solid black;
+// 	background-color: #89C4F4;
+//
+// }
 
-}
+// .pack-auth-container{
+// 	color: #3A539B;
+// 	height: 500px;
+// 	padding-top: 300px;
+// 	background: url('../images/MoverBox.jpg');
+// 	background-size: cover;
+// 		.pack-auth-lead{
+// 			font-size: 30px;
+// 			display: inline-block;
+// 				h3{
+// 					margin-top: 50px;
+// 					font-size: 40px;
+// 					font-weight: 600;
+// 				}
+// 			}
+// 		.pack-auth-logo{
+// 			padding-top: 45px;
+// 			display: inline-block;
+// 			width: 15%;
+// 		}
+// 		.pack-auth-form{
+// 			border: 2px solid black;
+// 			background-color: #89C4F4;
+//
+// 				.create-packer-form{
+// 					h2{
+// 						padding-top: 60px;
+// 					}
+// 				}
+// 				#login-form {
+// 					width: 50%;
+// 					display: inline-block;
+// 				}
+//
+// 				#create-form {
+// 					width: 50%;
+// 					display: inline-block;
+// 					vertical-align: top;
+// 				}
+// 		}
+// }
 
-.pack-auth-container{
-	color: #3A539B;
-	height: 500px;
-	padding-top: 300px;
-	background: url('../images/MoverBox.jpg');
-	background-size: cover;
-		.pack-auth-lead{
-			font-size: 30px;
-			display: inline-block;
-				h3{
-					margin-top: 50px;
-					font-size: 40px;
-					font-weight: 600;
-				}
-			}
-		.pack-auth-logo{
-			padding-top: 45px;
-			display: inline-block;
-			width: 15%;
-		}
-		.pack-auth-form{
-			border: 2px solid black;
-			background-color: #89C4F4;
-
-				.create-packer-form{
-					h2{
-						padding-top: 60px;
-					}
-				}
-				#login-form {
-					width: 50%;
-					display: inline-block;
-				}
-
-				#create-form {
-					width: 50%;
-					display: inline-block;
-					vertical-align: top;
-				}
-		}
-}
-.home-container{
-}
 .navbar-logo{
 	display: inline-block;
 	margin-left: 3px;
@@ -93,7 +101,7 @@ body{
 
 .lugg-auth-container{
 	color: #3A539B;
-	height: 500px;
+	height: 100%;
 	padding-top: 300px;
 	background: url('../images/MoverBox.jpg');
 	background-size: cover;
@@ -114,7 +122,7 @@ body{
 	}
 	.lugg-auth-form{
 		border: 2px solid black;
-		background-color: #89C4F4;
+		background-color: rgba(137,196,244,.5);
 
 			.create-lugg-form{
 				h2{
@@ -136,10 +144,10 @@ body{
 
 
 
-.main-container{
+.home-main-container{
 	   color: #3A539B;
 		width: 100%;
-		height: 500px;
+		height: 100%;
 	   padding-top: 100px;
 	   background: url('../images/MoverBox.jpg') center center no-repeat fixed;
 	   background-size: cover;
@@ -147,12 +155,34 @@ body{
 				color: #3A539B;
 			}
 
+			.login-btn-row{
+			}
+
 			.profile-row{
 			 width: 100%;
 			 padding-top: 80px;
-			 	.luggerProfile, .packerProfile{
+			 	.luggerProfile, {
+
+				  background: rgba(118,213,77,.5);
+				  border-radius: 5px;
+				  padding: 20px;
+
 					h3, p{
-						color: #FFF;
+						color: #3A539B;
+
+						font-size: 20px;
+						font-weight: 600;
+					}
+			 	}
+				.packerProfile{
+
+				  background: rgba(216,226,250,.5);
+				  border-radius: 5px;
+				  padding: 20px;
+
+					h3, p{
+						color: #3A539B;
+
 						font-size: 20px;
 						font-weight: 600;
 					}
@@ -263,11 +293,12 @@ body{
 
 }
 
- 	.packer-container{
+ 	.lugg-home-container{
 	  	width: 100%;
-	  	height: 500px;
+	  	height: 100%;
 	  	padding-top: 50px;
 	  	padding-left: 20px;
+		margin-top: 0;
 	  	background: url('../images/moving-boxes.jpg') center center no-repeat fixed;
 	  	background-size: cover;
 	  		i{
@@ -283,16 +314,18 @@ body{
 		width: 100%;
 		padding: 10px;
 		border: 2px solid black;
-		background-color: #89C4F4;
+		background-color: rgba(255,255,255, .8%);
 		display: inline-block;
 			#create-lugg-form{
 				padding: 10px;
 			#s_address, #e_address, #cargo_description, #cargo_img{
 				width: 50%;
 			}
+			.pending-button{
+				margin-left: 900px;
+			}
 		}
 		.map-container2{
-			background-color: #89C4F4;
 			display: inline-block;
 			width: 10%;
 		}
@@ -307,9 +340,13 @@ body{
 		}
 }
 
+.packer-container{
+	font-size: 140px;
+}
+
 .info-container{
 	font-size: 0;
-	   background-color: #D8E2FA;
+	background: rgba(216,226,250,.8);
 	   margin-top: 20px;
 		width: 100%;
 
@@ -382,7 +419,12 @@ body{
 
 .list-group-item {
 	width: 80%;
-	height: 150px;
+	height: 75px;
+	background-color: rgba(255,255,255, .9%);
+		.status-btn{
+			margin-left: 75%;
+			margin-top: -15px;
+		}
 
 }
 
