@@ -6,12 +6,14 @@ import {UserModel, UserCollection, LoginModel, CreateUserModel, TruckModel, Crea
 import STORE from './STORE.js'
 const ACTIONS = {
 
-   _loginUser: function(newLogin){
+   _authenticateUser: function(loginPack){
       let loginMod = new LoginModel()
-      loginMod.set(newLogin)
+      loginMod.set(loginPack)
       loginMod.save().then(function(serverRes){
+       STORE.setStore('currentUser', loginPack)
+
       // console.log('are we changing the route?', window.location);
-         window.location.hash = '/create-lugg';
+         location.hash = '/create-lugg';
     })
   },
 
@@ -19,18 +21,19 @@ const ACTIONS = {
       let createMod = new CreateUserModel()
       createMod.set(newCreate)
       createMod.save().then(function(serverRes){
-         window.location.hash = '/create-lugg';
+         location.hash = '/create-lugg';
     })
   },
 
-  _loginTruck: function(loginTruck){
+  _authenticateTruck: function(loginTruck){
      let truckLoginMod = new TruckModel()
      truckLoginMod.set(loginTruck)
-
      truckLoginMod.save().then(function(serverRes){
+        STORE.setStore('currentTruck', loginTruck)
+
       //   console.log('am i even here?')
 
-        window.location.hash = '/lugg-list';
+        location.hash = '/lugg-list';
     })
   },
 
@@ -39,7 +42,7 @@ const ACTIONS = {
      truckCreateMod.set(createTruck)
      truckCreateMod.save().then(function(serverRes){
       //   console.log('are we changing the route?', window.location);
-        window.location.hash = '/lugg-list';
+        location.hash = '/lugg-list';
     })
   },
 
@@ -76,7 +79,7 @@ const ACTIONS = {
       // console.log('saving teh lugg')
       acceptlugg.save().then(function(serverRes){
          // console.log("okay this should route somewhere else now")
-         window.location.hash = '/lugg-list';
+         location.hash = '/lugg-list';
      }).fail(function(error){
       //   console.log("did i fail??", error)
      })
@@ -87,28 +90,34 @@ const ACTIONS = {
         method: 'POST',
         url: '/logout'
      }).then(function(){
-        window.location.hash = ''
+        STORE.setStore('currentUser', {})
+        STORE.setStore('currentTruck', {  })
+        location.hash = ''
      })
   },
 
   setModal:function(showingStatus, modalData){
-     console.log(modalData)
-     STORE.setStore('modalWindowSettings', {
+      console.log(modalData)
+      STORE.setStore('modalWindowSettings', {
         isShowing:showingStatus,
         payload: modalData,
      })
- }
+ },
 
-   // _authenticateUser: function(){
-   //    let currentUser = new AuthenticateUser()
-   //    currentUser.set(currentUser)
-   //    currentUser.save().then(function(){
-   //       STORE.setStore('currentUser', currentUser)
-   //       window.location.hash = '';
-   //
-   //
-   //    })
-   // }
+   getCurrentUser: function(){
+      let uMod = new UserModel()
+      let tMod = new TruckModel()
+      tMod.checkAuth().then(function(servRes){
+         STORE.setStore('currentTruck', tMod)
+         console.log('truck auth', servRes)
+   })
+      uMod.checkAuth().then(function(servRes){
+         console.log('packer auth', servRes)
+         STORE.setStore('currentUser', uMod)
+   })
+
+}
+
 }
 
 

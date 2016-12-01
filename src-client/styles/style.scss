@@ -14,17 +14,13 @@ body{
 	background-color: #FAFAFA;
 
 }
-// h1 h3{
-// 		font-size: 150px;
-// 		text-align: center;
-// 		color: #000;
-// }
+
 #app-container{
-	width: 1400px;
+	width: 100%;
 	height: auto;
 	margin-left: auto;
 	margin-right: auto;
-	background-color: #A4B8E9;
+	overflow: hidden;
 
 }
 
@@ -41,67 +37,82 @@ body{
 	width: 50%;
 	border: 2px solid #000;
 }
-// .pack-auth-form{
-// 	width: 100%;
-// 	border: 2px solid black;
-// 	background-color: #89C4F4;
-//
-// }
 
-// .pack-auth-container{
-// 	color: #3A539B;
-// 	height: 500px;
-// 	padding-top: 300px;
-// 	background: url('../images/MoverBox.jpg');
-// 	background-size: cover;
-// 		.pack-auth-lead{
-// 			font-size: 30px;
-// 			display: inline-block;
-// 				h3{
-// 					margin-top: 50px;
-// 					font-size: 40px;
-// 					font-weight: 600;
-// 				}
-// 			}
-// 		.pack-auth-logo{
-// 			padding-top: 45px;
-// 			display: inline-block;
-// 			width: 15%;
-// 		}
-// 		.pack-auth-form{
-// 			border: 2px solid black;
-// 			background-color: #89C4F4;
-//
-// 				.create-packer-form{
-// 					h2{
-// 						padding-top: 60px;
-// 					}
-// 				}
-// 				#login-form {
-// 					width: 50%;
-// 					display: inline-block;
-// 				}
-//
-// 				#create-form {
-// 					width: 50%;
-// 					display: inline-block;
-// 					vertical-align: top;
-// 				}
-// 		}
-// }
+.pack-description-container{
+	font-size: 18px;
+	padding-top: 50px;
+		.return-button{
+		margin-left: 325px;
+		}
 
+}
+
+.pack-auth-container{
+	color: #3A539B;
+	height: 500px;
+	padding-top: 300px;
+	background: url('../images/MoverBox.jpg');
+	background-size: cover;
+		.pack-auth-lead{
+			font-size: 30px;
+			display: inline-block;
+				h3{
+					margin-top: 50px;
+					font-size: 40px;
+					font-weight: 600;
+				}
+			}
+		.pack-auth-logo{
+			padding-top: 45px;
+			display: inline-block;
+			width: 15%;
+		}
+		.pack-auth-form{
+			border: 2px solid black;
+			background-color: #89C4F4;
+
+
+
+				#create-form {
+					width: 50%;
+					display: inline-block;
+					vertical-align: top;
+				}
+		}
+}
+.oneLugg-container{
+	color: #FFF;
+	padding-top: 100px;
+}
+.home-container{
+	background: url(../images/chevrolet-pickup.jpg) center top no-repeat;
+	background-size: cover;
+	height: 100vh;
+	display: block;
+	max-width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+}
+.home-container2{
+	background-color: #31536E;
+}
+.navbar{
+	opacity: .5;
+}
 .navbar-logo{
 	display: inline-block;
 	margin-left: 3px;
-	width: 30%;
+	width: 50%;
 	}
 
 
 
 
 .lugg-auth-container{
-	color: #3A539B;
-	height: 100%;
+
+	color: #FFF;
+	text-shadow: 1px 1px black;
+	height: 500px;
 	padding-top: 300px;
 	background: url('../images/MoverBox.jpg');
 	background-size: cover;
@@ -193,7 +204,7 @@ body{
 				display: inline-block;
 				font-size: 30px;
 				font-weight: 600;
-				color: #083B66
+				color: #FFF;
 
 			}
 			.home-page-logo{
@@ -206,10 +217,14 @@ body{
 				}
 }
 .footer-container{
+	color: #FFF;
+	text-shadow: 1px 1px black;
 	background-color: #A4B8E9;
 }
 
 .faq-logo-container{
+	color: #FFF;
+	text-shadow: 1px 1px black;
 	height: 380px;
 	background: url('../images/MoverBox.jpg')center no-repeat fixed;
 	background-size: cover;
@@ -241,57 +256,62 @@ body{
 		}
 
 .lugger-container{
-	height: 400px;
-	background: url('../images/chevrolet-pickup.jpg') center center no-repeat fixed;
-	background-size: cover;
+	color: #FFF;
+	text-shadow: 1px 1px black;
 		h3{
 			padding-left: 30px;
 		}
 }
 
 .logo-lugger{
-	margin: 0;
 	padding-top: 30px;
 	width: 15%;
 	display: inline-block;
 	background-color: #89C4F4;
-	margin-left: 0;
 		img{
 			width: 10%;
 		}
 }
 
-
-	#map{
-
-		width: 600px;
-		height: 400px;
-		margin-top: 25px;
-	  }
-
-
-.lugg-container{
+.lugg-map-container{
+	background-color: rgba(0,0,0,0.4);
 	width: 100%;
+	margin-top: 90px;
 }
-
 .lugg-list-container{
-	margin-top: 25px;
-
-	.map-container{
-		background-color: #89C4F4;
-		display: inline-block;
-		width: 10%;
-	}
-	#map{
-		margin-right: 10px;
-		margin-left: 50%;
-		display: inline-block;
-		vertical-align: top;
-		width: 600px;
-		height: 400px;
-	}
-
+	color: #FFF;
+	font-size: 20px;
+	font-weight: 600;
+		i{
+			color: #000;
+		}
+		.lugg-item{
+			width: 50%;
+		}
 }
+.lugg-data{
+	width: 50%;
+}
+
+.map-container{
+	display: inline-block;
+	width: 49.5%;
+		p{
+			font-size: 20px;
+			font-weight: 600;
+		}
+
+		#map{
+			margin-top: 10%;
+			margin-right: 10px;
+			margin-left: 40px;
+			display: inline-block;
+			vertical-align: top;
+			width: 500px;
+			height: 300px;
+		}
+  	}
+
 
  	.lugg-home-container{
 	  	width: 100%;
@@ -311,6 +331,8 @@ body{
 	  }
 
 	.form-container{
+		color: #FFF;
+		text-shadow: 1px 1px black;
 		width: 100%;
 		padding: 10px;
 		border: 2px solid black;
@@ -355,6 +377,9 @@ body{
 				padding: 20px;
 				display: inline-block;
 				width: 33.3%;
+				h3, p{
+					font-size: 20px;
+				}
 				img{
 					border: 1px solid #000;
 					border-radius: 100%;
@@ -367,6 +392,9 @@ body{
 				display: inline-block;
 				vertical-align: top;
 				width: 33.3%;
+				h3, p{
+					font-size: 20px;
+				}
 				img{
 					border: 1px solid #000;
 					border-radius: 100%;
@@ -379,6 +407,9 @@ body{
 				display: inline-block;
 				vertical-align: top;
 				width: 33.3%;
+				h3, p{
+					font-size: 20px;
+				}
 				img{
 					border: 1px solid #000;
 					border-radius: 100%;
@@ -386,6 +417,8 @@ body{
 			}
 }
 .review-container{
+	color: #FFF;
+	text-shadow: 1px 1px black;
 	height: 380px;
 	background: url('../images/MoverBox.jpg')center no-repeat fixed;
 	background-size: cover;
@@ -412,6 +445,8 @@ body{
 
 
 .about-container{
+	color: #FFF;
+	text-shadow: 1px 1px black;
 	height: 500px;
 	background: url('../images/MoverBox.jpg')center no-repeat fixed;
 	background-size: cover;
@@ -459,6 +494,8 @@ body{
 }
 
 .builderPro{
+	color: #FFF;
+	text-shadow: 1px 1px black;
 	background-color: #89C4F4;
 	display: inline-block;
 		.thumbnail{

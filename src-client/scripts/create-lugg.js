@@ -45,7 +45,6 @@ const CreateLugg = React.createClass({
          acceptedStatus = <button type='button' className='btn btn-primay pendingBtn status-btn'>Pending</button>
       }
 
-
       return (
 
 

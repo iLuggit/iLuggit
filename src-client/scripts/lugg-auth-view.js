@@ -14,7 +14,7 @@ const LuggAuthView = React.createClass({
          password: this.refs.pass_word.value,
       }
       console.log(existingUserData);
-      ACTIONS._loginTruck(existingUserData)
+      ACTIONS._authenticateTruck(existingUserData)
 
    },
 
@@ -46,8 +46,6 @@ const LuggAuthView = React.createClass({
                   </ul>
                </nav>
             <div className="container-fluid lugg-auth-container ">
-                  <h3 className="lugg-auth-lead text-center">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
-
             <div className = "row">
                <div className ="lugg-auth-form">
                  <form className = "col-xs-12 col-sm-6 text-center" id="truck-login-form" onSubmit = {this._submitTruckLogin}>
