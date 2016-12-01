@@ -50,7 +50,7 @@ const LuggProfile = React.createClass({
             <div className = "lugg-map-container">
               <div className = "row">
                   <div className ="lugg-list-container text-center ">
-                     <div className = "col-xs-12 col-md-6 lugg-item">
+                     <div className = "col-xs-6 col-md-3 lugg-item">
                            <p>Lugg Item</p>
                            { luggs }
                      </div>
