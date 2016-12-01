@@ -41,7 +41,7 @@ const CargoDisplay = React.createClass({
                         <h3 className="panel-title">Details Of Pack</h3>
                      </div>
                      <div className="panel-body">
-                     <table class="table table-striped table-hover">
+                     <table className="table table-striped table-hover">
 
                        <thead>
                          <tr>

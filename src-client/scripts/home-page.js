@@ -15,16 +15,24 @@ const HomeView = React.createClass({
 
 
     return (
-      <div className="container-fluid">
-         <nav className="navbar navbar-default">
-            <a className="navbar-brand " href="#"><img className ="navbar-logo" src="../images/logo1.png" alt = "" /></a>
-            <ul className="nav navbar-nav navbar-right">
-            <li><a href="#">Home</a></li>
-            <li onClick = {this._logOut}>Logout</li>
-            </ul>
-         </nav>
+      <div>
+         <div>
+            <nav className="navbar navbar-default">
+               <a className="navbar-brand " href="#"><img className ="navbar-logo" src="../images/logo1.png" alt = "" /></a>
+               <ul className="nav navbar-nav navbar-right">
+                  <li><a href="#">Home</a></li>
+                  <li><a onClick = {this._logOut}>Logout</a></li>
+               </ul>
+            </nav>
+         </div>
+
+      <div className="container-fluid home-main-container">
+
+         <h1 className="text-center main-logo-header">i<em>L</em>uggit</h1>
+
+
             <div className="main-container text-center">
-               <div className="row">
+               <div className="row login-btn-row">
                   <div className ="profile-row">
                   <div className="col-xs-12 col-md-6 ">
                      <div className="luggerProfile text-center">
@@ -80,6 +88,7 @@ const HomeView = React.createClass({
           <a href="https://www.instagram.com/?hl=en"><i className="fa fa-instagram fa-4x multi-icons" aria-hidden="true"></i></a>
         </div>
       </div>
+   </div>
    </div>
 
 

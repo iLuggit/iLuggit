@@ -51,7 +51,7 @@ const ACTIONS = {
      let createLuggMod = new CreateLuggModel()
      createLuggMod.set(newLugg)
      createLuggMod.save().then(function(){
-        location.hash ='#'
+        ACTIONS.fetchLuggData()
     })
   },
 
@@ -116,9 +116,8 @@ const ACTIONS = {
          STORE.setStore('currentUser', uMod)
    })
 
-  }
 
 }
 
-
+}
 module.exports = ACTIONS

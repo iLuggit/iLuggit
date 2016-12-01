@@ -44,6 +44,9 @@ const LuggProfile = React.createClass({
                <li><a onClick = {this._logOut}>Logout</a></li>
                </ul>
             </nav>
+            <div className="container-fluid text-center packer-container ">
+                     <h1>Lugger Dashboard</h1>
+            </div>
             <div className = "lugg-map-container">
               <div className = "row">
                   <div className ="lugg-list-container text-center ">
