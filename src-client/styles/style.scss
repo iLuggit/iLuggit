@@ -49,15 +49,13 @@ body{
 
 .pack-auth-container{
 	color: #3A539B;
-	height: 500px;
-	padding-top: 300px;
+	min-height: 100vh;
 	background: url('../images/MoverBox.jpg');
 	background-size: cover;
 		.pack-auth-lead{
 			font-size: 30px;
 			display: inline-block;
 				h3{
-					margin-top: 50px;
 					font-size: 40px;
 					font-weight: 600;
 				}
@@ -69,7 +67,8 @@ body{
 		}
 		.pack-auth-form{
 			border: 2px solid black;
-			background-color: #89C4F4;
+			background-color: rgba(137,196,244,.9);
+			min-height: 100vh;
 
 
 
@@ -97,7 +96,7 @@ body{
 	background-color: #31536E;
 }
 .navbar{
-	opacity: .5;
+	opacity: .7;
 }
 .navbar-logo{
 	display: inline-block;
@@ -107,34 +106,29 @@ body{
 
 
 
-
+.luggerDash-container{
+	h1{
+	color: #3A539B;
+	font-size: 50px;
+	font-family: 'Sanchez', 'Baskervilles', serif;
+	border: 2px solid #3A539B;
+	background: rgba(118,213,77,.5);
+	text-shadow: 1px 1px #000;
+	}
+}
 .lugg-auth-container{
 
 	color: #FFF;
 	text-shadow: 1px 1px black;
-	height: 500px;
-	padding-top: 300px;
+	min-height: 100vh;
 	background: url('../images/MoverBox.jpg');
 	background-size: cover;
 
-	.lugg-auth-lead{
-		font-size: 25px;
-		display: inline-block;
-	}
-		h3{
-			font-size: 25px;
-			font-weight: 600;
-		}
-	.lugg-auth-logo{
-		padding-top: 15px;
-		display: inline-block;
-		width: 15%;
 
-	}
 	.lugg-auth-form{
 		border: 2px solid black;
-		background-color: rgba(137,196,244,.5);
-
+		background-color:  rgba(118,213,77,.5);
+		min-height: 100vh;
 			.create-lugg-form{
 				h2{
 					padding-top: 60px;
@@ -187,7 +181,7 @@ body{
 			 	}
 				.packerProfile{
 
-				  background: rgba(216,226,250,.5);
+				  background: rgba(137,196,244,.5);
 				  border-radius: 5px;
 				  padding: 20px;
 
@@ -312,7 +306,11 @@ body{
 		}
   	}
 
-
+.welcome-info{
+	color: #000;
+	text-shadow: 2px 2px #FFF;
+	font-size: 30px;
+}
  	.lugg-home-container{
 	  	width: 100%;
 	  	height: 100%;
@@ -363,7 +361,23 @@ body{
 }
 
 .packer-container{
-	font-size: 140px;
+	h1{
+	color: #083B66;
+	font-size: 50px;
+	font-family: 'Sanchez', 'Baskervilles', serif;
+	border: 2px solid #3A539B;
+	background: rgba(137,196,244,.5);
+	text-shadow: 1px 1px #000;
+	}
+
+}
+
+.packer-sub-header{
+	color: rgba(137,196,244,1);
+	background: #083B66;
+	padding: 10px 5px;
+
+
 }
 
 .info-container{
@@ -495,8 +509,9 @@ body{
 
 .builderPro{
 	color: #FFF;
+	font-size: 20px;
 	text-shadow: 1px 1px black;
-	background-color: #89C4F4;
+	background-color: #D0DDF4;
 	display: inline-block;
 		.thumbnail{
 			background-color: #D0DDF4;

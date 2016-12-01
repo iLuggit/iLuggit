@@ -50,7 +50,7 @@ const CreateLugg = React.createClass({
 
                   <div key={i} className="list-group">
                      <div className="list-group-item">
-                        <h4 ><span className ="userNameList"> {model.get('user').first_name}</span>, you're moving <span className="userNameList">  {typeof model === 'object' && model.get('haul_description')} </span> {acceptedStatus} </h4> <br/>
+                        <h4 ><span className ="userNameList"> {model.get('user').first_name}</span>, you're moving <span className="packer-sub-header">  {typeof model === 'object' && model.get('haul_description') + ' ' } </span> {acceptedStatus} </h4> <br/>
                      </div>
                   </div>
 
@@ -89,11 +89,10 @@ const CreateLugg = React.createClass({
          <div className = "lugg-home-container">
             <ModalWindow modalSettings={this.props.modalWindowInfo}/>
             <div className="container-fluid text-center packer-container ">
-                     <h1>iLuggit</h1>
-                     <h3 className="lead">Tell us what you need moved, we'll find a Lugger!</h3>
+                     <h1>Packer Dashboard</h1>
             </div>
-            <div>
-               <h3>Oustanding Packs </h3>
+            <div >
+               <h3 className="packer-sub-header">Oustanding Packs </h3>
                <div className="row">
                   <ul>
                      { outstandingPacks }
@@ -104,7 +103,7 @@ const CreateLugg = React.createClass({
             <div className ="form-container">
                <div className ="row ">
                   <form className = "col-xs-12 col-md-6 " id="create-lugg-form" onSubmit = {this._createLugg}>
-                       <h2 className = "">Welcome, Create a New Lugg </h2>
+                       <h2 className = "welcome-info">Welcome, Create a New Lugg </h2>
                   <div className = "col-xs-12 form-group">
                        <label htmlFor = "startAddress"> </label>
                        <input type = "text" className="form-control" id = "s_address" ref = "start_address" placeholder = "Enter Starting Address" />

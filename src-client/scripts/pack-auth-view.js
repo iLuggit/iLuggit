@@ -44,10 +44,9 @@ const PackAuthView = React.createClass({
 
                   </ul>
                </nav>
-         <div className="container-fluid lugg-auth-container ">
-               <h3 className = "lugg-auth-lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
+         <div className="container-fluid pack-auth-container ">
             <div className = "row">
-                  <div className="lugg-auth-form">
+                  <div className="pack-auth-form">
                      <form className = "col-xs-12 col-sm-6 text-center" id="login-form" onSubmit = {this._submitLogin}>
                            <h2 className = "existing-packer-form">Existing Packer Login </h2>
                         <div className = "form-group">

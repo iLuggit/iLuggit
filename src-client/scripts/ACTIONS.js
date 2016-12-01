@@ -116,9 +116,8 @@ const ACTIONS = {
          STORE.setStore('currentUser', uMod)
    })
 
-}
 
 }
 
-
+}
 module.exports = ACTIONS

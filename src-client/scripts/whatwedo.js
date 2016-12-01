@@ -9,7 +9,7 @@ const showWhatWeDo = React.createClass({
    render:function(){
       return(
          <div className ="main-faq-container">
-         <div className="container-fluid home-container">
+         <div className="container-fluid ">
             <nav className="navbar navbar-default">
                <a className="navbar-brand " href="#"><img className ="navbar-logo" src="../images/logo1.png" alt = "" /></a>
                <ul className="nav navbar-nav navbar-right">
