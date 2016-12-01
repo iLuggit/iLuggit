@@ -82,7 +82,9 @@ body{
 .oneLugg-container{
 	color: #FFF;
 	padding-top: 100px;
+	padding-left: 1100px;
 }
+
 .home-container{
 	background: url(../images/chevrolet-pickup.jpg) center top no-repeat;
 	background-size: cover;
@@ -227,14 +229,14 @@ body{
 		}
 
 		.faq-logo{
-			padding-top: 250px;
+			padding-top: 200px;
 			float: left;
 			display: inline-block;
 			width: 15%;
 		}
 
 		.faq-lead{
-			padding-top: 255px;
+			padding-top: 200px;
 			display: inline-block;
 			font-size: 50px;
 			font-weight: 600;
@@ -311,8 +313,8 @@ body{
 			margin-left: 40px;
 			display: inline-block;
 			vertical-align: top;
-			width: 500px;
-			height: 300px;
+			width: 600px;
+			height: 500px;
 		}
   	}
 
@@ -472,7 +474,7 @@ body{
 .about-container{
 	color: #FFF;
 	text-shadow: 1px 1px black;
-	height: 500px;
+	height: 380px;
 	background: url('../images/MoverBox.jpg')center no-repeat fixed;
 	background-size: cover;
 }
@@ -519,9 +521,9 @@ body{
 }
 
 .builderPro{
-	color: #FFF;
+	color: #000;
 	font-size: 20px;
-	text-shadow: 1px 1px black;
+	text-shadow: 1px 1px #000;
 	background-color: #D0DDF4;
 	display: inline-block;
 		.thumbnail{
@@ -553,7 +555,7 @@ body{
 		width: 15%;
 		}
 	.truck-info-lead{
-		padding-top: 400px;
+		padding-top: 300px;
 		display: inline-block;
 		font-size: 30px;
 		font-weight: 600;
