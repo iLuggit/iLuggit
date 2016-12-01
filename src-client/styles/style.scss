@@ -23,6 +23,21 @@ body{
 	overflow: hidden;
 
 }
+
+.main-logo-header{
+	color: #76D54D;
+	font-size: 70px;
+	font-family: 'Sanchez', 'Baskervilles', serif;
+	border: 2px solid #3A539B;
+	background-color: rgba(8,59,102,.8);
+	padding: 40px;
+}
+
+.pack-description{
+	width: 50%;
+	border: 2px solid #000;
+}
+
 .pack-description-container{
 	font-size: 18px;
 	padding-top: 50px;
@@ -56,15 +71,7 @@ body{
 			border: 2px solid black;
 			background-color: #89C4F4;
 
-				.create-packer-form{
-					h2{
-						padding-top: 60px;
-					}
-				}
-				#login-form {
-					width: 50%;
-					display: inline-block;
-				}
+
 
 				#create-form {
 					width: 50%;
@@ -102,6 +109,7 @@ body{
 
 
 .lugg-auth-container{
+
 	color: #FFF;
 	text-shadow: 1px 1px black;
 	height: 500px;
@@ -125,7 +133,7 @@ body{
 	}
 	.lugg-auth-form{
 		border: 2px solid black;
-		background-color: #89C4F4;
+		background-color: rgba(137,196,244,.5);
 
 			.create-lugg-form{
 				h2{
@@ -147,25 +155,46 @@ body{
 
 
 
-.main-container{
-		color: #FFF;
-		text-shadow: 1px 1px black;
+.home-main-container{
+	   color: #3A539B;
 		width: 100%;
-		height: 500px;
-	   padding-top: 55px;
+		height: 100%;
+	   padding-top: 100px;
 	   background: url('../images/MoverBox.jpg') center center no-repeat fixed;
 	   background-size: cover;
 			i{
 				color: #3A539B;
 			}
 
+			.login-btn-row{
+			}
+
 			.profile-row{
 			 width: 100%;
 			 padding-top: 80px;
-			 	.luggerProfile, .packerProfile{
+			 	.luggerProfile, {
+
+				  background: rgba(118,213,77,.5);
+				  border-radius: 5px;
+				  padding: 20px;
+
 					h3, p{
 						color: #3A539B;
-						font-size: 25px;
+
+						font-size: 20px;
+						font-weight: 600;
+					}
+			 	}
+				.packerProfile{
+
+				  background: rgba(216,226,250,.5);
+				  border-radius: 5px;
+				  padding: 20px;
+
+					h3, p{
+						color: #3A539B;
+
+						font-size: 20px;
 						font-weight: 600;
 					}
 			 	}
@@ -284,13 +313,12 @@ body{
   	}
 
 
- 	.packer-container{
-		color: #FFF;
-		text-shadow: 1px 1px black;
+ 	.lugg-home-container{
 	  	width: 100%;
-	  	height: 500px;
+	  	height: 100%;
 	  	padding-top: 50px;
 	  	padding-left: 20px;
+		margin-top: 0;
 	  	background: url('../images/moving-boxes.jpg') center center no-repeat fixed;
 	  	background-size: cover;
 	  		i{
@@ -308,16 +336,18 @@ body{
 		width: 100%;
 		padding: 10px;
 		border: 2px solid black;
-		background-color: #89C4F4;
+		background-color: rgba(255,255,255, .8%);
 		display: inline-block;
 			#create-lugg-form{
 				padding: 10px;
 			#s_address, #e_address, #cargo_description, #cargo_img{
 				width: 50%;
 			}
+			.pending-button{
+				margin-left: 900px;
+			}
 		}
 		.map-container2{
-			background-color: #89C4F4;
 			display: inline-block;
 			width: 10%;
 		}
@@ -332,11 +362,13 @@ body{
 		}
 }
 
+.packer-container{
+	font-size: 140px;
+}
+
 .info-container{
-	   color: #3A539B;
-	   text-shadow: 1px 1px black;
-		font-size: 0;
-	   background-color: #D8E2FA;
+	font-size: 0;
+	background: rgba(216,226,250,.8);
 	   margin-top: 20px;
 		width: 100%;
 
@@ -420,9 +452,15 @@ body{
 	background-size: cover;
 }
 
-.userNameList {
-	color:#FFF;
-	font-size: 25px;
+.list-group-item {
+	width: 80%;
+	height: 75px;
+	background-color: rgba(255,255,255, .9%);
+		.status-btn{
+			margin-left: 75%;
+			margin-top: -15px;
+		}
+
 }
 
 .modal-container{

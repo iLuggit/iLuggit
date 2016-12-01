@@ -36,7 +36,6 @@ const PackAuthView = React.createClass({
    render: function(){
       return(
          <div>
-            <div className="container-fluid home-container">
                <nav className="navbar navbar-default">
                   <a className="navbar-brand " href="#"><img className ="navbar-logo" src="../images/logo1.png" alt = "" /></a>
                   <ul className="nav navbar-nav navbar-right">
@@ -45,11 +44,10 @@ const PackAuthView = React.createClass({
 
                   </ul>
                </nav>
-         <div className="container-fluid pack-auth-container ">
-               <img className = "pack-auth-logo" src= "../images/logo1.png" alt="" />
-               <h3 className = "pack-auth-lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
+         <div className="container-fluid lugg-auth-container ">
+               <h3 className = "lugg-auth-lead">Bridges the gap between someone with a truck and someone who needs a truck!</h3>
             <div className = "row">
-                  <div className="pack-auth-form">
+                  <div className="lugg-auth-form">
                      <form className = "col-xs-12 col-sm-6 text-center" id="login-form" onSubmit = {this._submitLogin}>
                            <h2 className = "existing-packer-form">Existing Packer Login </h2>
                         <div className = "form-group">
@@ -96,7 +94,6 @@ const PackAuthView = React.createClass({
             </div>
          </div>
       </div>
-   </div>
       )
    }
 })
